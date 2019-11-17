@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Milena Liao">
+
+
+
+
+
+<title>CSP Encoding:Non-binary to Binary | Milena’s Blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Milena&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Milena&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">CSP Encoding:Non-binary to Binary</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Milena Liao</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">November 17, 2019&nbsp;&nbsp;19:56:12</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Paper-Notes/">Paper Notes</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p> Reading notes about《Encodings of Non-Binary Constraint Satisfaction Problems》</p>
+<hr>
+<ul>
+<li>Binary Constrant: A&lt;B.</li>
+<li>Non Constrant: A+B+C&gt;10.</li>
+</ul>
+<h2 id="Preliminaries"><a href="#Preliminaries" class="headerlink" title="Preliminaries"></a>Preliminaries</h2><p> Many CSPs can be formulated by non-binary relations.The methods of solving a non-binary CSP:</p>
+<ol>
+<li>Use algorithms like FC which have been generalized to non-binary constraints.</li>
+<li>Translate into a binary constraints.</li>
+</ol>
+<h2 id="Well-known-methods-for-translating"><a href="#Well-known-methods-for-translating" class="headerlink" title="Well-known methods for translating"></a>Well-known methods for translating</h2><h3 id="Dual-encoding"><a href="#Dual-encoding" class="headerlink" title="Dual encoding"></a>Dual encoding</h3><p> <img src="/pics/dual.jpg" alt="dual"></p>
+<h3 id="Hidden-variable-encoding"><a href="#Hidden-variable-encoding" class="headerlink" title="Hidden variable encoding"></a>Hidden variable encoding</h3><p> <img src="/pics/hidden.jpg" alt="hidden"></p>
+<h3 id="Hybrid-encoding"><a href="#Hybrid-encoding" class="headerlink" title="Hybrid encoding"></a>Hybrid encoding</h3><p> Dual or Hidden</p>
+<h3 id="Double-encoding"><a href="#Double-encoding" class="headerlink" title="Double encoding"></a>Double encoding</h3><p> Both Dual and Hidden</p>
+<h2 id="Mapping-between-the-encoding"><a href="#Mapping-between-the-encoding" class="headerlink" title="Mapping between the encoding"></a>Mapping between the encoding</h2><ul>
+<li>Hidden variable encoding —(simplification)—&gt; Dual encoding easily reverse!</li>
+<li>In double encoding: Both original variables and dual variables, both constraints between original variables and dual variables.</li>
+<li>Branching heuristics perform better on dual variable.</li>
+</ul>
+<h2 id="Theoretical-comparison"><a href="#Theoretical-comparison" class="headerlink" title="Theoretical comparison"></a>Theoretical comparison</h2><h3 id="In-hidden-variable-encoding"><a href="#In-hidden-variable-encoding" class="headerlink" title="In hidden variable encoding"></a>In hidden variable encoding</h3><ol>
+<li>AC = GAC in original problem</li>
+<li>NIC = AC</li>
+<li>strong PC &gt; SAC &gt; AC</li>
+</ol>
+<h3 id="In-dual-encoding"><a href="#In-dual-encoding" class="headerlink" title="In dual encoding"></a>In dual encoding</h3><ol start="4">
+<li>AC &gt; GAC in original problem</li>
+<li>AC &gt; AC on hidden</li>
+</ol>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><ul>
+<li>Show relationship between hidden variable and dual encoding.</li>
+<li>Do more pruning in the dual.</li>
+<li>These encoding translate non-binary CSP into a binary CSP. AC on hidden = GAC in original problem</li>
+<li>Propose double encoding.</li>
+</ul>
+<p><img src="/pics/con.jpg" alt="conclusion"></p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Milena Liao</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://yoursite.com/2019/11/17/encoding-CSP/">http://yoursite.com/2019/11/17/encoding-CSP/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY<strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/CSP/"># CSP</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();" target="_blank" rel="noopener">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2019/11/16/First/">面向对象数据库&简单问题构造</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Milena Liao | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
