@@ -12,7 +12,7 @@
 
 
 
-<title>First Blog | Milena’s Blog</title>
+<title>面向对象数据库&amp;简单问题构造 | Milena’s Blog</title>
 
 
 
@@ -174,7 +174,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">First Blog</h1>
+            <h1 class="post-title">面向对象数据库&amp;简单问题构造</h1>
             
                 <div class="post-meta">
                     
@@ -192,7 +192,18 @@
         </header>
 
         <div class="post-content">
-            <h1 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h1><h2 id="this-is-my-first-blog-hahahaha"><a href="#this-is-my-first-blog-hahahaha" class="headerlink" title="this is my first blog hahahaha"></a>this is my first blog hahahaha</h2>
+            <hr>
+<h1 id="需求分析如下，根据数据库理论设计EER模型，并给出对应的实现语句。"><a href="#需求分析如下，根据数据库理论设计EER模型，并给出对应的实现语句。" class="headerlink" title="需求分析如下，根据数据库理论设计EER模型，并给出对应的实现语句。"></a>需求分析如下，根据数据库理论设计EER模型，并给出对应的实现语句。</h1><h2 id="教室、学生和教师"><a href="#教室、学生和教师" class="headerlink" title="教室、学生和教师"></a>教室、学生和教师</h2><h3 id="计算机大楼教室分为研究室和实验室课堂教室。研究室和实验室均可以容纳多名学生学习。关于一个学生在学院注册的信息包括唯一的标识符、姓名、地址、性别、电话号码、年级和专业。每个学生都要上课修学分，每名教师都需要参与授课或指导实验。"><a href="#计算机大楼教室分为研究室和实验室课堂教室。研究室和实验室均可以容纳多名学生学习。关于一个学生在学院注册的信息包括唯一的标识符、姓名、地址、性别、电话号码、年级和专业。每个学生都要上课修学分，每名教师都需要参与授课或指导实验。" class="headerlink" title="计算机大楼教室分为研究室和实验室课堂教室。研究室和实验室均可以容纳多名学生学习。关于一个学生在学院注册的信息包括唯一的标识符、姓名、地址、性别、电话号码、年级和专业。每个学生都要上课修学分，每名教师都需要参与授课或指导实验。"></a>计算机大楼教室分为研究室和实验室课堂教室。研究室和实验室均可以容纳多名学生学习。关于一个学生在学院注册的信息包括唯一的标识符、姓名、地址、性别、电话号码、年级和专业。每个学生都要上课修学分，每名教师都需要参与授课或指导实验。</h3><h2 id="实验室管理员"><a href="#实验室管理员" class="headerlink" title="实验室管理员"></a>实验室管理员</h2><h3 id="每个管理员可以分配到某一个或多个实验室。也可以不分配到实验室。一个实验室可以有多个管理员。具体负责清洁和检查水电等工作，管理员的信息包括她们的职工号、姓名、住址、电话号码和级别。每个实验室有一个唯一的号码，而且它标识着一种特殊类型的实验形式（如软件或硬件）。"><a href="#每个管理员可以分配到某一个或多个实验室。也可以不分配到实验室。一个实验室可以有多个管理员。具体负责清洁和检查水电等工作，管理员的信息包括她们的职工号、姓名、住址、电话号码和级别。每个实验室有一个唯一的号码，而且它标识着一种特殊类型的实验形式（如软件或硬件）。" class="headerlink" title="每个管理员可以分配到某一个或多个实验室。也可以不分配到实验室。一个实验室可以有多个管理员。具体负责清洁和检查水电等工作，管理员的信息包括她们的职工号、姓名、住址、电话号码和级别。每个实验室有一个唯一的号码，而且它标识着一种特殊类型的实验形式（如软件或硬件）。"></a>每个管理员可以分配到某一个或多个实验室。也可以不分配到实验室。一个实验室可以有多个管理员。具体负责清洁和检查水电等工作，管理员的信息包括她们的职工号、姓名、住址、电话号码和级别。每个实验室有一个唯一的号码，而且它标识着一种特殊类型的实验形式（如软件或硬件）。</h3><h2 id="学生做实验"><a href="#学生做实验" class="headerlink" title="学生做实验"></a>学生做实验</h2><h3 id="学生可以做多次实验。实验信息包括实验类型、学生、指导教师、学时、时间和地点。学生信息包括学号、姓名、地址和电话号码和班级、专业。"><a href="#学生可以做多次实验。实验信息包括实验类型、学生、指导教师、学时、时间和地点。学生信息包括学号、姓名、地址和电话号码和班级、专业。" class="headerlink" title="学生可以做多次实验。实验信息包括实验类型、学生、指导教师、学时、时间和地点。学生信息包括学号、姓名、地址和电话号码和班级、专业。"></a>学生可以做多次实验。实验信息包括实验类型、学生、指导教师、学时、时间和地点。学生信息包括学号、姓名、地址和电话号码和班级、专业。</h3><h2 id="教师指导实验"><a href="#教师指导实验" class="headerlink" title="教师指导实验"></a>教师指导实验</h2><h3 id="只有资深教授有权负责指导实验。任何其他在场的教师，在实验中被认为只起到助手作用。在资深教授的指导下，其他教师也可以参与实验工作。教师信息包括职工号、姓名、地址和电话号码和专业，性别、年龄、总学时和级别。如果年龄大于50岁，级别则为“资深”senior，否则为非资深non-senior。实验学时自动增加到参加实验的教师的总学时中。"><a href="#只有资深教授有权负责指导实验。任何其他在场的教师，在实验中被认为只起到助手作用。在资深教授的指导下，其他教师也可以参与实验工作。教师信息包括职工号、姓名、地址和电话号码和专业，性别、年龄、总学时和级别。如果年龄大于50岁，级别则为“资深”senior，否则为非资深non-senior。实验学时自动增加到参加实验的教师的总学时中。" class="headerlink" title="只有资深教授有权负责指导实验。任何其他在场的教师，在实验中被认为只起到助手作用。在资深教授的指导下，其他教师也可以参与实验工作。教师信息包括职工号、姓名、地址和电话号码和专业，性别、年龄、总学时和级别。如果年龄大于50岁，级别则为“资深”senior，否则为非资深non-senior。实验学时自动增加到参加实验的教师的总学时中。"></a>只有资深教授有权负责指导实验。任何其他在场的教师，在实验中被认为只起到助手作用。在资深教授的指导下，其他教师也可以参与实验工作。教师信息包括职工号、姓名、地址和电话号码和专业，性别、年龄、总学时和级别。如果年龄大于50岁，级别则为“资深”senior，否则为非资深non-senior。实验学时自动增加到参加实验的教师的总学时中。</h3><h2 id="教授指导科研工作"><a href="#教授指导科研工作" class="headerlink" title="教授指导科研工作"></a>教授指导科研工作</h2><h3 id="每名资深教授在学院可以有其直接指导的研究生，研究室可以分配给一个或多个资深教授，也可以不分配给任何教授。这些研究生被分配到指定的研究室，每个研究室都有一个唯一的房间标识符，由专门的管理员管理。"><a href="#每名资深教授在学院可以有其直接指导的研究生，研究室可以分配给一个或多个资深教授，也可以不分配给任何教授。这些研究生被分配到指定的研究室，每个研究室都有一个唯一的房间标识符，由专门的管理员管理。" class="headerlink" title="每名资深教授在学院可以有其直接指导的研究生，研究室可以分配给一个或多个资深教授，也可以不分配给任何教授。这些研究生被分配到指定的研究室，每个研究室都有一个唯一的房间标识符，由专门的管理员管理。"></a>每名资深教授在学院可以有其直接指导的研究生，研究室可以分配给一个或多个资深教授，也可以不分配给任何教授。这些研究生被分配到指定的研究室，每个研究室都有一个唯一的房间标识符，由专门的管理员管理。</h3><hr>
+<h1 id="EER模型"><a href="#EER模型" class="headerlink" title="EER模型"></a>EER模型</h1><p> <img src="/pics/eer.jpg" alt="EER"></p>
+<hr>
+<h1 id="面向对象实现语句"><a href="#面向对象实现语句" class="headerlink" title="面向对象实现语句"></a>面向对象实现语句</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Class Employee</span><br><span class="line">    Properties</span><br><span class="line">        Emp#: string;</span><br><span class="line">        Name: string;</span><br><span class="line">        Address: string;</span><br><span class="line">        Phone_no: string;</span><br><span class="line">        </span><br><span class="line">End</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Class Teacher</span><br><span class="line">    Inherit Employee</span><br><span class="line">    Properties</span><br><span class="line">        Major: string;</span><br><span class="line">        Gender:string;</span><br><span class="line">        Age:Integer;</span><br><span class="line">        period: integer;</span><br><span class="line">        Type:&#123;senior, non-senior&#125;;</span><br><span class="line">        Suggested_by:professor Inverse is professor.suggest;</span><br><span class="line">        Guide:set(experiment) inverse is experiment.guided_by;</span><br><span class="line">        If age&gt;50 then type=”senior”;</span><br><span class="line">        Else type=”non-senior”;</span><br><span class="line"></span><br><span class="line">    Operations</span><br><span class="line">        Teach_lesson(....);</span><br><span class="line">        Guide_experiment(....);</span><br><span class="line">End</span><br></pre></td></tr></table></figure>
+
+
+
+
+
         </div>
 
         
@@ -230,7 +241,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/Life/"># Life</a>
+                        <a href="/tags/Database/"># Database</a>
                     
                         
                 </span>
