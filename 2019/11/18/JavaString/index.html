@@ -12,7 +12,7 @@
 
 
 
-<title>CSP Encoding:Non-binary to Binary | Milena’s Blog</title>
+<title>Java字符串反转:String与StringBuilder | Milena’s Blog</title>
 
 
 
@@ -176,7 +176,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">CSP Encoding:Non-binary to Binary</h1>
+            <h1 class="post-title">Java字符串反转:String与StringBuilder</h1>
             
                 <div class="post-meta">
                     
@@ -185,14 +185,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">November 17, 2019&nbsp;&nbsp;19:56:12</a>
+                        Date: <a href="#">November 18, 2019&nbsp;&nbsp;9:12:16</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/Paper-Notes/">Paper Notes</a>
+                                <a href="/categories/Java/">Java</a>
                             
                         </span>
                     
@@ -201,42 +201,19 @@
         </header>
 
         <div class="post-content">
-            <p> Reading notes about《Encodings of Non-Binary Constraint Satisfaction Problems》</p>
+            <blockquote>
+<p>给定一个字符串，你需要反转字符串中每个单词的字符顺序，同时仍保留空格和单词的初始顺序。<br>示例<br>输入: “Let’s take LeetCode contest”<br>输出: “s’teL ekat edoCteeL tsetnoc”<br>注意：在字符串中，每个单词由单个空格分隔，并且字符串中不会有任何额外的空格。<br>Leetcode</p>
+</blockquote>
 <hr>
-<ul>
-<li>Binary Constrant: A&lt;B.</li>
-<li>Non Constrant: A+B+C&gt;10.</li>
-</ul>
-<h2 id="Preliminaries"><a href="#Preliminaries" class="headerlink" title="Preliminaries"></a>Preliminaries</h2><p> Many CSPs can be formulated by non-binary relations.The methods of solving a non-binary CSP:</p>
-<ol>
-<li>Use algorithms like FC which have been generalized to non-binary constraints.</li>
-<li>Translate into a binary constraints.</li>
-</ol>
-<h2 id="Well-known-methods-for-translating"><a href="#Well-known-methods-for-translating" class="headerlink" title="Well-known methods for translating"></a>Well-known methods for translating</h2><h3 id="Dual-encoding"><a href="#Dual-encoding" class="headerlink" title="Dual encoding"></a>Dual encoding</h3><p> <img src="/pics/dual.jpg" alt="dual"></p>
-<h3 id="Hidden-variable-encoding"><a href="#Hidden-variable-encoding" class="headerlink" title="Hidden variable encoding"></a>Hidden variable encoding</h3><p> <img src="/pics/hidden.jpg" alt="hidden"></p>
-<h3 id="Hybrid-encoding"><a href="#Hybrid-encoding" class="headerlink" title="Hybrid encoding"></a>Hybrid encoding</h3><p> Dual or Hidden</p>
-<h3 id="Double-encoding"><a href="#Double-encoding" class="headerlink" title="Double encoding"></a>Double encoding</h3><p> Both Dual and Hidden</p>
-<h2 id="Mapping-between-the-encoding"><a href="#Mapping-between-the-encoding" class="headerlink" title="Mapping between the encoding"></a>Mapping between the encoding</h2><ul>
-<li>Hidden variable encoding —(simplification)—&gt; Dual encoding easily reverse!</li>
-<li>In double encoding: Both original variables and dual variables, both constraints between original variables and dual variables.</li>
-<li>Branching heuristics perform better on dual variable.</li>
-</ul>
-<h2 id="Theoretical-comparison"><a href="#Theoretical-comparison" class="headerlink" title="Theoretical comparison"></a>Theoretical comparison</h2><h3 id="In-hidden-variable-encoding"><a href="#In-hidden-variable-encoding" class="headerlink" title="In hidden variable encoding"></a>In hidden variable encoding</h3><ol>
-<li>AC = GAC in original problem</li>
-<li>NIC = AC</li>
-<li>strong PC &gt; SAC &gt; AC</li>
-</ol>
-<h3 id="In-dual-encoding"><a href="#In-dual-encoding" class="headerlink" title="In dual encoding"></a>In dual encoding</h3><ol start="4">
-<li>AC &gt; GAC in original problem</li>
-<li>AC &gt; AC on hidden</li>
-</ol>
-<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><ul>
-<li>Show relationship between hidden variable and dual encoding.</li>
-<li>Do more pruning in the dual.</li>
-<li>These encoding translate non-binary CSP into a binary CSP. AC on hidden = GAC in original problem</li>
-<li>Propose double encoding.</li>
-</ul>
-<p><img src="/pics/con.jpg" alt="conclusion"></p>
+<p>使用String：用时85ms</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public String reverseWords(String s) </span><br><span class="line">    &#123;</span><br><span class="line">        String[] str = s.split(&quot; &quot;);</span><br><span class="line">        String re = &quot;&quot;;</span><br><span class="line">        for(int i=0;i&lt;str.length;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            StringBuilder build = new StringBuilder(str[i]);</span><br><span class="line">            re = re + ( build.reverse().toString() ) + &quot; &quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        re = re.trim();</span><br><span class="line">        return re;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用StringBuilder：用时6ms</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public String reverseWords(String s) </span><br><span class="line">    &#123;</span><br><span class="line">        String[] str = s.split(&quot; &quot;);</span><br><span class="line">        StringBuilder builder = new StringBuilder();</span><br><span class="line">        for(int i = 0; i &lt; str.length; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            StringBuilder stb = new StringBuilder(str[i]);</span><br><span class="line">            builder.append(stb.reverse().toString());</span><br><span class="line">            if(i != str.length-1)</span><br><span class="line">                builder.append(&quot; &quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        return builder.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="执行速度比较：StringBuilder-gt-StringBuffer-gt-String"><a href="#执行速度比较：StringBuilder-gt-StringBuffer-gt-String" class="headerlink" title="执行速度比较：StringBuilder &gt; StringBuffer &gt; String"></a>执行速度比较：StringBuilder &gt; StringBuffer &gt; String</h3><p>String为字符串常量，StringBuilder和StringBuffer为可更改的字符串变量。<br>在线程安全上，StringBuilder是线程不安全的，StringBuffer是线程安全的。</p>
+<blockquote>
+<p>Conclusion<br>String：适用于少量的字符串操作的情况<br>StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况<br>StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况</p>
+</blockquote>
 
         </div>
 
@@ -251,7 +228,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://yoursite.com/2019/11/17/encoding-CSP/">http://yoursite.com/2019/11/17/encoding-CSP/</a></span>
+                        <span><a href="http://yoursite.com/2019/11/18/JavaString/">http://yoursite.com/2019/11/18/JavaString/</a></span>
                     </p>
                 
                 
@@ -275,7 +252,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/CSP/"># CSP</a>
+                        <a href="/tags/Java/"># Java</a>
                     
                         
                 </span>
@@ -288,10 +265,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2019/11/18/JavaString/">Java字符串反转:String与StringBuilder</a>
+                <a class="prev" rel="prev" href="/2019/11/18/CSP-PPT/">Foundations of CSP(2)</a>
             
             
-            <a class="next" rel="next" href="/2019/11/16/First/">面向对象数据库&简单问题构造</a>
+            <a class="next" rel="next" href="/2019/11/17/encoding-CSP/">CSP Encoding:Non-binary to Binary</a>
             
         </section>
 

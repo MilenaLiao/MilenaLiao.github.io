@@ -12,7 +12,7 @@
 
 
 
-<title>CSP Encoding:Non-binary to Binary | Milena’s Blog</title>
+<title>Foundations of CSP(2) | Milena’s Blog</title>
 
 
 
@@ -176,7 +176,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">CSP Encoding:Non-binary to Binary</h1>
+            <h1 class="post-title">Foundations of CSP(2)</h1>
             
                 <div class="post-meta">
                     
@@ -185,7 +185,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">November 17, 2019&nbsp;&nbsp;19:56:12</a>
+                        Date: <a href="#">November 18, 2019&nbsp;&nbsp;12:45:41</a>
                         </span>
                     
                     
@@ -201,42 +201,41 @@
         </header>
 
         <div class="post-content">
-            <p> Reading notes about《Encodings of Non-Binary Constraint Satisfaction Problems》</p>
-<hr>
-<ul>
-<li>Binary Constrant: A&lt;B.</li>
-<li>Non Constrant: A+B+C&gt;10.</li>
-</ul>
-<h2 id="Preliminaries"><a href="#Preliminaries" class="headerlink" title="Preliminaries"></a>Preliminaries</h2><p> Many CSPs can be formulated by non-binary relations.The methods of solving a non-binary CSP:</p>
+            <h2 id="Backtracking"><a href="#Backtracking" class="headerlink" title="Backtracking"></a>Backtracking</h2><p>Widely used in depth-first search to solve CSP, always better than GT!</p>
 <ol>
-<li>Use algorithms like FC which have been generalized to non-binary constraints.</li>
-<li>Translate into a binary constraints.</li>
+<li>assign values gradually</li>
+<li>test constraints (failure? backtrack!)</li>
 </ol>
-<h2 id="Well-known-methods-for-translating"><a href="#Well-known-methods-for-translating" class="headerlink" title="Well-known methods for translating"></a>Well-known methods for translating</h2><h3 id="Dual-encoding"><a href="#Dual-encoding" class="headerlink" title="Dual encoding"></a>Dual encoding</h3><p> <img src="/pics/dual.jpg" alt="dual"></p>
-<h3 id="Hidden-variable-encoding"><a href="#Hidden-variable-encoding" class="headerlink" title="Hidden variable encoding"></a>Hidden variable encoding</h3><p> <img src="/pics/hidden.jpg" alt="hidden"></p>
-<h3 id="Hybrid-encoding"><a href="#Hybrid-encoding" class="headerlink" title="Hybrid encoding"></a>Hybrid encoding</h3><p> Dual or Hidden</p>
-<h3 id="Double-encoding"><a href="#Double-encoding" class="headerlink" title="Double encoding"></a>Double encoding</h3><p> Both Dual and Hidden</p>
-<h2 id="Mapping-between-the-encoding"><a href="#Mapping-between-the-encoding" class="headerlink" title="Mapping between the encoding"></a>Mapping between the encoding</h2><ul>
-<li>Hidden variable encoding —(simplification)—&gt; Dual encoding easily reverse!</li>
-<li>In double encoding: Both original variables and dual variables, both constraints between original variables and dual variables.</li>
-<li>Branching heuristics perform better on dual variable.</li>
+<p>Improve</p>
+<ul>
+<li>Backjumping (jump to the source if failure)</li>
+<li>Backmarking/Backchecking (remenber nogood assignment)</li>
+<li>FC (forward check to early discover conflicts)</li>
 </ul>
-<h2 id="Theoretical-comparison"><a href="#Theoretical-comparison" class="headerlink" title="Theoretical comparison"></a>Theoretical comparison</h2><h3 id="In-hidden-variable-encoding"><a href="#In-hidden-variable-encoding" class="headerlink" title="In hidden variable encoding"></a>In hidden variable encoding</h3><ol>
-<li>AC = GAC in original problem</li>
-<li>NIC = AC</li>
-<li>strong PC &gt; SAC &gt; AC</li>
+<h3 id="Backjumping"><a href="#Backjumping" class="headerlink" title="Backjumping"></a>Backjumping</h3><p>Run like backtracking,longer.</p>
+<p>How to find jump position?</p>
+<ol>
+<li>Select cinstraints containing just assigned variables.</li>
+<li>Select the closest variable in the selected constraints.</li>
 </ol>
-<h3 id="In-dual-encoding"><a href="#In-dual-encoding" class="headerlink" title="In dual encoding"></a>In dual encoding</h3><ol start="4">
-<li>AC &gt; GAC in original problem</li>
-<li>AC &gt; AC on hidden</li>
-</ol>
-<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><ul>
-<li>Show relationship between hidden variable and dual encoding.</li>
-<li>Do more pruning in the dual.</li>
-<li>These encoding translate non-binary CSP into a binary CSP. AC on hidden = GAC in original problem</li>
-<li>Propose double encoding.</li>
+<h3 id="Backmarking"><a href="#Backmarking" class="headerlink" title="Backmarking"></a>Backmarking</h3><blockquote>
+<p>Redundant example: A,B,C,D…::1…10, A+8&lt;C……<br>A = 1, B = 1, check C=1….10<br>A = 1, B = 2, repeat check C=1…10 (not necessary)<br>A = 1, B = 3, repeat check C=1…10 (not necessary)<br>…</p>
+</blockquote>
+<ul>
+<li>Mark(X,V) is the farthest variable in conflict with X=V.</li>
+<li>BackTo(X) is the variable which we backtracked to after the last assignment of X.</li>
 </ul>
-<p><img src="/pics/con.jpg" alt="conclusion"></p>
+<p>Some constraint checks can be omitted.<br><img src="/pics/backmark.jpg" alt="backmark"></p>
+<h3 id="Tree-search-and-heuristics"><a href="#Tree-search-and-heuristics" class="headerlink" title="Tree search and heuristics"></a>Tree search and heuristics</h3><p>The search space for real-life problems is so huge,heuristic can be a guide of search.</p>
+<p>What to do upon a failure of the heuristic?</p>
+<ul>
+<li>LDS - Limited Discrepancy Search (Discrepancy = heuristic is not followed)</li>
+</ul>
+<ol>
+<li>Followed the heuristic.</li>
+<li>When a failure occurs, explore the path which is not followed maximally once.</li>
+<li>When another failure occurs, explore twice…</li>
+</ol>
 
         </div>
 
@@ -251,7 +250,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://yoursite.com/2019/11/17/encoding-CSP/">http://yoursite.com/2019/11/17/encoding-CSP/</a></span>
+                        <span><a href="http://yoursite.com/2019/11/18/CSP-PPT/">http://yoursite.com/2019/11/18/CSP-PPT/</a></span>
                     </p>
                 
                 
@@ -288,10 +287,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2019/11/18/JavaString/">Java字符串反转:String与StringBuilder</a>
             
-            
-            <a class="next" rel="next" href="/2019/11/16/First/">面向对象数据库&简单问题构造</a>
+            <a class="next" rel="next" href="/2019/11/18/JavaString/">Java字符串反转:String与StringBuilder</a>
             
         </section>
 
