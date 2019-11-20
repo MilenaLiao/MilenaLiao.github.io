@@ -12,7 +12,7 @@
 
 
 
-<title>Foundations of CSP(2) | Milena’s Blog</title>
+<title>Foundations of CSP(3) | Milena’s Blog</title>
 
 
 
@@ -176,7 +176,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Foundations of CSP(2)</h1>
+            <h1 class="post-title">Foundations of CSP(3)</h1>
             
                 <div class="post-meta">
                     
@@ -185,7 +185,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">November 18, 2019&nbsp;&nbsp;12:45:41</a>
+                        Date: <a href="#">November 18, 2019&nbsp;&nbsp;14:40:58</a>
                         </span>
                     
                     
@@ -201,43 +201,36 @@
         </header>
 
         <div class="post-content">
-            <h2 id="Backtracking"><a href="#Backtracking" class="headerlink" title="Backtracking"></a>Backtracking</h2><p>Widely used in depth-first search to solve CSP, always better than GT!</p>
-<ol>
-<li>assign values gradually</li>
-<li>test constraints (failure? backtrack!)</li>
-</ol>
-<p>Improve</p>
-<ul>
-<li>Backjumping (jump to the source if failure)</li>
-<li>Backmarking/Backchecking (remenber nogood assignment)</li>
-<li>FC (forward check to early discover conflicts)</li>
-</ul>
+            <hr>
+<h2 id="Consistency-Techniques"><a href="#Consistency-Techniques" class="headerlink" title="Consistency Techniques"></a>Consistency Techniques</h2><p>So far we used constraints as a test, we also can use the constraints in a more active way.</p>
+<h3 id="Node-consistency-NC"><a href="#Node-consistency-NC" class="headerlink" title="Node consistency (NC)"></a>Node consistency (NC)</h3><p>For unary constraints, delete inconsistent values in domain.</p>
 <hr>
-<h3 id="Backjumping"><a href="#Backjumping" class="headerlink" title="Backjumping"></a>Backjumping</h3><p>Run like backtracking,longer.</p>
-<p>How to find jump position?</p>
-<ol>
-<li>Select cinstraints containing just assigned variables.</li>
-<li>Select the closest variable in the selected constraints.</li>
-</ol>
-<h3 id="Backmarking"><a href="#Backmarking" class="headerlink" title="Backmarking"></a>Backmarking</h3><blockquote>
-<p>Redundant example: A,B,C,D…::1…10, A+8&lt;C……<br>A = 1, B = 1, check C=1….10<br>A = 1, B = 2, repeat check C=1…10 (not necessary)<br>A = 1, B = 3, repeat check C=1…10 (not necessary)<br>…</p>
-</blockquote>
+<h3 id="Arc-consistency-AC"><a href="#Arc-consistency-AC" class="headerlink" title="Arc consistency (AC)"></a>Arc consistency (AC)</h3><p>Directional binary CSP, AC of (vi,vj) does not guarantee AC of (vj,vi).</p>
 <ul>
-<li>Mark(X,V) is the farthest variable in conflict with X=V.</li>
-<li>BackTo(X) is the variable which we backtracked to after the last assignment of X.</li>
+<li><p>AC-1<br>For each arc(i,j) in G, the arc revisions repeated until any domain is changed.</p>
+</li>
+<li><p>AC-2<br>Only revise the arc whose consistency is affected by the domain pruning. Thus we can omit more arcs. Store the affected arcs in a new queue.</p>
+</li>
+<li><p>AC-3<br>One queue of arcs is enough. Only the arcs affected by domain reduction are added to the queue.</p>
+</li>
+<li><p>AC-4<br>Looking for and remembering the support</p>
+</li>
 </ul>
-<p>Some constraint checks can be omitted.<br><img src="/pics/backmark.jpg" alt="backmark"></p>
+<p><img src="/pics/support.jpg" alt="support"><br>a in V2 has been pruned, we need to prune d in V3, the a b c in V3 need not be checked.</p>
+<ul>
+<li>Other AC algorithms: AC-5 AC-6……</li>
+</ul>
+<h3 id="Directional-arc-consistency-DAC"><a href="#Directional-arc-consistency-DAC" class="headerlink" title="Directional arc consistency (DAC)"></a>Directional arc consistency (DAC)</h3><p>Faster than any AC-x.<br>Try to revise every arc just once!<br>If the arc are in a “good” order, no revision has to be repeated!</p>
+<p><img src="/pics/DAC.jpg" alt="DAC"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for each arc(i,j) in G such that i&lt;j do</span><br><span class="line">    REVISE(i,j)</span><br></pre></td></tr></table></figure>
+<p>If the constraint graph forms a tree, DAC is enough to solve the problem without BT.</p>
+<p>How to use DAC?</p>
+<ol>
+<li>from root to leaf nodes</li>
+<li>reverse direction<br>Then we get full arc consistency.</li>
+</ol>
+<h3 id="Is-AC-enough"><a href="#Is-AC-enough" class="headerlink" title="Is AC enough?"></a>Is AC enough?</h3><p>No! AC iust prunes the search space.<br>AC can not get a solution or know there exist a solution. </p>
 <hr>
-<h3 id="Tree-search-and-heuristics"><a href="#Tree-search-and-heuristics" class="headerlink" title="Tree search and heuristics"></a>Tree search and heuristics</h3><p>The search space for real-life problems is so huge,heuristic can be a guide of search.</p>
-<p>What to do upon a failure of the heuristic?</p>
-<ul>
-<li>LDS - Limited Discrepancy Search (Discrepancy = heuristic is not followed)</li>
-</ul>
-<ol>
-<li>Followed the heuristic.</li>
-<li>When a failure occurs, explore the path which is not followed maximally once.</li>
-<li>When another failure occurs, explore twice…</li>
-</ol>
 <p>《Foundations Of constraint satisfaction》<br>From  Roman Bartak  Charles University in Prague</p>
 
         </div>
@@ -253,7 +246,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://yoursite.com/2019/11/18/CSP-PPT2/">http://yoursite.com/2019/11/18/CSP-PPT2/</a></span>
+                        <span><a href="http://yoursite.com/2019/11/18/CSP-PPT3/">http://yoursite.com/2019/11/18/CSP-PPT3/</a></span>
                     </p>
                 
                 
@@ -290,10 +283,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2019/11/18/CSP-PPT3/">Foundations of CSP(3)</a>
+                <a class="prev" rel="prev" href="/2019/11/18/CSP-PPT1/">Foundations of CSP(1)</a>
             
             
-            <a class="next" rel="next" href="/2019/11/18/JavaString/">Java字符串反转:String与StringBuilder</a>
+            <a class="next" rel="next" href="/2019/11/18/CSP-PPT2/">Foundations of CSP(2)</a>
             
         </section>
 

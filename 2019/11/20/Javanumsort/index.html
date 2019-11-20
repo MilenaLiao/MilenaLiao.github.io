@@ -12,7 +12,7 @@
 
 
 
-<title>Foundations of CSP(2) | Milena’s Blog</title>
+<title>Java求众数:Array的使用 | Milena’s Blog</title>
 
 
 
@@ -176,7 +176,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Foundations of CSP(2)</h1>
+            <h1 class="post-title">Java求众数:Array的使用</h1>
             
                 <div class="post-meta">
                     
@@ -185,14 +185,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">November 18, 2019&nbsp;&nbsp;12:45:41</a>
+                        Date: <a href="#">November 20, 2019&nbsp;&nbsp;10:05:53</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/Paper-Notes/">Paper Notes</a>
+                                <a href="/categories/Java/">Java</a>
                             
                         </span>
                     
@@ -201,45 +201,16 @@
         </header>
 
         <div class="post-content">
-            <h2 id="Backtracking"><a href="#Backtracking" class="headerlink" title="Backtracking"></a>Backtracking</h2><p>Widely used in depth-first search to solve CSP, always better than GT!</p>
-<ol>
-<li>assign values gradually</li>
-<li>test constraints (failure? backtrack!)</li>
-</ol>
-<p>Improve</p>
-<ul>
-<li>Backjumping (jump to the source if failure)</li>
-<li>Backmarking/Backchecking (remenber nogood assignment)</li>
-<li>FC (forward check to early discover conflicts)</li>
-</ul>
-<hr>
-<h3 id="Backjumping"><a href="#Backjumping" class="headerlink" title="Backjumping"></a>Backjumping</h3><p>Run like backtracking,longer.</p>
-<p>How to find jump position?</p>
-<ol>
-<li>Select cinstraints containing just assigned variables.</li>
-<li>Select the closest variable in the selected constraints.</li>
-</ol>
-<h3 id="Backmarking"><a href="#Backmarking" class="headerlink" title="Backmarking"></a>Backmarking</h3><blockquote>
-<p>Redundant example: A,B,C,D…::1…10, A+8&lt;C……<br>A = 1, B = 1, check C=1….10<br>A = 1, B = 2, repeat check C=1…10 (not necessary)<br>A = 1, B = 3, repeat check C=1…10 (not necessary)<br>…</p>
+            <blockquote>
+<p>给定一个大小为 n 的数组，找到其中的众数。众数是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。<br>你可以假设数组是非空的，并且给定的数组总是存在众数<br>Leetcode</p>
 </blockquote>
-<ul>
-<li>Mark(X,V) is the farthest variable in conflict with X=V.</li>
-<li>BackTo(X) is the variable which we backtracked to after the last assignment of X.</li>
-</ul>
-<p>Some constraint checks can be omitted.<br><img src="/pics/backmark.jpg" alt="backmark"></p>
 <hr>
-<h3 id="Tree-search-and-heuristics"><a href="#Tree-search-and-heuristics" class="headerlink" title="Tree search and heuristics"></a>Tree search and heuristics</h3><p>The search space for real-life problems is so huge,heuristic can be a guide of search.</p>
-<p>What to do upon a failure of the heuristic?</p>
-<ul>
-<li>LDS - Limited Discrepancy Search (Discrepancy = heuristic is not followed)</li>
-</ul>
-<ol>
-<li>Followed the heuristic.</li>
-<li>When a failure occurs, explore the path which is not followed maximally once.</li>
-<li>When another failure occurs, explore twice…</li>
-</ol>
-<p>《Foundations Of constraint satisfaction》<br>From  Roman Bartak  Charles University in Prague</p>
-
+<h3 id="定义众数是出现次数1-2频度以上，那么将数组排序，中位数必为众数："><a href="#定义众数是出现次数1-2频度以上，那么将数组排序，中位数必为众数：" class="headerlink" title="定义众数是出现次数1/2频度以上，那么将数组排序，中位数必为众数："></a>定义众数是出现次数1/2频度以上，那么将数组排序，中位数必为众数：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int majorityElement(int[] nums) &#123;</span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        return nums[nums.length / 2];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="填充数组：Arrays-fill"><a href="#填充数组：Arrays-fill" class="headerlink" title="填充数组：Arrays.fill"></a>填充数组：Arrays.fill</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int []arr = new int[5];</span><br><span class="line">Arrays.fill(arr, 2);</span><br><span class="line">结果是：2 2 2 2 2</span><br><span class="line">int []arr = new int[5];</span><br><span class="line">Arrays.fill(arr, 1,3,8);</span><br><span class="line">结果是：0 8 8 0 0</span><br></pre></td></tr></table></figure>
+<h2 id="数组元素排序：Arrays-sort"><a href="#数组元素排序：Arrays-sort" class="headerlink" title="数组元素排序：Arrays.sort"></a>数组元素排序：Arrays.sort</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int []arr = &#123;3,2,1,5,4&#125;;</span><br><span class="line">Arrays.sort(arr);</span><br><span class="line">结果是：1 2 3 4 5</span><br></pre></td></tr></table></figure>
+<h2 id="比较数组元素是否相等：Arrays-equals"><a href="#比较数组元素是否相等：Arrays-equals" class="headerlink" title="比较数组元素是否相等：Arrays.equals"></a>比较数组元素是否相等：Arrays.equals</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(Arrays.equals(arr1,arr2));</span><br><span class="line">结果是：true/false</span><br></pre></td></tr></table></figure>
+<p>arr1.equals(arr2),比较的是两个对象的地址，不是里面的数。<br>而Arrays.equals重写了equals，所以能比较元素是否相等。</p>
+<h2 id="二分查找法找指定元素的索引：Arrays-binarySearch"><a href="#二分查找法找指定元素的索引：Arrays-binarySearch" class="headerlink" title="二分查找法找指定元素的索引：Arrays.binarySearch"></a>二分查找法找指定元素的索引：Arrays.binarySearch</h2><h2 id="截取数组：copeOf和copeOfRange"><a href="#截取数组：copeOf和copeOfRange" class="headerlink" title="截取数组：copeOf和copeOfRange"></a>截取数组：copeOf和copeOfRange</h2>
         </div>
 
         
@@ -253,7 +224,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://yoursite.com/2019/11/18/CSP-PPT2/">http://yoursite.com/2019/11/18/CSP-PPT2/</a></span>
+                        <span><a href="http://yoursite.com/2019/11/20/Javanumsort/">http://yoursite.com/2019/11/20/Javanumsort/</a></span>
                     </p>
                 
                 
@@ -277,7 +248,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/CSP/"># CSP</a>
+                        <a href="/tags/Java/"># Java</a>
                     
                         
                 </span>
@@ -290,10 +261,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2019/11/18/CSP-PPT3/">Foundations of CSP(3)</a>
             
-            
-            <a class="next" rel="next" href="/2019/11/18/JavaString/">Java字符串反转:String与StringBuilder</a>
+            <a class="next" rel="next" href="/2019/11/19/Javamult/">Java数组乘积:时间复杂度限制</a>
             
         </section>
 

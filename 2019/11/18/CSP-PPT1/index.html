@@ -12,7 +12,7 @@
 
 
 
-<title>Foundations of CSP(2) | Milena’s Blog</title>
+<title>Foundations of CSP(1) | Milena’s Blog</title>
 
 
 
@@ -176,7 +176,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Foundations of CSP(2)</h1>
+            <h1 class="post-title">Foundations of CSP(1)</h1>
             
                 <div class="post-meta">
                     
@@ -185,7 +185,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">November 18, 2019&nbsp;&nbsp;12:45:41</a>
+                        Date: <a href="#">November 18, 2019&nbsp;&nbsp;14:41:41</a>
                         </span>
                     
                     
@@ -201,41 +201,52 @@
         </header>
 
         <div class="post-content">
-            <h2 id="Backtracking"><a href="#Backtracking" class="headerlink" title="Backtracking"></a>Backtracking</h2><p>Widely used in depth-first search to solve CSP, always better than GT!</p>
-<ol>
-<li>assign values gradually</li>
-<li>test constraints (failure? backtrack!)</li>
-</ol>
-<p>Improve</p>
+            <hr>
+<h3 id="Constraint"><a href="#Constraint" class="headerlink" title="Constraint"></a>Constraint</h3><p>Constraint is an arbitrary relation over the set of variables.</p>
+<h3 id="CSP"><a href="#CSP" class="headerlink" title="CSP"></a>CSP</h3><p>Constraint Satisfaction Problem consists of:</p>
 <ul>
-<li>Backjumping (jump to the source if failure)</li>
-<li>Backmarking/Backchecking (remenber nogood assignment)</li>
-<li>FC (forward check to early discover conflicts)</li>
+<li>variables</li>
+<li>domains</li>
+<li>constraints</li>
 </ul>
-<h3 id="Backjumping"><a href="#Backjumping" class="headerlink" title="Backjumping"></a>Backjumping</h3><p>Run like backtracking,longer.</p>
-<p>How to find jump position?</p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>A complete assignment of variables satisfying all the constraints.</p>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><ul>
+<li>Toy Problems</li>
+<li>Scene Labelling</li>
+<li>Interactive Graphics</li>
+<li>AI Planning and scheduling</li>
+</ul>
+<hr>
+<h2 id="Solving-CSP-by-Enumeration"><a href="#Solving-CSP-by-Enumeration" class="headerlink" title="Solving CSP by Enumeration"></a>Solving CSP by Enumeration</h2><p>Use constraints only as a test.</p>
+<h3 id="Systematic-search"><a href="#Systematic-search" class="headerlink" title="Systematic search"></a>Systematic search</h3><p>Explore the space of all assignment.<br>Complete but take a lot of time.<br>Eg: GT,Tree search…</p>
+<h3 id="Generate-and-test-GT"><a href="#Generate-and-test-GT" class="headerlink" title="Generate and test(GT)"></a>Generate and test(GT)</h3><p>For general problem:</p>
 <ol>
-<li>Select cinstraints containing just assigned variables.</li>
-<li>Select the closest variable in the selected constraints.</li>
+<li>find a candidate</li>
+<li>test if the candidate is a solution</li>
 </ol>
-<h3 id="Backmarking"><a href="#Backmarking" class="headerlink" title="Backmarking"></a>Backmarking</h3><blockquote>
-<p>Redundant example: A,B,C,D…::1…10, A+8&lt;C……<br>A = 1, B = 1, check C=1….10<br>A = 1, B = 2, repeat check C=1…10 (not necessary)<br>A = 1, B = 3, repeat check C=1…10 (not necessary)<br>…</p>
-</blockquote>
-<ul>
-<li>Mark(X,V) is the farthest variable in conflict with X=V.</li>
-<li>BackTo(X) is the variable which we backtracked to after the last assignment of X.</li>
-</ul>
-<p>Some constraint checks can be omitted.<br><img src="/pics/backmark.jpg" alt="backmark"></p>
-<h3 id="Tree-search-and-heuristics"><a href="#Tree-search-and-heuristics" class="headerlink" title="Tree search and heuristics"></a>Tree search and heuristics</h3><p>The search space for real-life problems is so huge,heuristic can be a guide of search.</p>
-<p>What to do upon a failure of the heuristic?</p>
-<ul>
-<li>LDS - Limited Discrepancy Search (Discrepancy = heuristic is not followed)</li>
-</ul>
+<p>For CSP:</p>
 <ol>
-<li>Followed the heuristic.</li>
-<li>When a failure occurs, explore the path which is not followed maximally once.</li>
-<li>When another failure occurs, explore twice…</li>
+<li>assign values to all variables</li>
+<li>test if all constraints are SAT</li>
 </ol>
+<p>How to improve GT? - smart generator &amp; earlier discover the conflict</p>
+<h3 id="Local-Search"><a href="#Local-Search" class="headerlink" title="Local Search"></a>Local Search</h3><p>Small changes. Better than previous.</p>
+<p>Eg: Hill Climbing</p>
+<ol>
+<li>Ramdom start.</li>
+<li>Best state in the neighbourhood.</li>
+<li>Restart to escape from local optimum.</li>
+</ol>
+<h3 id="Improve-Local-Search"><a href="#Improve-Local-Search" class="headerlink" title="Improve Local Search"></a>Improve Local Search</h3><ul>
+<li><p>Min Conflict<br>(Neighbourhood is pretty large.)<br>Select randomly a varible in conflict and improve it.</p>
+</li>
+<li><p>Random Walk<br>(Leave the local optimum without a restart.)<br>Add some “noise” to the algorithm.<br>Random walk combine with the heuristic guiding.<br>p - using random walk<br>1-p - using heuristic guide</p>
+</li>
+<li><p>Tabu List<br>(Avoid cycles in general.)<br>Remember the already visited states and not to visit them again.</p>
+</li>
+</ul>
+<p><img src="/pics/local.jpg" alt="local"></p>
+<p>《Foundations Of constraint satisfaction》<br>From  Roman Bartak  Charles University in Prague</p>
 
         </div>
 
@@ -250,7 +261,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://yoursite.com/2019/11/18/CSP-PPT/">http://yoursite.com/2019/11/18/CSP-PPT/</a></span>
+                        <span><a href="http://yoursite.com/2019/11/18/CSP-PPT1/">http://yoursite.com/2019/11/18/CSP-PPT1/</a></span>
                     </p>
                 
                 
@@ -287,8 +298,10 @@
         </section>
         <section class="post-nav">
             
+                <a class="prev" rel="prev" href="/2019/11/19/CSP-PPT4/">Foundations of CSP(4)</a>
             
-            <a class="next" rel="next" href="/2019/11/18/JavaString/">Java字符串反转:String与StringBuilder</a>
+            
+            <a class="next" rel="next" href="/2019/11/18/CSP-PPT3/">Foundations of CSP(3)</a>
             
         </section>
 

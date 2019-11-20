@@ -12,7 +12,7 @@
 
 
 
-<title>Foundations of CSP(2) | Milena’s Blog</title>
+<title>Foundations of CSP(5) | Milena’s Blog</title>
 
 
 
@@ -176,7 +176,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Foundations of CSP(2)</h1>
+            <h1 class="post-title">Foundations of CSP(5)</h1>
             
                 <div class="post-meta">
                     
@@ -185,7 +185,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">November 18, 2019&nbsp;&nbsp;12:45:41</a>
+                        Date: <a href="#">November 19, 2019&nbsp;&nbsp;12:27:33</a>
                         </span>
                     
                     
@@ -201,43 +201,38 @@
         </header>
 
         <div class="post-content">
-            <h2 id="Backtracking"><a href="#Backtracking" class="headerlink" title="Backtracking"></a>Backtracking</h2><p>Widely used in depth-first search to solve CSP, always better than GT!</p>
-<ol>
-<li>assign values gradually</li>
-<li>test constraints (failure? backtrack!)</li>
-</ol>
-<p>Improve</p>
+            <hr>
+<h2 id="Two-methods-to-solve-the-constraint-problems"><a href="#Two-methods-to-solve-the-constraint-problems" class="headerlink" title="Two methods to solve the constraint problems?"></a>Two methods to solve the constraint problems?</h2><h3 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h3><p>Complete but too slow.</p>
+<h3 id="Consistency-techniques"><a href="#Consistency-techniques" class="headerlink" title="Consistency techniques"></a>Consistency techniques</h3><p>Usually incomplete but pretty fast.</p>
+<h3 id="Combine-them"><a href="#Combine-them" class="headerlink" title="Combine them!"></a>Combine them!</h3><hr>
+<h2 id="Core-depth-first-search"><a href="#Core-depth-first-search" class="headerlink" title="Core - depth first search"></a>Core - depth first search</h2><p>Label the variables step by step.<br>Maintain consistency after assigning a value.</p>
+<h2 id="Look-back-techniques"><a href="#Look-back-techniques" class="headerlink" title="Look back techniques"></a>Look back techniques</h2><h3 id="Backtracking"><a href="#Backtracking" class="headerlink" title="Backtracking"></a>Backtracking</h3><p>The result of Maintain may be a conflict.<br>In this time, we should look back.</p>
+<h2 id="Look-ahead-techniques"><a href="#Look-ahead-techniques" class="headerlink" title="Look ahead techniques"></a>Look ahead techniques</h2><h3 id="Forward-checking"><a href="#Forward-checking" class="headerlink" title="Forward checking"></a>Forward checking</h3><p>It is better to prevent failure.<br>Consistency techniques can remove values for future variables.(Ensure consistency between current var and connected var)</p>
+<h3 id="Partial-Full-look-ahead"><a href="#Partial-Full-look-ahead" class="headerlink" title="Partial/Full look ahead"></a>Partial/Full look ahead</h3><p>Check more future variables.<br>Propagate to all future variables.</p>
 <ul>
-<li>Backjumping (jump to the source if failure)</li>
-<li>Backmarking/Backchecking (remenber nogood assignment)</li>
-<li>FC (forward check to early discover conflicts)</li>
+<li>Partial look ahead-DAC</li>
+<li>Full look ahead-AC</li>
+</ul>
+<p><img src="/pics/check.jpg" alt="check"></p>
+<ul>
+<li>Remove more inconsistencies but increase complexity BT&lt;FC&lt;PLA&lt;LA.</li>
+<li>Use stronger consistency technique.</li>
 </ul>
 <hr>
-<h3 id="Backjumping"><a href="#Backjumping" class="headerlink" title="Backjumping"></a>Backjumping</h3><p>Run like backtracking,longer.</p>
-<p>How to find jump position?</p>
-<ol>
-<li>Select cinstraints containing just assigned variables.</li>
-<li>Select the closest variable in the selected constraints.</li>
-</ol>
-<h3 id="Backmarking"><a href="#Backmarking" class="headerlink" title="Backmarking"></a>Backmarking</h3><blockquote>
-<p>Redundant example: A,B,C,D…::1…10, A+8&lt;C……<br>A = 1, B = 1, check C=1….10<br>A = 1, B = 2, repeat check C=1…10 (not necessary)<br>A = 1, B = 3, repeat check C=1…10 (not necessary)<br>…</p>
-</blockquote>
+<h2 id="Variable-Ordering"><a href="#Variable-Ordering" class="headerlink" title="Variable Ordering"></a>Variable Ordering</h2><p>First-fail principle</p>
 <ul>
-<li>Mark(X,V) is the farthest variable in conflict with X=V.</li>
-<li>BackTo(X) is the variable which we backtracked to after the last assignment of X.</li>
+<li>prefer variables with small domain</li>
+<li>prefer the most constrained variables</li>
+<li>prefer variables with more constrainteds to past var</li>
 </ul>
-<p>Some constraint checks can be omitted.<br><img src="/pics/backmark.jpg" alt="backmark"></p>
-<hr>
-<h3 id="Tree-search-and-heuristics"><a href="#Tree-search-and-heuristics" class="headerlink" title="Tree search and heuristics"></a>Tree search and heuristics</h3><p>The search space for real-life problems is so huge,heuristic can be a guide of search.</p>
-<p>What to do upon a failure of the heuristic?</p>
+<h2 id="Value-ordering"><a href="#Value-ordering" class="headerlink" title="Value ordering"></a>Value ordering</h2><p>First-succeed principle</p>
 <ul>
-<li>LDS - Limited Discrepancy Search (Discrepancy = heuristic is not followed)</li>
+<li>prefer values with more supports</li>
+<li>prefer value leading to less domain reduction</li>
+<li>prefer value simplifying the problem</li>
 </ul>
-<ol>
-<li>Followed the heuristic.</li>
-<li>When a failure occurs, explore the path which is not followed maximally once.</li>
-<li>When another failure occurs, explore twice…</li>
-</ol>
+<h2 id="Constraint-optimisation"><a href="#Constraint-optimisation" class="headerlink" title="Constraint optimisation"></a>Constraint optimisation</h2><h3 id="CSOP-consists-of-CSP-p-and-a-function-f"><a href="#CSOP-consists-of-CSP-p-and-a-function-f" class="headerlink" title="CSOP - consists of CSP p and a function f"></a>CSOP - consists of CSP p and a function f</h3><p>Solution to CSOP is a solution of P minimising/maximising the value of f.</p>
+<h3 id="Branch-and-bound-widelu-used-optimisation-tech"><a href="#Branch-and-bound-widelu-used-optimisation-tech" class="headerlink" title="Branch and bound - widelu used optimisation tech"></a>Branch and bound - widelu used optimisation tech</h3><p>Based on cutting sub-tree (without better solution).</p>
 <p>《Foundations Of constraint satisfaction》<br>From  Roman Bartak  Charles University in Prague</p>
 
         </div>
@@ -253,7 +248,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://yoursite.com/2019/11/18/CSP-PPT2/">http://yoursite.com/2019/11/18/CSP-PPT2/</a></span>
+                        <span><a href="http://yoursite.com/2019/11/19/CSP-PPT5/">http://yoursite.com/2019/11/19/CSP-PPT5/</a></span>
                     </p>
                 
                 
@@ -290,10 +285,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2019/11/18/CSP-PPT3/">Foundations of CSP(3)</a>
+                <a class="prev" rel="prev" href="/2019/11/19/Javamult/">Java数组乘积:时间复杂度限制</a>
             
             
-            <a class="next" rel="next" href="/2019/11/18/JavaString/">Java字符串反转:String与StringBuilder</a>
+            <a class="next" rel="next" href="/2019/11/19/CSP-PPT4/">Foundations of CSP(4)</a>
             
         </section>
 
