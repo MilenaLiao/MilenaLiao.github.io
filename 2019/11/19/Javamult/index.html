@@ -12,7 +12,7 @@
 
 
 
-<title>Java数组乘积:时间复杂度限制 | Milena’s Blog</title>
+<title>Java简单操作 | Milena’s Blog</title>
 
 
 
@@ -114,7 +114,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Java数组乘积:时间复杂度限制</h1>
+            <h1 class="post-title">Java简单操作</h1>
             
                 <div class="post-meta">
                     
@@ -139,14 +139,25 @@
         </header>
 
         <div class="post-content">
-            <blockquote>
+            <ol>
+<li>数组乘积<blockquote>
 <p>给定长度为 n 的整数数组 nums，其中 n&gt;1，返回输出数组 output ，其中 output[i] 等于 nums 中除 nums[i] 之外其余各元素的乘积。<br>示例:<br>输入: [1,2,3,4]<br>输出: [24,12,8,6]<br>说明: 请不要使用除法，且在 O(n) 时间复杂度内完成此题<br>Leetcode</p>
 </blockquote>
+</li>
+</ol>
 <hr>
 <p>不占用额外空间：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int[] productExceptSelf(int[] nums) &#123;</span><br><span class="line">        int[] output = new int[nums.length];</span><br><span class="line">        for(int m=0;m&lt;nums.length;m++)</span><br><span class="line">        &#123;</span><br><span class="line">            int i=0;</span><br><span class="line">            int j=nums.length-1;</span><br><span class="line">            int re=1;</span><br><span class="line">            while(i&lt;j)</span><br><span class="line">            &#123;</span><br><span class="line">                if(i==m) &#123;</span><br><span class="line">                    re = re* nums[j];</span><br><span class="line">                    j--;</span><br><span class="line">                &#125;</span><br><span class="line">                else if(j==m) &#123;</span><br><span class="line">                    re = re * nums[i];</span><br><span class="line">                    i++;</span><br><span class="line">                &#125;</span><br><span class="line">                else &#123;</span><br><span class="line">                    re = re * nums[j] * nums[i];</span><br><span class="line">                    i++;</span><br><span class="line">                    j--;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            output[m] = re;</span><br><span class="line">        &#125;</span><br><span class="line">        return output;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//O(n*n)</span><br></pre></td></tr></table></figure>
 <p>O(n) 时间复杂度内，需要额外空间：<br>output[i] = nums[i]前所有数的乘积 * nums[i]后所有数的乘积</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int[] productExceptSelf(int[] nums) &#123;</span><br><span class="line">        int length = nums.length;</span><br><span class="line">        int []res=new int[length];</span><br><span class="line">        if (length==0)return res;</span><br><span class="line">        int []forward=new int[length];//记录自身之前所有数的乘积</span><br><span class="line">        int []backward=new int[length];//记录自身之后所有数的乘积</span><br><span class="line">        forward[0]=1;//因为是乘法，第一个得设1才能进行</span><br><span class="line">        backward[length -1]=1;//同理</span><br><span class="line">        for (int i = 0; i &lt; length-1; i++) &#123;</span><br><span class="line">            forward[i+1]=forward[i]*nums[i];//状态转移</span><br><span class="line">            backward[length -2-i]=backward[length -i-1]*nums[length -i-1];//同理</span><br><span class="line">        &#125;</span><br><span class="line">        for (int i = 0; i &lt; length; i++) &#123;</span><br><span class="line">            res[i]=forward[i]*backward[i];</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>2的幂<blockquote>
+<p>给定一个整数，编写一个函数来判断它是否是 2 的幂次方。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public boolean isPowerOfTwo(int n) &#123;</span><br><span class="line">        if(n&lt;=0) return false;</span><br><span class="line">        while(n&gt;2)&#123;</span><br><span class="line">            if(n%2==1) return false;</span><br><span class="line">            else n = n/2;</span><br><span class="line">        &#125;</span><br><span class="line">    return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
         </div>
 
