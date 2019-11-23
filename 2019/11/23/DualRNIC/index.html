@@ -12,7 +12,7 @@
 
 
 
-<title>Java数组重复元素:HashSet、LinkedHashSet、TreeSet | Milena’s Blog</title>
+<title>Enforcing RNIC on Dual Graph | Milena’s Blog</title>
 
 
 
@@ -176,7 +176,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Java数组重复元素:HashSet、LinkedHashSet、TreeSet</h1>
+            <h1 class="post-title">Enforcing RNIC on Dual Graph</h1>
             
                 <div class="post-meta">
                     
@@ -185,14 +185,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">November 21, 2019&nbsp;&nbsp;22:42:17</a>
+                        Date: <a href="#">November 23, 2019&nbsp;&nbsp;9:19:17</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/Java/">Java</a>
+                                <a href="/categories/Paper-Notes/">Paper Notes</a>
                             
                         </span>
                     
@@ -201,21 +201,43 @@
         </header>
 
         <div class="post-content">
-            <blockquote>
-<p>给定一个整数数组，判断是否存在重复元素。<br>如果任何值在数组中出现至少两次，函数返回true。<br>如果数组中每个元素都不相同，则返回 false。<br>Leetcode</p>
-</blockquote>
-<hr>
-<h2 id="Arrays排序，判断相邻元素："><a href="#Arrays排序，判断相邻元素：" class="headerlink" title="Arrays排序，判断相邻元素："></a>Arrays排序，判断相邻元素：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public boolean containsDuplicate(int[] nums) &#123;</span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        for(int i=0;i&lt;nums.length-1;i++)&#123;</span><br><span class="line">            if(nums[i]==nums[i+1]) return true;</span><br><span class="line">        &#125;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="利用HashSet："><a href="#利用HashSet：" class="headerlink" title="利用HashSet："></a>利用HashSet：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public boolean containsDuplicate(int[] nums) &#123;</span><br><span class="line">        Set&lt;Integer&gt; set = new HashSet&lt;&gt;(nums.length);</span><br><span class="line">        for (int x: nums) &#123;</span><br><span class="line">            if (set.contains(x)) return true;</span><br><span class="line">            set.add(x);</span><br><span class="line">        &#125;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Set接口的实现类"><a href="#Set接口的实现类" class="headerlink" title="Set接口的实现类"></a>Set接口的实现类</h2><h3 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h3><p>HashSet采用hash表算法来实现，元素无排列顺序。<br>主要有add()、remove()以及contains()等方法。</p>
-<h3 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h3><p>TreeSet采用树结构实现(红黑树算法)，元素按顺序进行排列。<br>主要有add()、remove()以及contains()等方法，它们都是复杂度为O(log (n))的方法；<br>它还提供了一些处理排序的set方法，如first(), last(), headSet(), tailSet()等。</p>
-<p>API如下:</p>
+            <h3 id="《Solving-Difficult-CSPs-with-Relational-Neighborhood-Inverse-Consistency》"><a href="#《Solving-Difficult-CSPs-with-Relational-Neighborhood-Inverse-Consistency》" class="headerlink" title="《Solving Difficult CSPs with Relational Neighborhood Inverse Consistency》"></a>《Solving Difficult CSPs with Relational Neighborhood Inverse Consistency》</h3><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><ul>
+<li>Neighborhood Inverse Consistency(NIC 1996)，是一种处理二元CSP问题的 健壮局部一致性技术。</li>
+<li>本文主要内容：在非二元CSP问题中用双重编码约束图（Dual graph）实现了RNIC（relational NIC）的操作。</li>
+</ul>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>传统的低级一致性技术：二元CSP问题的弧一致性技术AC、非二元CSP问题的广义弧一致性GAC。<br>二元CSP问题的NIC(1996)有空间上的优势优势。但是，执行NIC的时间消耗很大，所以无法在稠密网络或回溯搜索过程中的look ahead中使用。</p>
 <blockquote>
-<p>boolean                   add(E object)<br>boolean                   addAll(Collection&lt;? extends E&gt; collection)<br>void                      clear()<br>Object                    clone()<br>boolean                   contains(Object object)<br>// 返回第一个/最后一个元素<br>E                         first()<br>E                         last()<br>boolean                   isEmpty()<br>// 弹出第一个或者最后一个元素<br>E                         pollFirst()<br>E                         pollLast()<br>// 返回大于/小于给定元素的元素<br>E                         higher(E e)<br>E                         lower(E e)<br>// 返回小于/大于给定元素的最大/最小的一个<br>E                         floor(E e)<br>E                         ceiling(E e)<br>boolean                   remove(Object object)<br>int                       size()<br>Comparator&lt;? super E&gt;     comparator()<br>Iterator<E>               iterator()<br>// 降序遍历<br>Iterator<E>               descendingIterator()<br>// 返回大于/小于给定元素的所有元素集合,endInclusive为是否包含的控制量<br>SortedSet<E>              headSet(E end)<br>NavigableSet<E>           headSet(E end, boolean endInclusive)<br>SortedSet<E>              tailSet(E start)<br>NavigableSet<E>           tailSet(E start, boolean startInclusive)<br>// 降序的set<br>NavigableSet<E>           descendingSet()<br>// 子集合<br>SortedSet<E>              subSet(E start, E end)<br>NavigableSet<E>           subSet(E start, boolean startInclusive, E end, boolean endInclusive)</p>
+<p>In this paper ：<br>解决二元CSP的NIC——&gt;重新定义为——&gt;解决非二元CSP的RNIC。<br>介绍了此技术的弱化和增强变化，自动选择应对dual graph拓扑结构的策略。<br>这种算法相当于回溯搜索过程中的look ahead策略。</p>
 </blockquote>
-<h3 id="LinkedHashSet"><a href="#LinkedHashSet" class="headerlink" title="LinkedHashSet"></a>LinkedHashSet</h3><p>LinkedHashSet也是一个hash表，同时维护了一个双链表来记录插入的顺序，输出的顺序和插入的顺序一致。基本方法的复杂度为O(1)。</p>
-
+<h2 id="Compare"><a href="#Compare" class="headerlink" title="Compare"></a>Compare</h2><p>GAC2001,m-wise consistency2010.</p>
+<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><h3 id="CSP相关的定义"><a href="#CSP相关的定义" class="headerlink" title="CSP相关的定义"></a>CSP相关的定义</h3><p>每一个约束Ci由变量之间的关系Ri定义，这些相关变量称为关系范围，表示为scope(Ri)。</p>
+<h3 id="CSP的约束图表示"><a href="#CSP的约束图表示" class="headerlink" title="CSP的约束图表示"></a>CSP的约束图表示</h3><p>二元CSP约束图中，顶点表示变量，边表示约束。<br>非二元CSP问题</p>
+<ol>
+<li>可以由混合图(hypergraph)表示。边表示非二元的约束。</li>
+<li>由原始约束图表示。每一条边表示一个约束的一部分。Neigh(Vi)表示与Vi相邻的变量集（与Vi有约束关系的变量）。比如图中一个环ABD表示约束R1。</li>
+<li>由Dual graph表示。Neigh(Ri)表示与关系Ri相邻的关系集（与Ri覆盖相同变量的y关系）。</li>
+<li>Dual graph会存在冗余边，现存构造最小dual graph的的算法。</li>
+</ol>
+<p><img src="/pics/graph.jpg" alt="graph"></p>
+<h3 id="NIC-amp-GAC"><a href="#NIC-amp-GAC" class="headerlink" title="NIC&amp;GAC"></a>NIC&amp;GAC</h3><ul>
+<li>GAC用于二元CSP问题的变量取值的过滤，过滤后保证了从任意变量的任意取值都可以找到一个可满足的CSP解。</li>
+<li>扩展到非二元CSP问题，NIC也通过过滤变量取值域保证了从任意变量的任意取值都可以找到一个可满足的CSP解。</li>
+</ul>
+<h2 id="Relation-NIC"><a href="#Relation-NIC" class="headerlink" title="Relation NIC"></a>Relation NIC</h2><ul>
+<li>如何定义RNIC？<br>一个关系Ri是RNIC<br>iff<br>对于满足关系Ri的赋值，所有在Rj中而不在Ri中的变量（Rj是Neigh(Ri)），都可以找到一个值使关系Rj可满足。</li>
+</ul>
+<h2 id="Algorithm-for-enforcing-RNIC"><a href="#Algorithm-for-enforcing-RNIC" class="headerlink" title="Algorithm for enforcing RNIC"></a>Algorithm for enforcing RNIC</h2><h3 id="PROCESS-Q（算法1）"><a href="#PROCESS-Q（算法1）" class="headerlink" title="PROCESS Q（算法1）"></a>PROCESS Q（算法1）</h3><p>确保每个关系中的每个元组都有有效的支持。</p>
+<p><img src="/pics/rnic.jpg" alt="alg"></p>
+<ul>
+<li>队列Q包含所有的关系。</li>
+<li>Qt(R)w包含关系R的所有元组。</li>
+<li>函数SupportedBy(τ )返回所有τ 支持的元组。</li>
+<li>函数REL(τi )返回τi所属的关系。</li>
+</ul>
+<blockquote>
+<p>算法过程：<br>1.关系R从Q中出队<br>2.遍历Qt(R):τ<br>3.函数SEARCHSUPPORT寻找一个τ的支持。<br>找不到支持的时候，所有τ支持的元组τi所在的关系入队(重新检查)。从Qt(R)中删除τ。<br>4.继续遍历，出队，直到Q，Qt为空结束。</p>
+</blockquote>
+<h3 id="PROCESS-Q-的重点函数SEARCHSUPPORT"><a href="#PROCESS-Q-的重点函数SEARCHSUPPORT" class="headerlink" title="PROCESS Q 的重点函数SEARCHSUPPORT"></a>PROCESS Q 的重点函数SEARCHSUPPORT</h3>
         </div>
 
         
@@ -229,7 +251,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://yoursite.com/2019/11/21/Javaset/">http://yoursite.com/2019/11/21/Javaset/</a></span>
+                        <span><a href="http://yoursite.com/2019/11/23/DualRNIC/">http://yoursite.com/2019/11/23/DualRNIC/</a></span>
                     </p>
                 
                 
@@ -253,7 +275,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/Java/"># Java</a>
+                        <a href="/tags/CSP/"># CSP</a>
                     
                         
                 </span>
@@ -266,10 +288,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2019/11/23/DualRNIC/">Enforcing RNIC on Dual Graph</a>
             
-            
-            <a class="next" rel="next" href="/2019/11/20/JavaArrays/">Java求众数:Array的使用&HashMap</a>
+            <a class="next" rel="next" href="/2019/11/21/Javaset/">Java数组重复元素:HashSet、LinkedHashSet、TreeSet</a>
             
         </section>
 
