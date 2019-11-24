@@ -12,7 +12,7 @@
 
 
 
-<title>Enforcing RNIC on Dual Graph | Milena’s Blog</title>
+<title>Java字符串公共前缀 | Milena’s Blog</title>
 
 
 
@@ -176,7 +176,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Enforcing RNIC on Dual Graph</h1>
+            <h1 class="post-title">Java字符串公共前缀</h1>
             
                 <div class="post-meta">
                     
@@ -185,14 +185,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">November 23, 2019&nbsp;&nbsp;9:19:17</a>
+                        Date: <a href="#">November 24, 2019&nbsp;&nbsp;19:17:01</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/Paper-Notes/">Paper Notes</a>
+                                <a href="/categories/Java/">Java</a>
                             
                         </span>
                     
@@ -201,43 +201,13 @@
         </header>
 
         <div class="post-content">
-            <h3 id="《Solving-Difficult-CSPs-with-Relational-Neighborhood-Inverse-Consistency》"><a href="#《Solving-Difficult-CSPs-with-Relational-Neighborhood-Inverse-Consistency》" class="headerlink" title="《Solving Difficult CSPs with Relational Neighborhood Inverse Consistency》"></a>《Solving Difficult CSPs with Relational Neighborhood Inverse Consistency》</h3><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><ul>
-<li>Neighborhood Inverse Consistency(NIC 1996)，是一种处理二元CSP问题的 健壮局部一致性技术。</li>
-<li>本文主要内容：在非二元CSP问题中用双重编码约束图（Dual graph）实现了RNIC（relational NIC）的操作。</li>
-</ul>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>传统的低级一致性技术：二元CSP问题的弧一致性技术AC、非二元CSP问题的广义弧一致性GAC。<br>二元CSP问题的NIC(1996)有空间上的优势优势。但是，执行NIC的时间消耗很大，所以无法在稠密网络或回溯搜索过程中的look ahead中使用。</p>
-<blockquote>
-<p>In this paper ：<br>解决二元CSP的NIC——&gt;重新定义为——&gt;解决非二元CSP的RNIC。<br>介绍了此技术的弱化和增强变化，自动选择应对dual graph拓扑结构的策略。<br>这种算法相当于回溯搜索过程中的look ahead策略。</p>
+            <blockquote>
+<p>编写一个函数来查找字符串数组中的最长公共前缀。<br>如果不存在公共前缀，返回空字符串 “”。<br>示例 1:<br>输入: [“flower”,”flow”,”flight”]<br>输出: “fl”<br>Leetcode</p>
 </blockquote>
-<h2 id="Compare"><a href="#Compare" class="headerlink" title="Compare"></a>Compare</h2><p>GAC2001,m-wise consistency2010.</p>
-<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><h3 id="CSP相关的定义"><a href="#CSP相关的定义" class="headerlink" title="CSP相关的定义"></a>CSP相关的定义</h3><p>每一个约束Ci由变量之间的关系Ri定义，这些相关变量称为关系范围，表示为scope(Ri)。</p>
-<h3 id="CSP的约束图表示"><a href="#CSP的约束图表示" class="headerlink" title="CSP的约束图表示"></a>CSP的约束图表示</h3><p>二元CSP约束图中，顶点表示变量，边表示约束。<br>非二元CSP问题</p>
-<ol>
-<li>可以由混合图(hypergraph)表示。边表示非二元的约束。</li>
-<li>由原始约束图表示。每一条边表示一个约束的一部分。Neigh(Vi)表示与Vi相邻的变量集（与Vi有约束关系的变量）。比如图中一个环ABD表示约束R1。</li>
-<li>由Dual graph表示。Neigh(Ri)表示与关系Ri相邻的关系集（与Ri覆盖相同变量的y关系）。</li>
-<li>Dual graph会存在冗余边，现存构造最小dual graph的的算法。</li>
-</ol>
-<p><img src="/pics/graph.jpg" alt="graph"></p>
-<h3 id="NIC-amp-GAC"><a href="#NIC-amp-GAC" class="headerlink" title="NIC&amp;GAC"></a>NIC&amp;GAC</h3><ul>
-<li>GAC用于二元CSP问题的变量取值的过滤，过滤后保证了从任意变量的任意取值都可以找到一个可满足的CSP解。</li>
-<li>扩展到非二元CSP问题，NIC也通过过滤变量取值域保证了从任意变量的任意取值都可以找到一个可满足的CSP解。</li>
-</ul>
-<h2 id="Relation-NIC"><a href="#Relation-NIC" class="headerlink" title="Relation NIC"></a>Relation NIC</h2><ul>
-<li>如何定义RNIC？<br>一个关系Ri是RNIC<br>iff<br>对于满足关系Ri的赋值，所有在Rj中而不在Ri中的变量（Rj是Neigh(Ri)），都可以找到一个值使关系Rj可满足。</li>
-</ul>
-<h2 id="Algorithm-for-enforcing-RNIC"><a href="#Algorithm-for-enforcing-RNIC" class="headerlink" title="Algorithm for enforcing RNIC"></a>Algorithm for enforcing RNIC</h2><h3 id="PROCESS-Q（算法1）"><a href="#PROCESS-Q（算法1）" class="headerlink" title="PROCESS Q（算法1）"></a>PROCESS Q（算法1）</h3><p>确保每个关系中的每个元组都有有效的支持。</p>
-<p><img src="/pics/rnic.jpg" alt="alg"></p>
-<ul>
-<li>队列Q包含所有的关系。</li>
-<li>Qt(R)w包含关系R的所有元组。</li>
-<li>函数SupportedBy(τ )返回所有τ 支持的元组。</li>
-<li>函数REL(τi )返回τi所属的关系。</li>
-</ul>
-<blockquote>
-<p>算法过程：<br>1.关系R从Q中出队<br>2.遍历Qt(R):τ<br>3.函数SEARCHSUPPORT寻找一个τ的支持。<br>找不到支持的时候，所有τ支持的元组τi所在的关系入队(重新检查)。从Qt(R)中删除τ。<br>4.继续遍历，出队，直到Q，Qt为空结束。</p>
-</blockquote>
-<h3 id="PROCESS-Q-的重点函数SEARCHSUPPORT"><a href="#PROCESS-Q-的重点函数SEARCHSUPPORT" class="headerlink" title="PROCESS Q 的重点函数SEARCHSUPPORT"></a>PROCESS Q 的重点函数SEARCHSUPPORT</h3><h3 id="时间复杂度分析"><a href="#时间复杂度分析" class="headerlink" title="时间复杂度分析"></a>时间复杂度分析</h3><h2 id="Variations-on-RNIC"><a href="#Variations-on-RNIC" class="headerlink" title="Variations on RNIC"></a>Variations on RNIC</h2><p>严重阻碍执行RNIC的算法的因素（在算法1s中）：<br>1.dual graph非常稠密。<br>2.存在长度大于4d的循环。<br>随着dual graph的密度增加，给定关系Ri的邻域也会增加，这会增加执行RNIC的成本。<br>为了解决上述问题，我们提出了dual graph的两种重新定义：<br>1.如第2节所述，删除冗余的边。<br>2.三角剖分，删除长度大于4的循环。</p>
+<hr>
+<h1 id="水平扫描法"><a href="#水平扫描法" class="headerlink" title="水平扫描法"></a>水平扫描法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public String longestCommonPrefix(String[] strs) &#123;</span><br><span class="line">    if (strs.length == 0) return &quot;&quot;;</span><br><span class="line">    String prefix = strs[0]; //公共串初始化为第一个字符串</span><br><span class="line">    </span><br><span class="line">    for (int i = 1; i &lt; strs.length; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        while (strs[i].indexOf(prefix) != 0) &#123;</span><br><span class="line">            prefix = prefix.substring(0, prefix.length() - 1);</span><br><span class="line">            if (prefix.isEmpty()) return &quot;&quot;;</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    return prefix;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/pics/long.jpg" alt="long"></p>
 
         </div>
 
@@ -252,7 +222,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://yoursite.com/2019/11/23/DualRNIC/">http://yoursite.com/2019/11/23/DualRNIC/</a></span>
+                        <span><a href="http://yoursite.com/2019/11/24/%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/">http://yoursite.com/2019/11/24/%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/</a></span>
                     </p>
                 
                 
@@ -276,7 +246,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/CSP/"># CSP</a>
+                        <a href="/tags/Java/"># Java</a>
                     
                         
                 </span>
@@ -289,10 +259,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2019/11/24/%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/">Java字符串公共前缀</a>
             
-            
-            <a class="next" rel="next" href="/2019/11/21/Javaset/">Java数组重复元素:HashSet、LinkedHashSet、TreeSet</a>
+            <a class="next" rel="next" href="/2019/11/23/DualRNIC/">Enforcing RNIC on Dual Graph</a>
             
         </section>
 
