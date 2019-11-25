@@ -237,7 +237,16 @@
 <blockquote>
 <p>算法过程：<br>1.关系R从Q中出队<br>2.遍历Qt(R):τ<br>3.函数SEARCHSUPPORT寻找一个τ的支持。<br>找不到支持的时候，所有τ支持的元组τi所在的关系入队(重新检查)。从Qt(R)中删除τ。<br>4.继续遍历，出队，直到Q，Qt为空结束。</p>
 </blockquote>
-<h3 id="PROCESS-Q-的重点函数SEARCHSUPPORT"><a href="#PROCESS-Q-的重点函数SEARCHSUPPORT" class="headerlink" title="PROCESS Q 的重点函数SEARCHSUPPORT"></a>PROCESS Q 的重点函数SEARCHSUPPORT</h3><h3 id="时间复杂度分析"><a href="#时间复杂度分析" class="headerlink" title="时间复杂度分析"></a>时间复杂度分析</h3><h2 id="Variations-on-RNIC"><a href="#Variations-on-RNIC" class="headerlink" title="Variations on RNIC"></a>Variations on RNIC</h2><p>严重阻碍执行RNIC的算法的因素（在算法1s中）：<br>1.dual graph非常稠密。<br>2.存在长度大于4d的循环。<br>随着dual graph的密度增加，给定关系Ri的邻域也会增加，这会增加执行RNIC的成本。<br>为了解决上述问题，我们提出了dual graph的两种重新定义：<br>1.如第2节所述，删除冗余的边。<br>2.三角剖分，删除长度大于4的循环。</p>
+<h3 id="PROCESS-Q-的重点函数SEARCHSUPPORT"><a href="#PROCESS-Q-的重点函数SEARCHSUPPORT" class="headerlink" title="PROCESS Q 的重点函数SEARCHSUPPORT"></a>PROCESS Q 的重点函数SEARCHSUPPORT</h3><h3 id="时间复杂度分析"><a href="#时间复杂度分析" class="headerlink" title="时间复杂度分析"></a>时间复杂度分析</h3><h2 id="Variations-on-RNIC"><a href="#Variations-on-RNIC" class="headerlink" title="Variations on RNIC"></a>Variations on RNIC</h2><p>严重阻碍执行RNIC的算法的因素（在算法1s中）：<br>1.dual graph非常稠密。<br>2.存在长度大于4d的循环。<br>随着dual graph的密度增加，给定关系Ri的邻域也会增加，这会增加执行RNIC的成本。<br>为了解决上述问题，我们提出了dual graph的两种重新定义：<br>解决1:删除冗余的边。<br>解决2:三角划分(Triangulating)，删除长度大于4的循环,在不相邻的顶点之间添加一个边。</p>
+<h2 id="Improve"><a href="#Improve" class="headerlink" title="Improve"></a>Improve</h2><p>运行PROCESS Q之前，对dual graph进行上述的两种改进，会产生RNIC的三个变体：wRNIC，triRNIC和wtriRNIC。</p>
+<h3 id="Use-a-minimal-dual-graph-wRNIC"><a href="#Use-a-minimal-dual-graph-wRNIC" class="headerlink" title="Use a minimal dual graph: wRNIC"></a>Use a minimal dual graph: wRNIC</h3><p>RNIC在密度15％左右的图上是可以执行的。但是对于密度更高的图，应该删除图上的冗余边后再执行PROCESS Q。</p>
+<h3 id="Triangulate-the-dual-graph-triRNIC"><a href="#Triangulate-the-dual-graph-triRNIC" class="headerlink" title="Triangulate the dual graph: triRNIC"></a>Triangulate the dual graph: triRNIC</h3><h3 id="Triangulate-a-minimal-dual-graph-wtriRNIC"><a href="#Triangulate-a-minimal-dual-graph-wtriRNIC" class="headerlink" title="Triangulate a minimal dual graph: wtriRNIC"></a>Triangulate a minimal dual graph: wtriRNIC</h3><p>最小化可以应对高密度图，三角划分可以增强传播。</p>
+<h3 id="Select-the-appropriate-RNIC-selRNIC"><a href="#Select-the-appropriate-RNIC-selRNIC" class="headerlink" title="Select the appropriate RNIC: selRNIC"></a>Select the appropriate RNIC: selRNIC</h3><ul>
+<li>For RNIC, it uses the original dual graph (Go).</li>
+<li>For wRNIC, it uses a minimal dual graph (Gw).</li>
+<li>For triRNIC, it uses a triangulated dual graph (Gtri).</li>
+<li>Finally, for wtriRNIC, it uses a triangulated minimal dual<br>graph (Gwtri).</li>
+</ul>
 
         </div>
 
