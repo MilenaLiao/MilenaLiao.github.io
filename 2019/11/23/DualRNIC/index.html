@@ -12,7 +12,7 @@
 
 
 
-<title>Enforcing RNIC on Dual Graph | Milena’s Blog</title>
+<title>Enforcing RNIC on Dual Graph &amp; 应用domain-filter技术计算MUS的一点思考 | Milena’s Blog</title>
 
 
 
@@ -176,7 +176,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Enforcing RNIC on Dual Graph</h1>
+            <h1 class="post-title">Enforcing RNIC on Dual Graph &amp; 应用domain-filter技术计算MUS的一点思考</h1>
             
                 <div class="post-meta">
                     
@@ -201,7 +201,7 @@
         </header>
 
         <div class="post-content">
-            <h3 id="《Solving-Difficult-CSPs-with-Relational-Neighborhood-Inverse-Consistency》"><a href="#《Solving-Difficult-CSPs-with-Relational-Neighborhood-Inverse-Consistency》" class="headerlink" title="《Solving Difficult CSPs with Relational Neighborhood Inverse Consistency》"></a>《Solving Difficult CSPs with Relational Neighborhood Inverse Consistency》</h3><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><ul>
+            <h1 id="《Solving-Difficult-CSPs-with-Relational-Neighborhood-Inverse-Consistency》"><a href="#《Solving-Difficult-CSPs-with-Relational-Neighborhood-Inverse-Consistency》" class="headerlink" title="《Solving Difficult CSPs with Relational Neighborhood Inverse Consistency》"></a>《Solving Difficult CSPs with Relational Neighborhood Inverse Consistency》</h1><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><ul>
 <li>Neighborhood Inverse Consistency(NIC 1996)，是一种处理二元CSP问题的 健壮局部一致性技术。</li>
 <li>本文主要内容：在非二元CSP问题中用双重编码约束图（Dual graph）实现了RNIC（relational NIC）的操作。</li>
 </ul>
@@ -240,13 +240,23 @@
 <h3 id="PROCESS-Q-的重点函数SEARCHSUPPORT"><a href="#PROCESS-Q-的重点函数SEARCHSUPPORT" class="headerlink" title="PROCESS Q 的重点函数SEARCHSUPPORT"></a>PROCESS Q 的重点函数SEARCHSUPPORT</h3><h3 id="时间复杂度分析"><a href="#时间复杂度分析" class="headerlink" title="时间复杂度分析"></a>时间复杂度分析</h3><h2 id="Variations-on-RNIC"><a href="#Variations-on-RNIC" class="headerlink" title="Variations on RNIC"></a>Variations on RNIC</h2><p>严重阻碍执行RNIC的算法的因素（在算法1s中）：<br>1.dual graph非常稠密。<br>2.存在长度大于4d的循环。<br>随着dual graph的密度增加，给定关系Ri的邻域也会增加，这会增加执行RNIC的成本。<br>为了解决上述问题，我们提出了dual graph的两种重新定义：<br>解决1:删除冗余的边。<br>解决2:三角划分(Triangulating)，删除长度大于4的循环,在不相邻的顶点之间添加一个边。</p>
 <h2 id="Improve"><a href="#Improve" class="headerlink" title="Improve"></a>Improve</h2><p>运行PROCESS Q之前，对dual graph进行上述的两种改进，会产生RNIC的三个变体：wRNIC，triRNIC和wtriRNIC。</p>
 <h3 id="Use-a-minimal-dual-graph-wRNIC"><a href="#Use-a-minimal-dual-graph-wRNIC" class="headerlink" title="Use a minimal dual graph: wRNIC"></a>Use a minimal dual graph: wRNIC</h3><p>RNIC在密度15％左右的图上是可以执行的。但是对于密度更高的图，应该删除图上的冗余边后再执行PROCESS Q。</p>
-<h3 id="Triangulate-the-dual-graph-triRNIC"><a href="#Triangulate-the-dual-graph-triRNIC" class="headerlink" title="Triangulate the dual graph: triRNIC"></a>Triangulate the dual graph: triRNIC</h3><h3 id="Triangulate-a-minimal-dual-graph-wtriRNIC"><a href="#Triangulate-a-minimal-dual-graph-wtriRNIC" class="headerlink" title="Triangulate a minimal dual graph: wtriRNIC"></a>Triangulate a minimal dual graph: wtriRNIC</h3><p>最小化可以应对高密度图，三角划分可以增强传播。</p>
+<h3 id="Triangulate-the-dual-graph-triRNIC"><a href="#Triangulate-the-dual-graph-triRNIC" class="headerlink" title="Triangulate the dual graph: triRNIC"></a>Triangulate the dual graph: triRNIC</h3><p>三角划分增强传播。</p>
+<h3 id="Triangulate-a-minimal-dual-graph-wtriRNIC"><a href="#Triangulate-a-minimal-dual-graph-wtriRNIC" class="headerlink" title="Triangulate a minimal dual graph: wtriRNIC"></a>Triangulate a minimal dual graph: wtriRNIC</h3><p>最小化可以应对高密度图，同时三角划分可以增强传播。</p>
 <h3 id="Select-the-appropriate-RNIC-selRNIC"><a href="#Select-the-appropriate-RNIC-selRNIC" class="headerlink" title="Select the appropriate RNIC: selRNIC"></a>Select the appropriate RNIC: selRNIC</h3><ul>
 <li>For RNIC, it uses the original dual graph (Go).</li>
 <li>For wRNIC, it uses a minimal dual graph (Gw).</li>
 <li>For triRNIC, it uses a triangulated dual graph (Gtri).</li>
-<li>Finally, for wtriRNIC, it uses a triangulated minimal dual<br>graph (Gwtri).</li>
+<li>Finally, for wtriRNIC, it uses a triangulated minimal dual graph (Gwtri).</li>
 </ul>
+<h1 id="如何利用domain-filter系列技术计算MUS？？？"><a href="#如何利用domain-filter系列技术计算MUS？？？" class="headerlink" title="如何利用domain filter系列技术计算MUS？？？"></a>如何利用domain filter系列技术计算MUS？？？</h1><blockquote>
+<ol>
+<li>CNF公式相当于非二元CSP问题，这个CSP问题一定没有解。</li>
+<li>通过dual encoding构造dual graph，将非二元CSP问题转化为等价的二元CSP问题。<br><img src="/pics/dual.jpg" alt="dualgraph"></li>
+<li>这时每一个顶点都代表一个约束，也就是clause。</li>
+<li>选择一种高效率的一致性过滤技术（PC,NIC,RNIC…），逐步删除图中顶点的元组（clause的赋值元组）。</li>
+<li>过滤结束后，所有被删空的顶点所对应的clauses构成了一个MUS。</li>
+</ol>
+</blockquote>
 
         </div>
 
