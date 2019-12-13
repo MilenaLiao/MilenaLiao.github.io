@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Milena Liao">
+
+
+
+
+
+<title>NPA | Milena’s Blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+</head>
+<body>
+    <script type="text/javascript" color="192,192,192" pointColor="128,138,135" opacity='0.8' zIndex="-2" count="150" src="js/canvas-nest.js"></script>
+    <script type="text/javascript" src="js/canvas-nest.umd.js"></script>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Milena&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Milena&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">NPA</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Milena Liao</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">December 11, 2019&nbsp;&nbsp;11:17:48</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Paper-Notes/">Paper Notes</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="NPA-Neural-News-Recommendation-with-Personalized-Attention"><a href="#NPA-Neural-News-Recommendation-with-Personalized-Attention" class="headerlink" title="NPA: Neural News Recommendation with Personalized Attention"></a>NPA: Neural News Recommendation with Personalized Attention</h2><h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>新闻推荐对于帮助用户发现感兴趣的新闻，避免信息过载具有重要意义。不同的用户通常有不同的兴趣，一个用户也可能有不同的兴趣。因此，不同的用户可能会点击同一篇新闻文章，但是会关注不同的方面。</p>
+<ul>
+<li><p>本文提出了一种具有个性注意力机制的新闻推荐模型。我们的方法的核心是新闻表示模型和用户表示模型。</p>
+</li>
+<li><p>在新闻表示模型中，我们使用CNN网络来学习基于标题的新闻文章的隐藏表示。</p>
+</li>
+<li><p>在用户表示模型中，我们根据用户所点击的新闻文章的表示来学习用户的表示。</p>
+</li>
+<li><p>由于不同的词汇和不同的新闻文章可能会有不同的信息量来代表新闻和用户，因此我们建议同时运用词汇和新闻层面的注意机制来帮助我们的模型关注重要的词汇和新闻文章。</p>
+</li>
+<li><p>此外，相同的新闻文章和相同的单词对于不同的用户可能会有不同的信息量。因此，我们提出了一种个性化的注意力网络，它利用用户ID的嵌入来生成单词级和新闻级注意力的查询向量。<br>实验：对从MSN新闻采集到的真实世界新闻推荐数据集进行了大量的实验，结果验证了我们的新闻推荐方法的有效性。</p>
+</li>
+</ul>
+<h3 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h3><p>MSNnews和谷歌news等在线新闻平台每天都会出现大量的新闻文章，用户从大量的网络新闻文章中寻找感兴趣的新闻是不现实的。因此，针对用户兴趣，进行个性化的新闻推荐可以帮助用户找到感兴趣的新闻文章，缓解信息超载。</p>
+<p>在新闻推荐场景中有两个常见的观察结果。</p>
+<ol>
+<li>并非所有用户点击的新闻都能反映用户的偏好。</li>
+<li>相同的新闻还应该具有不同的信息量，以便对不同的用户进行建模。<br>此外，新闻标题中相同的词语也可能具有不同的信息量，以反映不同用户的偏好。因此，对不同用户的词汇和新闻的不同信息性进行建模，可能有助于更好地学习用户的兴趣，从而获得准确的新闻推荐。</li>
+</ol>
+<p>在这篇论文中，我们提出了一种具有个性化注意机制的方法(NPA)来进行新闻推荐。<br>方法的核心是新闻表示模型和用户表示模型。在新闻表示模型中，我们使用CNN网络来学习新闻标题的上下文表示，在用户表示模型中，我们从用户单击的新闻中学习用户的表示。由于不同的词汇和新闻文章在学习新闻表征和用户表征时通常具有不同的信息性，我们建议在词汇和新闻层面应用注意机制来选择和突出信息性词汇和新闻。此外将用户ID作为词级和新闻级注意力网络的查询向量进行嵌入，根据用户偏好对重要的词和新闻进行不同的关注。</p>
+<h3 id="2-Related-Work"><a href="#2-Related-Work" class="headerlink" title="2. Related Work"></a>2. Related Work</h3><ul>
+<li><p>新闻推荐<br>新闻推荐系统数据挖掘领域的一项重要任务，传统的新闻推荐方法基于新闻相关性、语义相关性。但是用户的偏好不能被很好地建模，因此大多数的新闻推荐方法都是基于协同过滤技术（CF），许多方法都是CF的补充方法。与这些方法不同的是，我们提出利用注意力机制，根据不同用户的喜好动态识别不同的信息和新闻。</p>
+</li>
+<li><p>神经网络推荐系统系统<br>近年来深度学习在推荐系统中得到了广泛的应用。但是近年来的很多方法都依赖于手工构造的特征，而且特征向量的维数通常很大，而且不能在学习新闻和用户时有效地识别重要的情境。然而我们的方法可以根据用户偏好动态选择重要的单词和新闻用于推荐，这样可以学习更丰富的用户表示信息。</p>
+</li>
+</ul>
+<h3 id="3-Our-Approach"><a href="#3-Our-Approach" class="headerlink" title="3. Our Approach"></a>3. Our Approach</h3><p>现在介绍NPA方法，主要有三个主要模块：</p>
+<ol>
+<li>news coder 新闻编码器，用于学习新闻的表示。</li>
+<li>user coder 用户编码器，用于在用户点击新闻的基础上学习用户表示。</li>
+<li>click predictor 点击预测器，用于预测一系列候选新闻的点击得分</li>
+</ol>
+<p><img src="/pics/NPA1.jpg" alt="p1"></p>
+<ul>
+<li>News Encoder</li>
+</ul>
+<p>用户在新闻平台上的点击通常由标题来决定，所以该模块从新闻标题中学习新闻表示。这个学习模块有三个部分：</p>
+<p>1）单词嵌入。将新闻标题内的单词转换为一个低维稠密向量序列</p>
+<p>2）卷积神经网络。CNN是一种获取局部信息的神经网络结构。新闻中的语境对于新闻推荐系统非常重要，因此我们将CNN应用于单词序列，用来学习单词的上下文表示。</p>
+<p>3）一个词层次的个性化注意力机制网络。新闻标题中的每一个词对于这个新闻主题的表示往往有不同的信息量，比如“NBA games in this season”标题中“NBA”是该条信息的重要线索，而“this”这个词表达的信息量比较小。此外，相同的一个单词对于不同的用户来说，信息量也都不相同。因此，识别不同用户的重要词语对于新闻推荐是非常有用的。我们利用下图中的模型，为不同的用户建立注意力机制网络，根据用户的偏好突出标题中的重要单词。</p>
+<ul>
+<li>User Encoder</li>
+</ul>
+<p>用户编码器利用用户点击的消息学习，这个模块使用新闻级个性化注意力机制，通常来说，同一个用户点击的新闻包含不同的信息量。比如“10条烹饪技巧”的信息比“周末要下雨”包含更多的有用信息。另外，同一个新闻对于不同的用户来说，包含信息量也不同。比如“100个最大的高尔夫球场”仅仅对于喜欢高尔夫的人来说是感兴趣的（信息有价值的）。不喜欢高尔夫的用户则会认为这是噪音，没用的信息。<br>类似于词级别的注意力机制，为了对同一条新闻的不同点击用户进行建模，我们先将用户ID嵌入到新闻偏好查询中。最终的用户表征是新闻上下文表示的加权总和（权重由注意力机制决定）。</p>
+<ul>
+<li>Click Predictor<br>点击预测器模块用于预测：对于每一个候选新闻，用户的点击得分。在新闻推荐系统中，大多数用户只点击现实出来的新闻，所以样本高度不平均。在很多基于神经网络的新闻推荐系统中，模型仅仅预测单个新闻的点击得分。在这些方法中，通过随机采样手动平衡正负新闻样本，丢失了负样本提供的丰富信息。此外，由于新闻样本的总数通常很大，因此在模型训练期间这些方法的计算成本通常很高。因此，这些方法对于模拟现实世界中的新闻推荐场景而言不是最优的。</li>
+</ul>
+<p>我们建议通过在模型训练期间共同预测K +1个新闻的点击得分来应用负采样技术，以解决上述两个问题。<br>K + 1个新闻由一个用户的一个正样本和K个用户的随机选择的负样本组成。<br>对于模型训练，我们将点击预测问题公式化为分类任务，即，被点击的新闻为正类，其余所有新闻为负类。  通过梯度下降优化损失函数L，可以在我们的模型中调整所有参数。 与现有的新闻推荐方法相比，我们的方法可以有效地利用负面样本中的有用信息，并进一步降低模型训练的计算成本。<br>因此，我们可以在大量新闻点击日志中更轻松地训练我们的模型。</p>
+<h3 id="EXPERIMENTS"><a href="#EXPERIMENTS" class="headerlink" title="EXPERIMENTS"></a>EXPERIMENTS</h3><p>实验在真实的数据集上进行。<br>表1：该数据集合由2018.12.13-2019.1.12MSN新闻中随机抽取的用户日志构建的。在此基础上抽取10%的样本进行验证。<br>表2：与其他的新闻推荐算法的性能比较<br>表3：与其他算法的训练和测试的时间复杂性和空间复杂性的比较</p>
+<p>图5：与其他的注意力机制的性能对比<br>图6：增加负采样对于性能的影响<br>图7：词级和新闻级个人注意力机制的有效性<br>图8：负采样比对于我们方法性能的影响</p>
+<h3 id="CONCLUSION"><a href="#CONCLUSION" class="headerlink" title="CONCLUSION"></a>CONCLUSION</h3><p>在本文中，我们提出了一种具有个人注意力机制（NPA）的神经新闻推荐方法。<br>在我们的NPA方法中，我们使用新闻表示模型来使用CNN从标题中学习新闻表示，并使用用户表示模型来从用户点击的新闻中学习用户的表示。 由于不同的单词和新闻文章通常具有代表新闻和用户的信息性，因此我们建议在单词和新闻上都应用注意力机制，以帮助我们的模型关注重要的单词和新闻文章。 另外，由于相同的单词和新闻通常对不同的用户具有不同的重要性，因此我们提出了一种个性化的注意力网络，该网络利用用户ID的嵌入作为单词和新闻级别的注意力网络的查询。 从MSN新闻收集的真实数据集上的实验验证了我们方法的有效性。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Milena Liao</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://yoursite.com/2019/12/11/NPA/">http://yoursite.com/2019/12/11/NPA/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY<strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/CNN/"># CNN</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();" target="_blank" rel="noopener">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2019/11/26/Javabit/">Java位运算相关</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Milena Liao | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

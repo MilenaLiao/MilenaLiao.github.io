@@ -253,7 +253,7 @@
 <li>CNF公式相当于非二元CSP问题，这个CSP问题一定没有解。</li>
 <li>通过dual encoding构造dual graph，将非二元CSP问题转化为等价的二元CSP问题。<br><img src="/pics/dual.jpg" alt="dualgraph"></li>
 <li>这时每一个顶点都代表一个约束，也就是clause。</li>
-<li>选择一种高效率的一致性过滤技术（PC,NIC,RNIC…），逐步删除图中顶点的元组（clause的赋值元组）。</li>
+<li>选择一种高效率的一致性过滤技术（PC,NIC,RNIC…），逐步删除图中顶点的元组（clause的赋值元组）。现有的一致性技术如果遇到某个顶点被删空，算法会停止。我们需要对现有的一致性技术进行修改，一直运行直到</li>
 <li>过滤结束后，所有被删空的顶点所对应的clauses构成了一个MUS。</li>
 </ol>
 </blockquote>

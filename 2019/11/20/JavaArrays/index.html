@@ -12,7 +12,7 @@
 
 
 
-<title>Java求众数:Array的使用&amp;HashMap | Milena’s Blog</title>
+<title>Java求众数:Arrays数组操作&amp;HashMap | Milena’s Blog</title>
 
 
 
@@ -176,7 +176,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Java求众数:Array的使用&amp;HashMap</h1>
+            <h1 class="post-title">Java求众数:Arrays数组操作&amp;HashMap</h1>
             
                 <div class="post-meta">
                     
@@ -201,18 +201,39 @@
         </header>
 
         <div class="post-content">
-            <blockquote>
-<p>给定一个大小为 n 的数组，找到其中的众数。众数是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。<br>你可以假设数组是非空的，并且给定的数组总是存在众数<br>Leetcode</p>
+            <hr>
+<blockquote>
+<p>寻找大小为 n 的数组的众数。<br>众数是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。你可以假设数组是非空的，并且给定的数组总s是存在众数<br>Leetcode</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//定义众数是出现次数1/2频度以上，那么将数组排序，中位数必为众数：</span><br><span class="line">class Solution &#123;</span><br><span class="line">    public int majorityElement(int[] nums) &#123;</span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        return nums[nums.length / 2];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
-<h1 id="Arrays排序"><a href="#Arrays排序" class="headerlink" title="Arrays排序"></a>Arrays排序</h1><p>定义众数是出现次数1/2频度以上，那么将数组排序，中位数必为众数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int majorityElement(int[] nums) &#123;</span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        return nums[nums.length / 2];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="填充数组：Arrays-fill"><a href="#填充数组：Arrays-fill" class="headerlink" title="填充数组：Arrays.fill"></a>填充数组：Arrays.fill</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int []arr = new int[5];</span><br><span class="line">Arrays.fill(arr, 2);</span><br><span class="line">结果是：2 2 2 2 2</span><br><span class="line">int []arr = new int[5];</span><br><span class="line">Arrays.fill(arr, 1,3,8);</span><br><span class="line">结果是：0 8 8 0 0</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>合并有序数组<br>给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。<br>Leetcode</p>
+</blockquote>
+<ol>
+<li>copy+排序</li>
+<li>从前往后排序</li>
+<li>从后往前排序（最好）</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public void merge(int[] nums1, int m, int[] nums2, int n) &#123;</span><br><span class="line">    int p1=m-1;</span><br><span class="line">    int p2=n-1;</span><br><span class="line">    int p = m+n-1;      //from tail to head</span><br><span class="line">    while( p1&gt;=0 &amp;&amp; p2&gt;=0 )&#123;</span><br><span class="line">        if(nums1[p1]&gt;=nums2[p2])&#123;</span><br><span class="line">            nums1[p]=nums1[p1];</span><br><span class="line">            p1--;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            nums1[p]=nums2[p2];</span><br><span class="line">            p2--;</span><br><span class="line">        &#125;</span><br><span class="line">        p--;</span><br><span class="line">    &#125;</span><br><span class="line">    System.arraycopy(nums2,0,nums1,0,p2+1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<blockquote>
+<p>最大子序列的和<br>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。<br>示例:输入: [-2,1,-3,4,-1,2,1,-5,4],输出: 6 解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。<br>来源：力扣（LeetCode）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public int maxSubArray(int[] nums) &#123;</span><br><span class="line">    int result = nums[0];   // 保存最大的结果</span><br><span class="line">    int sum = 0;            // 保存当前的子序和</span><br><span class="line"></span><br><span class="line">    for (int num : nums) &#123;</span><br><span class="line">        if (sum &gt; 0) sum += num; // sum是正数，意味着后面有机会再创新高，可以继续加</span><br><span class="line">        else sum = num;          //sum是负的，还不如直接从当前位重新开始算，也比(负数+当前值)要大吧</span><br><span class="line">        result = Math.max(result, sum);   // 每一步都更新最大值</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="Arrays类操作"><a href="#Arrays类操作" class="headerlink" title="Arrays类操作"></a>Arrays类操作</h1><h2 id="填充数组：Arrays-fill"><a href="#填充数组：Arrays-fill" class="headerlink" title="填充数组：Arrays.fill"></a>填充数组：Arrays.fill</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int []arr = new int[5];</span><br><span class="line">Arrays.fill(arr, 2);</span><br><span class="line">结果是：2 2 2 2 2</span><br><span class="line">int []arr = new int[5];</span><br><span class="line">Arrays.fill(arr, 1,3,8);</span><br><span class="line">结果是：0 8 8 0 0</span><br></pre></td></tr></table></figure>
 <h2 id="数组元素排序：Arrays-sort"><a href="#数组元素排序：Arrays-sort" class="headerlink" title="数组元素排序：Arrays.sort"></a>数组元素排序：Arrays.sort</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int []arr = &#123;3,2,1,5,4&#125;;</span><br><span class="line">Arrays.sort(arr);</span><br><span class="line">结果是：1 2 3 4 5</span><br></pre></td></tr></table></figure>
 <h2 id="比较数组元素是否相等：Arrays-equals"><a href="#比较数组元素是否相等：Arrays-equals" class="headerlink" title="比较数组元素是否相等：Arrays.equals"></a>比较数组元素是否相等：Arrays.equals</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(Arrays.equals(arr1,arr2));</span><br><span class="line">结果是：true/false</span><br></pre></td></tr></table></figure>
 <p>arr1.equals(arr2),比较的是两个对象的地址，不是里面的数。<br>而Arrays.equals重写了equals，所以能比较元素是否相等。</p>
-<h2 id="二分查找法找指定元素的索引：Arrays-binarySearch"><a href="#二分查找法找指定元素的索引：Arrays-binarySearch" class="headerlink" title="二分查找法找指定元素的索引：Arrays.binarySearch"></a>二分查找法找指定元素的索引：Arrays.binarySearch</h2><h2 id="截取数组：copeOf和copeOfRange"><a href="#截取数组：copeOf和copeOfRange" class="headerlink" title="截取数组：copeOf和copeOfRange"></a>截取数组：copeOf和copeOfRange</h2><h1 id="HashMap："><a href="#HashMap：" class="headerlink" title="HashMap："></a>HashMap：</h1><p>记录数组中每个元素出现的次数，找出次数大于 ⌊ n/2 ⌋的元素。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;Integer, Integer&gt; counts = new HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">int[] a =&#123;1,2,3,2,3,6&#125;;</span><br><span class="line">for(int num:a)&#123;</span><br><span class="line">    if(!counts.containsKey(num))</span><br><span class="line">    counts.put(num,1);</span><br><span class="line">else </span><br><span class="line">    counts.put(num,counts.get(num)+1);</span><br></pre></td></tr></table></figure>
+<h2 id="二分查找法找指定元素的索引：Arrays-binarySearch"><a href="#二分查找法找指定元素的索引：Arrays-binarySearch" class="headerlink" title="二分查找法找指定元素的索引：Arrays.binarySearch"></a>二分查找法找指定元素的索引：Arrays.binarySearch</h2><h2 id="截取数组：copeOf和copeOfRange"><a href="#截取数组：copeOf和copeOfRange" class="headerlink" title="截取数组：copeOf和copeOfRange"></a>截取数组：copeOf和copeOfRange</h2><h1 id="System-arraycopy"><a href="#System-arraycopy" class="headerlink" title="System.arraycopy"></a>System.arraycopy</h1><h2 id="System提供了一个静态方法arraycopy-，实现数组之间的复制。"><a href="#System提供了一个静态方法arraycopy-，实现数组之间的复制。" class="headerlink" title="System提供了一个静态方法arraycopy()，实现数组之间的复制。"></a>System提供了一个静态方法arraycopy()，实现数组之间的复制。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">其函数原型是：</span><br><span class="line">public static void arraycopy(Object src,int srcPos,Object dest,int destPos,int length)</span><br></pre></td></tr></table></figure>
+<p>src:源数组；<br>srcPos:源数组要复制的起始位置；<br>dest:目的数组；<br>destPos:目的数组放置的起始位置；<br>length:复制的长度。</p>
+<h1 id="HashMap："><a href="#HashMap：" class="headerlink" title="HashMap："></a>HashMap：</h1><p>上面题：记录数组中每个元素出现的次数，找出次数大于 ⌊ n/2 ⌋的元素。</p>
+<blockquote>
+<p>给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int singleNumber(int[] nums) &#123;</span><br><span class="line">        Map&lt;Integer,Integer&gt; m = new HashMap&lt;Integer,Integer&gt;();</span><br><span class="line">        for(int num:nums)&#123;</span><br><span class="line">            if(!m.containsKey(num)) m.put(num,1);</span><br><span class="line">            else m.put(num,m.get(num)+1);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        for (int i : m.keySet()) &#123;</span><br><span class="line">            if (m.get(i)==1) return i;</span><br><span class="line">        &#125;</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上面的程序计算数组中出现元素的个数，以&lt;value，count&gt;形式存储。</p>
 <p>HashMap: </p>
 <p>存储：put( key , value )<br>获取value：get( key )<br>删除键值对：remove( key )<br>遍历：for ( int id : mapname.keySet( ) ){…}</p>

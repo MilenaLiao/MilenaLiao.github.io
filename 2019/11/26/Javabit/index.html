@@ -12,7 +12,7 @@
 
 
 
-<title>Java链表操作 | Milena’s Blog</title>
+<title>Java位运算相关 | Milena’s Blog</title>
 
 
 
@@ -114,7 +114,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Java链表操作</h1>
+            <h1 class="post-title">Java位运算相关</h1>
             
                 <div class="post-meta">
                     
@@ -123,7 +123,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">November 25, 2019&nbsp;&nbsp;12:42:21</a>
+                        Date: <a href="#">November 26, 2019&nbsp;&nbsp;20:48:00</a>
                         </span>
                     
                     
@@ -140,15 +140,10 @@
 
         <div class="post-content">
             <blockquote>
-<p>将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。<br>输入：1-&gt;2-&gt;4, 1-&gt;3-&gt;4<br>输出：1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4<br>来源LeetCode<br>Definition for singly-linked list.<br>public class ListNode {<br>   int val;<br>   ListNode next;<br>   ListNode(int x) { val = x; }<br>}</p>
+<p>汉明距离<br>两个整数之间的汉明距离指的是这两个数字对应二进制位不同的位置的数目。<br>输入: x = 1, y = 4 输出: 2<br>解释:1   (0 0 0 1), 4   (0 1 0 0)<br>From Leetcode</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public ListNode mergeTwoLists(ListNode l1, ListNode l2) </span><br><span class="line">    &#123;</span><br><span class="line">        ListNode l0 = new ListNode(-1);</span><br><span class="line">        ListNode l = l0;</span><br><span class="line">        while(l1!= null &amp;&amp; l2!= null)&#123;</span><br><span class="line">            if(l1.val&lt;=l2.val)&#123;</span><br><span class="line">                l.next=l1;</span><br><span class="line">                l1=l1.next; </span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                l.next=l2;</span><br><span class="line">                l2=l2.next; </span><br><span class="line">            &#125;</span><br><span class="line">            l=l.next;</span><br><span class="line">        &#125;</span><br><span class="line">        if(l1==null) l.next=l2;</span><br><span class="line">        else l.next=l1;</span><br><span class="line">        return l0.next;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>给定一个链表，判断链表中是否有环。<br>（哈希表，重复=有环）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public boolean hasCycle(ListNode head) &#123;</span><br><span class="line">        if(head==null) return false;</span><br><span class="line">        Set&lt;ListNode&gt; s = new HashSet&lt;ListNode&gt;();</span><br><span class="line">        ListNode l = head;</span><br><span class="line">        </span><br><span class="line">        while(l!=null)&#123;</span><br><span class="line">            if(s.contains(l)) return true;</span><br><span class="line">            else s.add(l);</span><br><span class="line">            l=l.next;</span><br><span class="line">        &#125;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<p>用异或 a^b 解决：如果a、b两个值不相同，则异或结果为1。<br>1的个数即为汉明距离。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public int hammingDistance(int x, int y) &#123;</span><br><span class="line">    int mark=0;</span><br><span class="line">    int a=x^y;</span><br><span class="line">    String b=Integer.toBinaryString(a);</span><br><span class="line">    </span><br><span class="line">    for(int i=0;i&lt;b.length();i++)&#123;    //count 1</span><br><span class="line">        if (b.charAt(i)==&apos;1&apos;)</span><br><span class="line">        mark++;</span><br><span class="line">    &#125;</span><br><span class="line">    return mark;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -163,7 +158,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://yoursite.com/2019/11/25/Javalink/">http://yoursite.com/2019/11/25/Javalink/</a></span>
+                        <span><a href="http://yoursite.com/2019/11/26/Javabit/">http://yoursite.com/2019/11/26/Javabit/</a></span>
                     </p>
                 
                 
@@ -200,10 +195,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2019/11/26/Javabit/">Java位运算相关</a>
+                <a class="prev" rel="prev" href="/2019/12/11/NPA/">NPA</a>
             
             
-            <a class="next" rel="next" href="/2019/11/24/%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/">Java字符串公共前缀</a>
+            <a class="next" rel="next" href="/2019/11/25/Javalink/">Java链表操作</a>
             
         </section>
 
