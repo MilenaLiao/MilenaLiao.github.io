@@ -12,7 +12,7 @@
 
 
 
-<title>hello | Milena’s Blog</title>
+<title>Mybatis学习笔记 | Milena’s Blog</title>
 
 
 
@@ -110,11 +110,73 @@
             <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">hello</h1>
+            <h1 class="post-title">Mybatis学习笔记</h1>
             
                 <div class="post-meta">
                     
@@ -123,16 +185,36 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">October 26, 2020&nbsp;&nbsp;18:12:49</a>
+                        Date: <a href="#">October 26, 2020&nbsp;&nbsp;18:30:32</a>
                         </span>
                     
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Database/">Database</a>
+                            
+                        </span>
                     
                 </div>
             
         </header>
 
         <div class="post-content">
-            <p>A A A</p>
+            <p>SSM中M=Mybatis</p>
+<h1 id="Mybatis简介"><a href="#Mybatis简介" class="headerlink" title="Mybatis简介"></a>Mybatis简介</h1><ul>
+<li>本是apache的一个开源项目<strong>iBatis</strong> </li>
+<li>MyBatis 是一款优秀的<strong>持久层框架</strong>，它支持自定义 SQL、存储过程以及高级射。</li>
+<li>MyBatis  <strong>以及设置参数和获取结果集的工作</strong>。</li>
+<li>MyBatis 可以<strong>通过简单的 XML 或注解来配置</strong>和映射原始类型为数据库中的记录。</li>
+<li>MyBatis帮助程序员将数据存入数据库。SQL和代码分离。</li>
+</ul>
+<h2 id="如何获得Mybatis？"><a href="#如何获得Mybatis？" class="headerlink" title="如何获得Mybatis？"></a>如何获得Mybatis？</h2><p>Maven仓库/GitHub </p>
+<h1 id="第一个MyBatis程序"><a href="#第一个MyBatis程序" class="headerlink" title="第一个MyBatis程序"></a>第一个MyBatis程序</h1><ol>
+<li>搭建数据库 创建数据库并且定义实体类User</li>
+<li>创建Maven项目 依赖mybatis/mysql-connect/junit</li>
+<li>创建MyBatis核心配置文件<br><img src="/pics/Mybatis/1.png" alt="1"></li>
+</ol>
 
         </div>
 
@@ -147,7 +229,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://yoursite.com/2020/10/26/hello/">http://yoursite.com/2020/10/26/hello/</a></span>
+                        <span><a href="http://yoursite.com/2020/10/26/Mybatis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">http://yoursite.com/2020/10/26/Mybatis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a></span>
                     </p>
                 
                 
@@ -170,6 +252,10 @@
                 <span>Tag(s):</span>
                 <span class="tag">
                     
+                    
+                        <a href="/tags/Mybatis/"># Mybatis</a>
+                    
+                        
                 </span>
             </div>
             <div>
@@ -180,10 +266,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2020/10/26/Mybatis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Mybatis学习笔记</a>
             
-            
-            <a class="next" rel="next" href="/2019/12/13/JavaTree/">JavaTree</a>
+            <a class="next" rel="next" href="/2020/10/26/hello/">hello</a>
             
         </section>
 
