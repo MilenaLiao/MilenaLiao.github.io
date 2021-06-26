@@ -1,8 +1,530 @@
-| (implies  http://www.co-ode.org/ontologies/galen#BCellChronicLymphocyticLeukaemia #749  ) | 31   | 0.513912 | 31   | 0.512258 | 31   | 2.6852   |
-| ------------------------------------------------------------ | ---- | -------- | ---- | -------- | ---- | -------- |
-| (implies  http://www.co-ode.org/ontologies/galen#BCellChronicLymphocyticLeukaemia (some  http://www.co-ode.org/ontologies/galen#StatusAttribute  http://www.co-ode.org/ontologies/galen#pathological) ) | 28   | 2.54727  | 28   | 2.52973  | 28   | 3.78554  |
-| (implies  http://www.co-ode.org/ontologies/galen#CysticVein (some  http://www.co-ode.org/ontologies/galen#InverseStructuralPartitiveAttribute  http://www.co-ode.org/ontologies/galen#CardiovascularSystem) ) | 6    | 0.043997 | 6    | 0.042422 | 6    | 0.048846 |
-| (implies  http://www.co-ode.org/ontologies/galen#Cystitis (some  http://www.co-ode.org/ontologies/galen#StatusAttribute  http://www.co-ode.org/ontologies/galen#AbstractStatus) ) | 7    | 0.014696 | 7    | 0.014942 | 7    | 0.035835 |
-| (implies  http://www.co-ode.org/ontologies/galen#CystitisDueToInfection (some  http://www.co-ode.org/ontologies/galen#DomainAttribute  http://www.co-ode.org/ontologies/galen#pathological) ) | 5    | 0.008488 | 5    | 0.008477 | 5    | 0.012703 |
-| (implies  http://www.co-ode.org/ontologies/galen#CystitisDueToInfection #4527 ) | 20   | 0.522693 | 20   | 0.517104 | 18   | 0.122166 |
+Not-Galen
 
+| Query                                                        | MinAs | RDMinA   | MinAs | RDMinA+  | MinAs | EL2MUS   |
+| ------------------------------------------------------------ | ----- | -------- | ----- | -------- | ----- | -------- |
+| (implies  UlnarArtery (some DomainAttribute discrete) )      | 50    | 2.57637  | 50    | 2.5685   | 46    | 2.55997  |
+| (implies UnstableKneeJoint (some  hasFeature discrete) )     | 23    | 0.944859 | 23    | 0.938918 | 20    | 2.7645   |
+| (implies UnstableKneeJoint (some  DomainAttribute atLeastPaired) ) | 43    | 2.39912  | 43    | 2.36873  | 43    | 2.58487  |
+| (implies UnstableKneeJoint (some  Attribute SynovialFluid) ) | 26    | 1.22225  | 26    | 1.1492   | 25    | 1.55204  |
+| (implies UnstableKneeJoint (some  StructuralAppearanceModifier hollowTopology) ) | 14    | 0.139111 | 14    | 0.139089 | 13    | 0.272032 |
+| (implies UretericValve (some  ModifierAttribute discrete) )  | 45    | 1.66309  | 45    | 1.65819  | 41    | 2.77535  |
+| (implies UrinaryBladderCavity (some  StructuralModifierAttribute hollowTopology) ) | 28    | 0.884646 | 28    | 0.868352 | 27    | 0.665326 |
+| (implies Uterus (some  StructuralAppearanceModifier #1589) ) | 74    | 2.57526  | 74    | 2.54474  | 62    | 2.96534  |
+| (implies Uterus (some ModifierAttribute  discrete) )         | 63    | 2.56582  | 63    | 2.55095  | 59    | 2.893    |
+| (implies VasDeferens (some  StructuralAppearanceModifier #1589) ) | 74    | 2.58754  | 74    | 2.54309  | 61    | 2.90693  |
+| (implies VasDeferens (some  ModifierAttribute discrete) )    | 63    | 2.55522  | 63    | 2.55008  | 59    | 2.86566  |
+| (implies VentricularAneurysm (some  ModifierAttribute discrete) ) | 50    | 2.93944  | 50    | 2.97412  | 44    | 2.77674  |
+| (implies WristJoint #6843 )                                  | 21    | 0.38432  | 21    | 0.382594 | 21    | 0.68322  |
+| (implies externalCarotidArtery (some  hasFeature #166) )     | 7     | 0.003618 | 7     | 0.00359  | 7     | 0.003545 |
+| (implies externalCarotidArtery (some  StructuralAppearanceModifier #1589) ) | 70    | 2.26447  | 70    | 2.21691  | 63    | 2.73119  |
+| (implies externalCarotidArtery (some  ModifierAttribute discrete) ) | 57    | 0.992581 | 57    | 0.974799 | 45    | 2.65756  |
+| (implies internalCarotidArtery (some  hasFeature #166) )     | 7     | 0.003616 | 7     | 0.003607 | 7     | 0.003745 |
+| (implies internalCarotidArtery (some  StructuralAppearanceModifier #1589) ) | 70    | 2.24801  | 70    | 2.23245  | 63    | 2.73183  |
+| (implies internalCarotidArtery (some  ModifierAttribute discrete) ) | 57    | 0.981064 | 57    | 0.979651 | 45    | 2.64613  |
+| (implies AtrophicGastritisProcess (some  Attribute #5652) )  | 9     | 0.031225 | 9     | 0.030656 | 9     | 0.031979 |
+| (implies  Atrophyic_HyperplasticGastritisGastritisProcess (some Attribute Bicarbonate)  ) | 63    | 0.462808 | 63    | 0.456609 | 63    | 0.728263 |
+| (implies CystitisDueToInfection (some  Attribute Urine) )    | 11    | 0.002746 | 11    | 0.00272  | 11    | 0.002981 |
+| (implies DrugInducedCystitis (some  Attribute Urine) )       | 11    | 0.002736 | 11    | 0.002651 | 11    | 0.003051 |
+| (implies Buttock (some DomainAttribute  atLeastPaired) )     | 17    | 0.033873 | 17    | 0.033736 | 17    | 0.034063 |
+| (implies LateralFemoralCondyle (some  StructuralModifierAttribute exactlyPaired) ) | 49    | 2.55553  | 49    | 2.52187  | 27    | 0.219317 |
+| (implies LateralFemoralEpicondyle (some  StructuralModifierAttribute exactlyPaired) ) | 49    | 2.24777  | 49    | 2.23091  | 48    | 2.39119  |
+| (implies MedialFemoralCondyle (some  StructuralModifierAttribute exactlyPaired) ) | 49    | 2.5251   | 49    | 2.51814  | 27    | 0.218306 |
+| (implies MedialFemoralEpicondyle (some  StructuralModifierAttribute exactlyPaired) ) | 49    | 2.23015  | 49    | 2.2268   | 48    | 2.38805  |
+| (implies AcuteGastritis (some Attribute  Bicarbonate) )      | 21    | 0.014149 | 21    | 0.013802 | 21    | 0.013856 |
+| (implies  SigmoidArteries (some DomainAttribute discrete) )  | 54    | 0.905655 | 54    | 0.896767 | 45    | 2.28895  |
+| (implies SigmoidColon (some  DomainAttribute discrete) )     | 56    | 2.89643  | 57    | 2.97432  | 46    | 1.32561  |
+| (implies Skull (some  StructuralAppearanceModifier #1589) )  | 21    | 0.217696 | 21    | 0.212721 | 21    | 0.587428 |
+| (implies SurfaceBodyOpening (some  FeatureStateAttribute #1589) ) | 41    | 2.16077  | 47    | 2.84345  | 37    | 2.23599  |
+| (implies SurfaceBodyOpening (some  ModifierAttribute discrete) ) | 59    | 0.367498 | 59    | 0.353741 | 52    | 1.55411  |
+| (implies Toe (some Attribute  atLeastPaired) )               | 41    | 0.696939 | 41    | 0.699851 | 41    | 0.78943  |
+| (implies TransverseColon (some  DomainAttribute discrete) )  | 57    | 2.99286  | 56    | 2.90689  | 46    | 1.31753  |
+| (implies UlcerOfPylorus #112 )                               | 18    | 1.0573   | 18    | 1.0363   | 18    | 1.56165  |
+| (implies BasalWall (some  FeatureStateAttribute #4) )        | 50    | 2.72769  | 50    | 2.70577  | 46    | 2.12814  |
+| (implies InferolateralWall (some  FeatureStateAttribute #4) ) | 52    | 2.74182  | 52    | 2.60476  | 46    | 1.38261  |
+| (implies InferoposteriorWall (some  FeatureStateAttribute #4) ) | 52    | 2.61202  | 52    | 2.63506  | 46    | 1.42363  |
+| (implies OtherInferiorWall (some  FeatureStateAttribute #4) ) | 52    | 0.900313 | 52    | 0.883305 | 46    | 1.66296  |
+| (implies PosteriorWall (some  FeatureStateAttribute #4) )    | 52    | 0.892227 | 52    | 0.88401  | 46    | 1.63734  |
+| (implies #701 (some Attribute #6286) )                       | 117   | 2.69393  | 117   | 2.68399  | 103   | 2.9192   |
+| (implies GastricMucosa (some Attribute  #6286) )             | 123   | 2.67278  | 123   | 2.62087  | 79    | 2.78926  |
+| (implies MuscularisMucosae (some  Attribute #6286) )         | 55    | 2.25041  | 55    | 2.21384  | 46    | 1.81649  |
+| (implies #4738 (some Attribute #6286) )                      | 110   | 2.7205   | 110   | 2.6854   | 107   | 2.90729  |
+| (implies #701 (some Attribute #6297) )                       | 100   | 2.20249  | 100   | 2.19455  | 98    | 2.90192  |
+| (implies #696 (some FeatureStateAttribute  #4) )             | 136   | 2.96787  | 136   | 2.94049  | 89    | 2.8403   |
+| (implies WallOfDuodenum (some  FeatureStateAttribute #4) )   | 113   | 2.73617  | 113   | 2.69143  | 113   | 2.88638  |
+| (implies MuscularisMucosae (some  Attribute #6297) )         | 59    | 1.17706  | 59    | 1.16101  | 50    | 1.24313  |
+| (implies #4738 (some Attribute #6297) )                      | 111   | 2.3394   | 111   | 2.32017  | 95    | 2.87108  |
+| (implies #4734 (some  FeatureStateAttribute #4) )            | 133   | 2.66299  | 133   | 2.63951  | 100   | 2.08087  |
+| (implies WallOfStomachToDuodenum (some  FeatureStateAttribute #4) ) | 113   | 2.17171  | 113   | 2.13983  | 107   | 2.70225  |
+| (implies ArterialWall (some  FeatureStateAttribute #4) )     | 61    | 2.98156  | 61    | 2.99805  | 50    | 1.39655  |
+| (implies MucousMembraneOfUrinaryBladder  (some Attribute #6297) ) | 55    | 2.69724  | 55    | 2.68936  | 47    | 1.75158  |
+| (implies #4275 (some  FeatureStateAttribute #4) )            | 54    | 2.10309  | 54    | 2.05591  | 50    | 1.37444  |
+| (implies MucousMembraneOfUreter (some  Attribute #6286) )    | 51    | 1.8915   | 51    | 1.87284  | 47    | 0.765908 |
+| (implies #4253 (some  FeatureStateAttribute #4) )            | 61    | 1.90226  | 61    | 1.84176  | 50    | 1.11116  |
+| (implies MucousMembraneOfUrethra (some  Attribute #6286) )   | 51    | 1.85323  | 51    | 1.81968  | 47    | 0.747591 |
+| (implies MucousMembraneOfUrethra (some  Attribute #6297) )   | 47    | 1.57459  | 47    | 1.57351  | 44    | 1.02917  |
+| (implies #3951 (some Attribute discrete)  )                  | 54    | 1.90866  | 54    | 1.87197  | 52    | 0.898423 |
+| (implies TubularSolidStructure (some  Attribute discrete) )  | 25    | 0.342762 | 25    | 0.338183 | 25    | 0.496487 |
+| (implies AnkleJoint (some Attribute  #1589) )                | 21    | 1.35724  | 21    | 1.35462  | 21    | 0.453141 |
+| (implies KneeJoint (some Attribute #1589)  )                 | 42    | 2.05065  | 42    | 2.04953  | 42    | 2.19792  |
+| (implies KneeJointRecessus #6843 )                           | 34    | 1.01884  | 34    | 1.01785  | 32    | 1.56521  |
+| (implies KneeJointRecessus (some  hasFeature #166) )         | 32    | 0.052047 | 32    | 0.050567 | 32    | 0.052677 |
+| (implies SupraPatellarPouch (some  hasFeature #4670) )       | 17    | 0.056583 | 17    | 0.056352 | 12    | 0.038334 |
+| (implies HilumOfKidney (some Attribute  atLeastPaired) )     | 18    | 0.112114 | 18    | 0.111891 | 18    | 0.169793 |
+| (implies InterventricularSeptum (some  ModifierAttribute #4) ) | 43    | 1.56239  | 43    | 1.53045  | 40    | 2.81511  |
+| (implies  Atrophyic_HyperplasticGastritisGastritisProcess (some Attribute  NAMEDGITractBodyPart) ) | 16    | 0.281185 | 16    | 0.282044 | 16    | 0.406134 |
+| (implies CalixOfKidney (some  DomainAttribute exactlyPaired) ) | 15    | 2.32045  | 15    | 2.31546  | 13    | 2.63865  |
+| (implies Capitate (some DomainAttribute  atLeastPaired) )    | 45    | 1.10128  | 45    | 1.09222  | 42    | 2.11966  |
+| (implies ElbowJoint (some Attribute  #1589) )                | 21    | 0.458039 | 21    | 0.448889 | 21    | 0.615899 |
+| (implies NeckOfFibula (some  FeatureStateAttribute exactlyPaired) ) | 88    | 0.477729 | 88    | 0.476508 | 88    | 0.510565 |
+| (implies Metacarpal (some DomainAttribute  atLeastPaired) )  | 46    | 1.74647  | 46    | 1.73662  | 42    | 1.19755  |
+| (implies HeadOfHumerus (some  FeatureStateAttribute exactlyPaired) ) | 88    | 0.490435 | 88    | 0.489107 | 88    | 0.594798 |
+| (implies NeckOfRadius (some  FeatureStateAttribute exactlyPaired) ) | 88    | 0.44398  | 88    | 0.443284 | 88    | 0.460182 |
+| (implies #3308 (some DomainAttribute  atLeastPaired) )       | 6     | 0.002961 | 6     | 0.002954 | 6     | 0.00483  |
+| (implies InguinalTriangle (some  DomainAttribute atLeastPaired) ) | 6     | 0.002731 | 6     | 0.002713 | 6     | 0.004749 |
+| (implies InterphalangealJoint (some  Attribute #1589) )      | 21    | 0.926393 | 21    | 0.924661 | 21    | 0.988766 |
+| (implies MetacarpoPhalangealJoint (some  Attribute #1589) )  | 21    | 0.313362 | 21    | 0.311894 | 21    | 0.353319 |
+| (implies MetatarsoPhalangealJoint (some  Attribute #1589) )  | 21    | 0.311558 | 21    | 0.310649 | 21    | 0.358088 |
+| (implies RenalAbscess (some Attribute  hollowTopology) )     | 28    | 1.01797  | 28    | 0.992331 | 27    | 1.18884  |
+| (implies ShoulderJoint (some Attribute  #1589) )             | 21    | 0.319068 | 21    | 0.305231 | 21    | 0.338329 |
+| (implies Recess (some Attribute  hollowTopology) )           | 56    | 1.04664  | 56    | 1.04378  | 54    | 2.99195  |
+| (implies AcuteErosionOfStomach (some  Attribute NAMEDGITractBodyPart) ) | 18    | 0.641358 | 18    | 0.632946 | 18    | 0.709423 |
+| (implies LesserTrochanter (some  hasFeature leftRightPaired) ) | 12    | 0.046504 | 12    | 0.045196 | 12    | 0.048269 |
+| (implies HeartWall (some  ModifierAttribute #4) )            | 65    | 1.70979  | 65    | 1.67267  | 51    | 2.06149  |
+| (implies BasalWall (some  ModifierAttribute #4) )            | 58    | 1.69981  | 58    | 1.69159  | 53    | 1.98779  |
+| (implies OtherInferiorWall (some  ModifierAttribute #4) )    | 57    | 2.82365  | 57    | 2.76196  | 55    | 1.4318   |
+| (implies PosteriorWall (some  ModifierAttribute #4) )        | 57    | 2.7582   | 57    | 2.75104  | 55    | 1.42215  |
+| (implies #696 (some ModifierAttribute #4)  )                 | 113   | 1.87965  | 113   | 1.80704  | 97    | 2.6187   |
+| (implies #4734 (some ModifierAttribute  #4) )                | 109   | 2.962    | 109   | 2.95906  | 102   | 2.89215  |
+| (implies WallOfPylorus (some  ModifierAttribute #4) )        | 120   | 2.67686  | 120   | 2.5969   | 87    | 2.87882  |
+| (implies WallOfStomachToDuodenum (some  ModifierAttribute #4) ) | 119   | 2.99454  | 119   | 2.94663  | 93    | 2.51926  |
+| (implies #4275 (some ModifierAttribute  #4) )                | 58    | 1.90167  | 58    | 1.89516  | 48    | 1.08847  |
+| (implies #4264 (some ModifierAttribute  #4) )                | 71    | 2.13052  | 71    | 2.0586   | 49    | 1.79984  |
+| (implies AnkleJoint (some  ModifierAttribute exactlyPaired) ) | 16    | 0.017902 | 16    | 0.017414 | 16    | 0.018612 |
+| (implies SupraPatellarPouch (some  StructuralAppearanceModifier #1589) ) | 48    | 0.233474 | 48    | 0.218399 | 42    | 0.958432 |
+| (implies CapsuleOfKnee (some Attribute  atLeastPaired) )     | 32    | 2.97977  | 32    | 2.95495  | 31    | 2.5846   |
+
+
+Gene
+
+
+
+| Query                                            | MinAs | RDMinA   | MinAs | RDMinA+  | MinAs | EL2MUS   |
+| ------------------------------------------------ | ----- | -------- | ----- | -------- | ----- | -------- |
+| (implies GO_0009715 GO_0044237 )                 | 11    | 0.000731 | 11    | 0.000728 | 11    | 0.00094  |
+| (implies GO_0019635 GO_0044237 )                 | 6     | 0.000436 | 6     | 0.000421 | 6     | 0.00062  |
+| (implies GO_0006200 GO_0044237 )                 | 37    | 0.149074 | 37    | 0.14697  | 37    | 0.169018 |
+| (implies GO_0045421 (some PART_OF  GO_0001816) ) | 6     | 0.000358 | 6     | 0.000358 | 6     | 0.000421 |
+| (implies GO_0046641 GO_0050863 )                 | 6     | 0.00031  | 6     | 0.00029  | 6     | 0.000408 |
+| (implies GO_0001808 GO_0050776 )                 | 6     | 0.000307 | 6     | 0.000301 | 6     | 0.000478 |
+| (implies GO_0019275 GO_0019752 )                 | 9     | 0.000621 | 9     | 0.000619 | 9     | 0.05367  |
+| (implies GO_0019500 GO_0008152 )                 | 8     | 0.000398 | 8     | 0.000389 | 8     | 0.000636 |
+| (implies GO_0006703 GO_0044237 )                 | 6     | 0.000379 | 6     | 0.000376 | 6     | 0.000504 |
+| (implies GO_0000262 (some PART_OF  GO_0005623) ) | 179   | 0.255243 | 179   | 0.255156 | 164   | 2.35785  |
+| (implies GO_0045749 GO_0008150 )                 | 10    | 0.000869 | 10    | 0.000847 | 10    | 0.027343 |
+| (implies GO_0006005 GO_0008152 )                 | 20    | 0.021557 | 20    | 0.021543 | 20    | 1.76473  |
+| (implies GO_0018875 GO_0008150 )                 | 9     | 0.002261 | 9     | 0.002241 | 9     | 0.002612 |
+| (implies GO_0006684 GO_0008150 )                 | 8     | 0.000643 | 8     | 0.000635 | 8     | 0.00085  |
+| (implies GO_0030148 top )                        | 13    | 0.02012  | 13    | 0.020065 | 13    | 0.028075 |
+| (implies GO_0048295 GO_0050791 )                 | 14    | 0.001236 | 14    | 0.001233 | 14    | 0.002326 |
+| (implies GO_0048295 GO_0050794 )                 | 7     | 0.000579 | 7     | 0.000571 | 7     | 0.000779 |
+| (implies GO_0048295 (some PART_OF  GO_0050875) ) | 6     | 0.000684 | 6     | 0.000657 | 6     | 0.000568 |
+| (implies GO_0048295 (some PART_OF  GO_0050874) ) | 6     | 0.00051  | 6     | 0.00051  | 6     | 0.000691 |
+| (implies GO_0042775 top )                        | 5     | 0.000472 | 5     | 0.000463 | 5     | 0.000748 |
+| (implies GO_0046050 GO_0008152 )                 | 58    | 0.189182 | 58    | 0.187853 | 50    | 0.097477 |
+| (implies GO_0046050 GO_0050875 )                 | 36    | 0.032724 | 36    | 0.032328 | 36    | 0.033599 |
+| (implies GO_0006557 top )                        | 28    | 0.014076 | 28    | 0.013984 | 19    | 0.001774 |
+| (implies GO_0045841 GO_0008150 )                 | 12    | 0.002873 | 12    | 0.002807 | 12    | 0.004504 |
+| (implies GO_0045839 top )                        | 10    | 0.00084  | 10    | 0.000813 | 10    | 0.003724 |
+| (implies GO_0046132 GO_0008150 )                 | 32    | 0.883454 | 32    | 0.882787 | 32    | 0.954901 |
+| (implies GO_0046134 top )                        | 12    | 0.016856 | 12    | 0.01678  | 12    | 0.020798 |
+| (implies GO_0046131 GO_0008150 )                 | 8     | 0.000998 | 8     | 0.000993 | 8     | 0.001989 |
+| (implies GO_0005005 GO_0003674 )                 | 5     | 0.000566 | 5     | 0.000548 | 5     | 0.00066  |
+| (implies GO_0046295 top )                        | 20    | 0.085905 | 20    | 0.085396 | 20    | 0.078994 |
+| (implies GO_0045557 top )                        | 11    | 0.008232 | 11    | 0.008221 | 11    | 0.00108  |
+| (implies GO_0045722 top )                        | 21    | 0.021357 | 21    | 0.021309 | 21    | 0.987075 |
+| (implies GO_0018295 GO_0008152 )                 | 10    | 0.000977 | 10    | 0.000976 | 10    | 0.01286  |
+| (implies GO_0006564 GO_0009987 )                 | 11    | 0.017915 | 11    | 0.017828 | 11    | 0.023639 |
+| (implies GO_0045609 top )                        | 25    | 0.031132 | 25    | 0.03029  | 25    | 0.275237 |
+| (implies GO_0051366 GO_0009987 )                 | 5     | 0.000592 | 5     | 0.000575 | 5     | 0.001473 |
+| (implies GO_0051518 top )                        | 17    | 0.017867 | 17    | 0.017856 | 17    | 0.034948 |
+| (implies GO_0045726 top )                        | 44    | 0.082141 | 44    | 0.082072 | 44    | 0.712972 |
+| (implies GO_0018248 GO_0007582 )                 | 12    | 0.034954 | 12    | 0.034926 | 12    | 0.035532 |
+| (implies GO_0007329 GO_0019222 )                 | 14    | 0.007002 | 14    | 0.006989 | 14    | 0.031693 |
+| (implies GO_0007329 GO_0008150 )                 | 50    | 0.473712 | 50    | 0.472409 | 44    | 2.37613  |
+| (implies GO_0009371 GO_0050791 )                 | 14    | 0.013022 | 14    | 0.013003 | 14    | 0.047929 |
+| (implies GO_0009371 (some PART_OF  GO_0008152) ) | 6     | 0.000665 | 6     | 0.000654 | 6     | 0.000757 |
+| (implies GO_0009371 top )                        | 25    | 0.004168 | 25    | 0.004135 | 25    | 0.175113 |
+| (implies GO_0045944 GO_0050791 )                 | 14    | 0.004843 | 14    | 0.004873 | 14    | 0.053504 |
+| (implies GO_0045944 GO_0050794 )                 | 7     | 0.000799 | 7     | 0.000798 | 7     | 0.000973 |
+| (implies GO_0045944 (some PART_OF  GO_0008152) ) | 6     | 0.00068  | 6     | 0.000666 | 6     | 0.000753 |
+| (implies GO_0006053 GO_0007582 )                 | 25    | 0.014557 | 25    | 0.014546 | 20    | 0.020223 |
+| (implies GO_0006257 GO_0008152 )                 | 43    | 1.54019  | 43    | 1.52641  | 49    | 0.248929 |
+| (implies GO_0006257 GO_0050875 )                 | 36    | 0.027428 | 36    | 0.026607 | 36    | 0.060584 |
+| (implies GO_0046176 GO_0008150 )                 | 17    | 0.010615 | 17    | 0.010601 | 17    | 0.011133 |
+| (implies GO_0051160 GO_0050875 )                 | 7     | 0.000632 | 7     | 0.000621 | 7     | 0.000935 |
+| (implies GO_0015517 GO_0003674 )                 | 8     | 0.001171 | 8     | 0.00116  | 8     | 0.001266 |
+| (implies GO_0048358 GO_0007582 )                 | 27    | 0.073235 | 27    | 0.073052 | 24    | 0.976313 |
+| (implies GO_0045489 GO_0008150 )                 | 25    | 0.52482  | 25    | 0.524132 | 24    | 0.198686 |
+| (implies GO_0048363 GO_0008150 )                 | 9     | 0.000954 | 9     | 0.000921 | 9     | 0.000979 |
+| (implies GO_0048697 (some PART_OF  GO_0007399) ) | 42    | 0.007064 | 42    | 0.007005 | 42    | 0.007557 |
+| (implies GO_0043571 GO_0008150 )                 | 7     | 0.000699 | 7     | 0.000685 | 7     | 0.001067 |
+| (implies GO_0045358 (some PART_OF  GO_0007582) ) | 30    | 0.005063 | 30    | 0.005053 | 30    | 0.237353 |
+| (implies GO_0030822 GO_0050789 )                 | 47    | 0.673027 | 47    | 0.671415 | 39    | 0.347438 |
+| (implies GO_0046115 GO_0009987 )                 | 10    | 0.001026 | 10    | 0.001009 | 10    | 0.003037 |
+| (implies GO_0006234 GO_0044238 )                 | 24    | 0.020975 | 24    | 0.021064 | 24    | 0.004335 |
+| (implies GO_0006234 GO_0050875 )                 | 28    | 0.016954 | 28    | 0.016826 | 28    | 0.034611 |
+| (implies GO_0043524 GO_0008150 )                 | 12    | 0.001602 | 12    | 0.001575 | 12    | 0.002485 |
+| (implies GO_0006552 GO_0009987 )                 | 11    | 0.00103  | 11    | 0.001022 | 11    | 0.026275 |
+| (implies GO_0042418 top )                        | 39    | 0.077923 | 39    | 0.077908 | 35    | 2.92771  |
+| (implies GO_0042423 GO_0008150 )                 | 24    | 1.77301  | 24    | 1.73216  | 23    | 2.4732   |
+| (implies GO_0030818 (some PART_OF  GO_0007582) ) | 34    | 1.68609  | 34    | 1.67813  | 25    | 0.037792 |
+| (implies GO_0009818 top )                        | 7     | 0.004972 | 7     | 0.004951 | 7     | 0.005977 |
+| (implies GO_0019590 GO_0007582 )                 | 38    | 0.070268 | 38    | 0.070165 | 30    | 2.59665  |
+| (implies GO_0019590 GO_0009987 )                 | 9     | 0.001556 | 9     | 0.001542 | 9     | 0.002078 |
+| (implies GO_0051070 GO_0008150 )                 | 25    | 0.524418 | 25    | 0.523516 | 24    | 0.210864 |
+| (implies GO_0044009 GO_0008150 )                 | 5     | 0.000495 | 5     | 0.000467 | 5     | 0.000566 |
+| (implies GO_0019122 GO_0007582 )                 | 18    | 0.003874 | 18    | 0.003864 | 18    | 0.006877 |
+| (implies GO_0045740 (some PART_OF  GO_0007582) ) | 12    | 0.001911 | 12    | 0.001887 | 12    | 0.001939 |
+| (implies GO_0045740 (some PART_OF  GO_0009987) ) | 6     | 0.000553 | 6     | 0.000533 | 6     | 0.000614 |
+| (implies GO_0031087 GO_0008152 )                 | 13    | 0.001473 | 13    | 0.00147  | 13    | 0.137298 |
+| (implies GO_0031086 GO_0007582 )                 | 17    | 0.689219 | 17    | 0.692082 | 17    | 1.415    |
+| (implies GO_0002003 GO_0007582 )                 | 10    | 0.006791 | 10    | 0.006781 | 10    | 0.006933 |
+| (implies GO_0051605 GO_0008150 )                 | 12    | 0.009635 | 12    | 0.009544 | 12    | 0.01526  |
+| (implies GO_0018881 top )                        | 9     | 0.001227 | 9     | 0.001227 | 9     | 0.00135  |
+| (implies GO_0045364 GO_0050789 )                 | 43    | 1.40331  | 43    | 1.39492  | 42    | 0.367821 |
+| (implies GO_0045364 (some PART_OF  GO_0007582) ) | 30    | 0.004882 | 30    | 0.004797 | 31    | 0.384104 |
+| (implies GO_0045364 (some PART_OF  GO_0050875) ) | 6     | 0.000534 | 6     | 0.000526 | 6     | 0.000585 |
+| (implies GO_0006076 GO_0008152 )                 | 43    | 2.45477  | 43    | 2.45118  | 41    | 0.955432 |
+| (implies GO_0018327 GO_0007582 )                 | 20    | 0.408787 | 20    | 0.408436 | 20    | 0.431016 |
+| (implies GO_0005977 GO_0008150 )                 | 12    | 0.001101 | 12    | 0.0011   | 12    | 0.015066 |
+| (implies GO_0046371 top )                        | 9     | 0.000941 | 9     | 0.000935 | 9     | 0.026442 |
+| (implies GO_0007537 (some PART_OF  GO_0050875) ) | 5     | 0.000443 | 5     | 0.000423 | 5     | 0.000453 |
+| (implies GO_0007537 (some PART_OF  GO_0008152) ) | 5     | 0.000431 | 5     | 0.000414 | 5     | 0.000455 |
+| (implies GO_0045910 GO_0050789 )                 | 21    | 0.11913  | 21    | 0.111273 | 21    | 0.357971 |
+| (implies GO_0045418 (some PART_OF  GO_0007582) ) | 30    | 0.005094 | 30    | 0.005066 | 30    | 0.236216 |
+| (implies GO_0045418 GO_0050794 )                 | 7     | 0.000714 | 7     | 0.000704 | 7     | 0.000716 |
+| (implies GO_0019517 GO_0008150 )                 | 35    | 2.79489  | 35    | 2.76774  | 29    | 2.93232  |
+| (implies GO_0009255 GO_0008150 )                 | 5     | 0.00049  | 5     | 0.000478 | 5     | 0.000765 |
+| (implies GO_0042524 (some PART_OF  GO_0007582) ) | 39    | 0.235055 | 39    | 0.234283 | 33    | 0.41318  |
+| (implies GO_0042524 GO_0051244 )                 | 15    | 0.002504 | 15    | 0.002445 | 15    | 0.07874  |
+| (implies GO_0042524 (some PART_OF  GO_0044237) ) | 13    | 0.012002 | 13    | 0.01178  | 13    | 0.02915  |
+| (implies GO_0042524 GO_0008150 )                 | 66    | 2.03077  | 66    | 2.02382  | 64    | 1.83384  |
+| (implies GO_0006016 GO_0043170 )                 | 7     | 0.000616 | 7     | 0.000611 | 7     | 0.000718 |
+
+NCI
+
+
+
+| Query                                                        | MinAs | RDMinA   | MinAs | RDMinA+  | MinAs | EL2MUS   |
+| ------------------------------------------------------------ | ----- | -------- | ----- | -------- | ----- | -------- |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Invasive_Malignant_Thymoma  http://www.mindswap.org/2003/nciOncology.owl#Respiratory_Thoracic_and_Mediastinal_Neoplasm  ) | 5     | 0.00045  | 5     | 0.000447 | 5     | 0.000551 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Malignant_Thymoma  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm ) | 5     | 0.000419 | 5     | 0.000415 | 5     | 0.000453 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Invasive_Papillary_Urothelial_Carcinoma  http://www.mindswap.org/2003/nciOncology.owl#Urinary_Tract_Disorder ) | 8     | 0.001496 | 8     | 0.001445 | 8     | 0.002244 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Invasive_Papillary_Urothelial_Carcinoma  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm_by_Site ) | 5     | 0.000395 | 5     | 0.0004   | 5     | 0.000616 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Invasive_Papillary_Urothelial_Carcinoma  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm_by_Morphology ) | 11    | 0.014995 | 11    | 0.014925 | 11    | 0.01952  |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Urothelial_Transitional_Cell_Carcinoma  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm ) | 6     | 0.000414 | 6     | 0.000415 | 6     | 0.000692 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Inverted_Urothelial_Papilloma  http://www.mindswap.org/2003/nciOncology.owl#Urinary_Tract_Disorder ) | 5     | 0.000398 | 5     | 0.00039  | 5     | 0.000919 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Urothelial_Papilloma  http://www.mindswap.org/2003/nciOncology.owl#Disorder_by_Site ) | 5     | 0.000669 | 5     | 0.000649 | 5     | 0.000908 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Urothelial_Papilloma (some  http://www.mindswap.org/2003/nciOncology.owl#rDisease_Has_Associated_Anatomy  http://www.mindswap.org/2003/nciOncology.owl#Urinary_System) ) | 5     | 0.00033  | 5     | 0.000343 | 5     | 0.000702 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Urothelial_Papilloma  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm ) | 5     | 0.000421 | 5     | 0.000411 | 5     | 0.000514 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Malignant_Iris_Neoplasm  http://www.mindswap.org/2003/nciOncology.owl#Disorder_by_Site ) | 5     | 0.000368 | 5     | 0.000335 | 5     | 0.000527 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Malignant_Iris_Neoplasm (some  http://www.mindswap.org/2003/nciOncology.owl#rDisease_Has_Associated_Anatomy  http://www.mindswap.org/2003/nciOncology.owl#Eye) ) | 5     | 0.00033  | 5     | 0.00033  | 5     | 0.000519 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Iris_Nevus  http://www.mindswap.org/2003/nciOncology.owl#Eye_Disorder ) | 5     | 0.00038  | 5     | 0.000386 | 5     | 0.000552 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Iris_Spindle_Cell_Melanoma  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm_by_Site ) | 5     | 0.000425 | 5     | 0.000422 | 5     | 0.000438 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Iris_Spindle_Cell_Melanoma  http://www.mindswap.org/2003/nciOncology.owl#Eye_Disorder ) | 7     | 0.002343 | 7     | 0.00234  | 7     | 0.000454 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Islet_Cell_Adenomatosis  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm ) | 5     | 0.000593 | 5     | 0.000592 | 5     | 0.000671 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Islet_Cell_Adenomatosis  http://www.mindswap.org/2003/nciOncology.owl#Diseases_and_Disorders ) | 12    | 0.001059 | 12    | 0.00105  | 12    | 0.001501 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Jejunal_Carcinoid_Tumor  http://www.mindswap.org/2003/nciOncology.owl#Endocrine_Neoplasm ) | 5     | 0.000402 | 5     | 0.000393 | 5     | 0.000601 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Jejunal_Carcinoid_Tumor  http://www.mindswap.org/2003/nciOncology.owl#Neuroepithelial_Neoplasm ) | 5     | 0.000413 | 5     | 0.000404 | 5     | 0.000607 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Jejunal_Carcinoid_Tumor (some  http://www.mindswap.org/2003/nciOncology.owl#rDisease_Has_Associated_Anatomy  http://www.mindswap.org/2003/nciOncology.owl#Gastrointestinal_System) ) | 25    | 0.03011  | 25    | 0.029981 | 25    | 0.037024 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Jugular_Foramen_Schwannoma (some  http://www.mindswap.org/2003/nciOncology.owl#rDisease_Has_Associated_Anatomy  http://www.mindswap.org/2003/nciOncology.owl#Nervous_System) ) | 7     | 0.000577 | 7     | 0.000568 | 7     | 0.001124 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Jugular_Foramen_Schwannoma  http://www.mindswap.org/2003/nciOncology.owl#Disorder_by_Site ) | 5     | 0.000355 | 5     | 0.000346 | 5     | 0.000556 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Juvenile_Pilocytic_Astrocytoma  http://www.mindswap.org/2003/nciOncology.owl#Nervous_System_Neoplasm ) | 5     | 0.000395 | 5     | 0.000419 | 5     | 0.000536 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Juvenile_Type_Ovarian_Granulosa_Cell_Tumor  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm ) | 6     | 0.000573 | 6     | 0.000563 | 6     | 0.001475 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Juvenile_Type_Ovarian_Granulosa_Cell_Tumor  http://www.mindswap.org/2003/nciOncology.owl#Reproductive_System_Disorder ) | 5     | 0.000541 | 5     | 0.000533 | 5     | 0.000627 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Juxtacortical_Chondroma_of_the_Murine_Skeletal_System  http://www.mindswap.org/2003/nciOncology.owl#Experimental_Organism_Diagnoses  ) | 5     | 0.000383 | 5     | 0.000384 | 5     | 0.000609 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Juxtacortical_Chondrosarcoma  http://www.mindswap.org/2003/nciOncology.owl#Diseases_and_Disorders ) | 7     | 0.000583 | 7     | 0.000595 | 7     | 0.010246 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Juxtacortical_Chondrosarcoma_of_the_Murine_Skeletal_System  http://www.mindswap.org/2003/nciOncology.owl#Experimental_Organism_Diagnoses  ) | 7     | 0.000639 | 7     | 0.000669 | 7     | 0.000954 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Olfactory_Neuroblastoma  http://www.mindswap.org/2003/nciOncology.owl#Central_Nervous_System_Disorder  ) | 6     | 0.000548 | 6     | 0.00054  | 6     | 0.002192 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Olfactory_Neuroblastoma  http://www.mindswap.org/2003/nciOncology.owl#Nervous_System_Neoplasm ) | 5     | 0.000367 | 5     | 0.00037  | 5     | 0.000561 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Kadish_Stage_B_Olfactory_Neuroblastoma  (some  http://www.mindswap.org/2003/nciOncology.owl#rDisease_Has_Associated_Anatomy  http://www.mindswap.org/2003/nciOncology.owl#Central_Nervous_System) ) | 5     | 0.000413 | 5     | 0.000419 | 5     | 0.000518 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Kadish_Stage_C_Olfactory_Neuroblastoma  (some  http://www.mindswap.org/2003/nciOncology.owl#rDisease_Has_Associated_Anatomy  http://www.mindswap.org/2003/nciOncology.owl#Central_Nervous_System) ) | 5     | 0.000417 | 5     | 0.00041  | 5     | 0.000521 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Kaposi_Sarcoma_of_the_Central_Nervous_System  http://www.mindswap.org/2003/nciOncology.owl#Connective_and_Soft_Tissue_Disorder  ) | 7     | 0.000612 | 7     | 0.000595 | 7     | 0.001769 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Kaposi_s_Sarcoma_NCI_Grade_2  http://www.mindswap.org/2003/nciOncology.owl#Connective_and_Soft_Tissue_Neoplasms  ) | 5     | 0.000355 | 5     | 0.000368 | 5     | 0.000634 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Kaposi_s_Sarcoma_NCI_Grade_2  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm_by_Morphology ) | 5     | 0.000364 | 5     | 0.000371 | 5     | 0.000613 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Kaposi_s_Sarcoma_NCI_Grade_3  http://www.mindswap.org/2003/nciOncology.owl#Connective_and_Soft_Tissue_Neoplasms  ) | 5     | 0.000373 | 5     | 0.000367 | 5     | 0.000607 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Kaposi_s_Sarcoma_NCI_Grade_3  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm_by_Morphology ) | 5     | 0.000371 | 5     | 0.000378 | 5     | 0.000624 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Kidney_Hemangiopericytoma  http://www.mindswap.org/2003/nciOncology.owl#Diseases_and_Disorders ) | 6     | 0.000622 | 6     | 0.000619 | 6     | 0.000782 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Metastasis_to_the_Ovary  http://www.mindswap.org/2003/nciOncology.owl#Reproductive_System_Disorder ) | 5     | 0.000363 | 5     | 0.000354 | 5     | 0.000506 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Labia_Majora_Carcinoma  http://www.mindswap.org/2003/nciOncology.owl#Female_Reproductive_System_Disorder  ) | 6     | 0.000901 | 6     | 0.000896 | 6     | 0.000913 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Malignant_Labia_Majora_Neoplasm  http://www.mindswap.org/2003/nciOncology.owl#Reproductive_System_Disorder ) | 5     | 0.000407 | 5     | 0.0004   | 5     | 0.001199 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Labia_Minora_Carcinoma  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm ) | 5     | 0.000504 | 5     | 0.000489 | 5     | 0.002471 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Labia_Minora_Carcinoma  http://www.mindswap.org/2003/nciOncology.owl#Female_Reproductive_System_Disorder  ) | 6     | 0.000933 | 6     | 0.000893 | 6     | 0.000983 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Malignant_Labia_Minora_Neoplasm  http://www.mindswap.org/2003/nciOncology.owl#Reproductive_System_Disorder ) | 5     | 0.000395 | 5     | 0.000403 | 5     | 0.001264 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Lacrimal_Gland_Adenoid_Cystic_Carcinoma  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm ) | 5     | 0.000398 | 5     | 0.000402 | 5     | 0.000478 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Lacrimal_Gland_Benign_Mixed_Tumor  http://www.mindswap.org/2003/nciOncology.owl#Diseases_and_Disorders ) | 9     | 0.000824 | 9     | 0.000812 | 9     | 0.001157 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Lacrimal_Gland_Malignant_Mixed_Tumor  http://www.mindswap.org/2003/nciOncology.owl#Diseases_and_Disorders ) | 5     | 0.000423 | 5     | 0.000426 | 5     | 0.004776 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Lacrimal_Gland_Squamous_Cell_Carcinoma  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm ) | 6     | 0.000472 | 6     | 0.000466 | 6     | 0.000603 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Laryngeal_Adenoid_Cystic_Carcinoma  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm ) | 6     | 0.000537 | 6     | 0.000539 | 6     | 0.000724 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Laryngeal_Carcinoid_Tumor  http://www.mindswap.org/2003/nciOncology.owl#Disorder_by_Site ) | 7     | 0.000556 | 7     | 0.000566 | 7     | 0.002892 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Laryngeal_Carcinoid_Tumor  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm ) | 7     | 0.000704 | 7     | 0.000692 | 7     | 0.010403 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Laryngeal_Neuroendocrine_Neoplasm  http://www.mindswap.org/2003/nciOncology.owl#Diseases_and_Disorders ) | 9     | 0.000897 | 9     | 0.000855 | 9     | 0.001226 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Malignant_Laryngeal_Neoplasm  http://www.mindswap.org/2003/nciOncology.owl#Disorder_by_Site ) | 5     | 0.000392 | 5     | 0.000391 | 5     | 0.000823 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Laryngeal_Leiomyosarcoma  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm_by_Site ) | 7     | 0.000589 | 7     | 0.000594 | 7     | 0.000804 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Laryngeal_Sarcoma  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm ) | 6     | 0.00073  | 6     | 0.000731 | 6     | 0.000753 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Laryngeal_Sarcoma  http://www.mindswap.org/2003/nciOncology.owl#Head_and_Neck_Disorder ) | 5     | 0.000382 | 5     | 0.000386 | 5     | 0.000501 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Laryngeal_Liposarcoma  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm_by_Site ) | 6     | 0.000524 | 6     | 0.000536 | 6     | 0.000642 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Laryngeal_Paraganglioma  http://www.mindswap.org/2003/nciOncology.owl#Diseases_and_Disorders ) | 19    | 0.002562 | 19    | 0.002495 | 19    | 1.94168  |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Laryngeal_Small_Cell_Carcinoma  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm ) | 14    | 0.001224 | 14    | 0.001224 | 14    | 0.034227 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Laryngeal_Small_Cell_Carcinoma  http://www.mindswap.org/2003/nciOncology.owl#Head_and_Neck_Disorder ) | 10    | 0.004391 | 10    | 0.004347 | 10    | 0.004941 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Laryngeal_Small_Cell_Carcinoma  http://www.mindswap.org/2003/nciOncology.owl#Disorder_by_Site ) | 14    | 0.002429 | 14    | 0.002436 | 14    | 0.11441  |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Leiomyoma_of_the_Central_Nervous_System  http://www.mindswap.org/2003/nciOncology.owl#Connective_and_Soft_Tissue_Disorder  ) | 7     | 0.000715 | 7     | 0.000713 | 7     | 0.000753 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Leiomyosarcoma_of_the_Central_Nervous_System  http://www.mindswap.org/2003/nciOncology.owl#Connective_and_Soft_Tissue_Disorder  ) | 5     | 0.000546 | 5     | 0.000519 | 5     | 0.000626 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Leiomyosarcoma_of_the_Central_Nervous_System  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm ) | 9     | 0.083448 | 9     | 0.083311 | 9     | 0.000871 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Small_Intestine_Leiomyosarcoma  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm_by_Site ) | 8     | 0.000789 | 8     | 0.000766 | 8     | 0.000883 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Leiomyosarcoma_of_the_Murine_Prostate_Gland  http://www.mindswap.org/2003/nciOncology.owl#Murine_Neoplasms ) | 5     | 0.000368 | 5     | 0.000367 | 5     | 0.00063  |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Leiomyosarcoma_of_the_Murine_Skin  http://www.mindswap.org/2003/nciOncology.owl#Murine_Neoplasms ) | 5     | 0.002551 | 5     | 0.002579 | 5     | 0.000573 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Lentigo_Maligna_Melanoma  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm ) | 6     | 0.000406 | 6     | 0.000394 | 6     | 0.000497 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Leptomeningeal_Sarcoma  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm_by_Site ) | 6     | 0.000577 | 6     | 0.000556 | 6     | 0.00073  |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Leptomeningeal_Sarcoma  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm ) | 8     | 0.004947 | 8     | 0.004961 | 8     | 0.061735 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Leukemic_Phase_of_Lymphoma  http://www.mindswap.org/2003/nciOncology.owl#Disorder_by_Site ) | 5     | 0.00037  | 5     | 0.000361 | 5     | 0.00064  |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Mouth_Mucous_Membrane_Leukoplakia  http://www.mindswap.org/2003/nciOncology.owl#Diseases_and_Disorders ) | 5     | 0.000385 | 5     | 0.00038  | 5     | 0.000409 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Stage_III_Colon_Cancer  http://www.mindswap.org/2003/nciOncology.owl#Intestinal_Neoplasm ) | 7     | 0.00118  | 7     | 0.001162 | 7     | 0.001399 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Limited_Stage_Small_Cell_Lung_Carcinoma  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm_by_Site ) | 8     | 0.000972 | 8     | 0.000923 | 8     | 0.109683 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Limited_Stage_Small_Cell_Lung_Carcinoma  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm ) | 15    | 0.171773 | 15    | 0.169738 | 15    | 0.209797 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Warty_Carcinoma_of_the_Penis  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm ) | 5     | 0.00055  | 5     | 0.000519 | 5     | 0.000681 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Well-Differentiated_Extraskeletal_Chondrosarcoma  http://www.mindswap.org/2003/nciOncology.owl#Connective_and_Soft_Tissue_Disorder  ) | 11    | 0.001365 | 11    | 0.00134  | 11    | 0.01012  |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Well-Differentiated_Pancreatic_Endocrine_Neoplasm  http://www.mindswap.org/2003/nciOncology.owl#Diseases_Disorders_and_Findings  ) | 12    | 0.001394 | 12    | 0.001371 | 12    | 0.004143 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Well-differentiated_Squamous_Cell_Carcinoma_of_the_Murine_Skin  http://www.mindswap.org/2003/nciOncology.owl#Murine_Pathologic_Diagnoses ) | 6     | 0.000734 | 6     | 0.000715 | 6     | 0.000913 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Well-differentiated_Squamous_Cell_Carcinoma_of_the_Murine_Skin  http://www.mindswap.org/2003/nciOncology.owl#Murine_Neoplasms ) | 5     | 0.000534 | 5     | 0.000522 | 5     | 0.000539 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Well_Differentiated_Leiomyosarcoma  http://www.mindswap.org/2003/nciOncology.owl#Disorder_by_Site ) | 5     | 0.000475 | 5     | 0.000473 | 5     | 0.000508 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Well_Differentiated_Leiomyosarcoma  http://www.mindswap.org/2003/nciOncology.owl#Diseases_and_Disorders ) | 15    | 0.001651 | 15    | 0.001632 | 15    | 0.029506 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Well_Differentiated_Prostate_Adenocarcinoma  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm ) | 6     | 0.00074  | 6     | 0.000713 | 6     | 0.000819 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Invasive_Malignant_Thymoma  http://www.mindswap.org/2003/nciOncology.owl#Respiratory_Thoracic_and_Mediastinal_Neoplasm  ) | 5     | 0.000457 | 5     | 0.000434 | 5     | 0.000504 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Malignant_Thymoma  http://www.mindswap.org/2003/nciOncology.owl#Respiratory_Thoracic_and_Mediastinal_Disorder  ) | 9     | 0.005372 | 9     | 0.005322 | 9     | 0.000715 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Invasive_Papillary_Urothelial_Carcinoma  http://www.mindswap.org/2003/nciOncology.owl#Urinary_Tract_Disorder ) | 8     | 0.001444 | 8     | 0.00138  | 8     | 0.003505 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Invasive_Papillary_Urothelial_Carcinoma  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm_by_Site ) | 5     | 0.000401 | 5     | 0.000398 | 5     | 0.000838 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Invasive_Papillary_Urothelial_Carcinoma  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm_by_Morphology ) | 11    | 0.015087 | 11    | 0.01499  | 11    | 0.019456 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Islet_Cell_Adenomatosis  http://www.mindswap.org/2003/nciOncology.owl#Diseases_and_Disorders ) | 12    | 0.001175 | 12    | 0.001077 | 12    | 0.001513 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Jejunal_Carcinoid_Tumor  http://www.mindswap.org/2003/nciOncology.owl#Neuroepithelial_Neoplasm ) | 5     | 0.000416 | 5     | 0.000401 | 5     | 0.000644 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Jejunal_Carcinoid_Tumor (some  http://www.mindswap.org/2003/nciOncology.owl#rDisease_Has_Associated_Anatomy  http://www.mindswap.org/2003/nciOncology.owl#Gastrointestinal_System) ) | 25    | 0.030342 | 25    | 0.030094 | 25    | 0.037384 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Juvenile_Type_Ovarian_Granulosa_Cell_Tumor  http://www.mindswap.org/2003/nciOncology.owl#Neoplasm ) | 6     | 0.000581 | 6     | 0.000572 | 6     | 0.001483 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Juxtacortical_Chondroma_of_the_Murine_Skeletal_System  http://www.mindswap.org/2003/nciOncology.owl#Experimental_Organism_Diagnoses  ) | 5     | 0.000411 | 5     | 0.000389 | 5     | 0.00061  |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Juxtacortical_Chondrosarcoma  http://www.mindswap.org/2003/nciOncology.owl#Diseases_and_Disorders ) | 7     | 0.000589 | 7     | 0.000581 | 7     | 0.010277 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Olfactory_Neuroblastoma  http://www.mindswap.org/2003/nciOncology.owl#Central_Nervous_System_Disorder  ) | 6     | 0.000559 | 6     | 0.00053  | 6     | 0.002252 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Olfactory_Neuroblastoma  http://www.mindswap.org/2003/nciOncology.owl#Nervous_System_Neoplasm ) | 5     | 0.000387 | 5     | 0.000366 | 5     | 0.000603 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Kadish_Stage_B_Olfactory_Neuroblastoma  (some  http://www.mindswap.org/2003/nciOncology.owl#rDisease_Has_Associated_Anatomy  http://www.mindswap.org/2003/nciOncology.owl#Central_Nervous_System) ) | 5     | 0.000441 | 5     | 0.000429 | 5     | 0.000522 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Kaposi_Sarcoma_of_the_Central_Nervous_System  http://www.mindswap.org/2003/nciOncology.owl#Connective_and_Soft_Tissue_Disorder  ) | 7     | 0.000623 | 7     | 0.000619 | 7     | 0.001773 |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Kidney_Hemangiopericytoma  http://www.mindswap.org/2003/nciOncology.owl#Diseases_and_Disorders ) | 6     | 0.000631 | 6     | 0.000623 | 6     | 0.00081  |
+| (implies  http://www.mindswap.org/2003/nciOncology.owl#Metastasis_to_the_Ovary  http://www.mindswap.org/2003/nciOncology.owl#Reproductive_System_Disorder ) | 5     | 0.000364 | 5     | 0.000363 | 5     | 0.000525 |
+
+Full-Galen
+
+| Query                                                        | MinAs | RDMinA   | MinAs | RDMinA+  | MinAs | EL2MUS   |
+| ------------------------------------------------------------ | ----- | -------- | ----- | -------- | ----- | -------- |
+| (implies  http://www.co-ode.org/ontologies/galen#BCellChronicLymphocyticLeukaemia #749  ) | 31    | 0.513912 | 31    | 0.512258 | 31    | 2.6852   |
+| (implies  http://www.co-ode.org/ontologies/galen#BCellChronicLymphocyticLeukaemia (some  http://www.co-ode.org/ontologies/galen#StatusAttribute  http://www.co-ode.org/ontologies/galen#pathological) ) | 28    | 2.54727  | 28    | 2.52973  | 28    | 3.78554  |
+| (implies  http://www.co-ode.org/ontologies/galen#CysticVein (some  http://www.co-ode.org/ontologies/galen#InverseStructuralPartitiveAttribute  http://www.co-ode.org/ontologies/galen#CardiovascularSystem) ) | 6     | 0.043997 | 6     | 0.042422 | 6     | 0.048846 |
+| (implies  http://www.co-ode.org/ontologies/galen#Cystitis (some  http://www.co-ode.org/ontologies/galen#StatusAttribute  http://www.co-ode.org/ontologies/galen#AbstractStatus) ) | 7     | 0.014696 | 7     | 0.014942 | 7     | 0.035835 |
+| (implies  http://www.co-ode.org/ontologies/galen#CystitisDueToInfection (some  http://www.co-ode.org/ontologies/galen#DomainAttribute  http://www.co-ode.org/ontologies/galen#pathological) ) | 5     | 0.008488 | 5     | 0.008477 | 5     | 0.012703 |
+| (implies  http://www.co-ode.org/ontologies/galen#CystitisDueToInfection #4527 ) | 20    | 0.522693 | 20    | 0.517104 | 18    | 0.122166 |
+| (implies  http://www.co-ode.org/ontologies/galen#ProlapseLesion (some  http://www.co-ode.org/ontologies/galen#ModifierAttribute  http://www.co-ode.org/ontologies/galen#AbstractStatus) ) | 7     | 0.01075  | 7     | 0.010772 | 8     | 0.016612 |
+| (implies  http://www.co-ode.org/ontologies/galen#AcuteMyocardialInfarction #4527 ) | 40    | 0.593585 | 40    | 0.570482 | 27    | 2.88094  |
+| (implies  http://www.co-ode.org/ontologies/galen#DamageLesion #4527 ) | 42    | 2.81846  | 42    | 2.80425  | 31    | 2.21356  |
+| (implies  http://www.co-ode.org/ontologies/galen#AcuteInfarctionOfPapillaryMuscle #4527  ) | 37    | 0.936917 | 37    | 0.931275 | 31    | 2.23545  |
+| (implies  http://www.co-ode.org/ontologies/galen#MyocardialInfarct #4527 ) | 29    | 0.12815  | 29    | 0.128067 | 29    | 0.981386 |
+| (implies  http://www.co-ode.org/ontologies/galen#BrainDamage #4527 ) | 37    | 0.527779 | 37    | 0.525969 | 36    | 1.90781  |
+| (implies  http://www.co-ode.org/ontologies/galen#CerebralInfarct #4527 ) | 33    | 0.146898 | 33    | 0.145591 | 32    | 2.30137  |
+| (implies  http://www.co-ode.org/ontologies/galen#HepaticCellDamage #4527 ) | 34    | 0.327407 | 34    | 0.327372 | 29    | 1.40201  |
+| (implies  http://www.co-ode.org/ontologies/galen#HepaticInjury #4527 ) | 32    | 0.06455  | 32    | 0.063557 | 33    | 2.44528  |
+| (implies #46993 #4527 )                                      | 32    | 1.16618  | 32    | 1.14886  | 24    | 0.189297 |
+| (implies #48476 #4527 )                                      | 39    | 0.398895 | 39    | 0.385549 | 28    | 1.41773  |
+| (implies  http://www.co-ode.org/ontologies/galen#OldInfarct #4527 ) | 76    | 2.87898  | 76    | 2.82885  | 45    | 2.92738  |
+| (implies  http://www.co-ode.org/ontologies/galen#PulmonaryInfarction #4527 ) | 31    | 2.13287  | 31    | 2.09603  | 26    | 0.150106 |
+| (implies  http://www.co-ode.org/ontologies/galen#SubendocardialMyocardialInfarction  #4527 ) | 32    | 0.867575 | 32    | 0.821747 | 29    | 1.69117  |
+| (implies  http://www.co-ode.org/ontologies/galen#AcuteAnteroApicalMyocardialInfarction  #48429 ) | 10    | 1.85161  | 10    | 1.82624  | 12    | 2.17232  |
+| (implies  http://www.co-ode.org/ontologies/galen#AcuteHighLateralWallMyocardialInfarction  #48429 ) | 12    | 2.65816  | 12    | 2.64335  | 11    | 0.061535 |
+| (implies  http://www.co-ode.org/ontologies/galen#DamageLesion #48429 ) | 12    | 0.566609 | 12    | 0.554125 | 12    | 2.14167  |
+| (implies  http://www.co-ode.org/ontologies/galen#AcuteInfarctionOfPapillaryMuscle  #48429 ) | 12    | 2.7659   | 12    | 2.76122  | 8     | 0.493153 |
+| (implies  http://www.co-ode.org/ontologies/galen#MyocardialInfarct #48429 ) | 12    | 1.11974  | 12    | 1.11868  | 10    | 1.86118  |
+| (implies  http://www.co-ode.org/ontologies/galen#Anonymous-103 #48429 ) | 11    | 2.29501  | 11    | 2.28376  | 12    | 2.7546   |
+| (implies  http://www.co-ode.org/ontologies/galen#BrainDamage #48429 ) | 12    | 0.612423 | 12    | 0.603816 | 12    | 0.645106 |
+| (implies #48476 #48429 )                                     | 12    | 2.31387  | 12    | 2.29638  | 12    | 2.34957  |
+| (implies  http://www.co-ode.org/ontologies/galen#OldInfarct #48429 ) | 20    | 1.75562  | 20    | 1.74779  | 17    | 2.84952  |
+| (implies  http://www.co-ode.org/ontologies/galen#OldMyocardialInfarct #48429 ) | 19    | 1.40359  | 19    | 1.39241  | 20    | 0.709058 |
+| (implies  http://www.co-ode.org/ontologies/galen#PulmonaryInfarction #48429 ) | 12    | 0.548464 | 12    | 0.542478 | 12    | 0.880946 |
+| (implies  http://www.co-ode.org/ontologies/galen#RecentMyocardialInfarct #48429 ) | 10    | 0.277433 | 10    | 0.278443 | 12    | 2.84355  |
+| (implies  http://www.co-ode.org/ontologies/galen#AcuteMyocardialInfarction #1488 ) | 6     | 0.131958 | 6     | 0.131597 | 6     | 0.168785 |
+| (implies  http://www.co-ode.org/ontologies/galen#DamageLesion (some  http://www.co-ode.org/ontologies/galen#isSpecificImmediateConsequenceOf  http://www.co-ode.org/ontologies/galen#AcquiredPathologicalProcess) ) | 6     | 0.021017 | 6     | 0.020565 | 6     | 0.041424 |
+| (implies  http://www.co-ode.org/ontologies/galen#MyocardialInfarct #62203 ) | 10    | 0.350799 | 10    | 0.347999 | 12    | 2.42557  |
+| (implies  http://www.co-ode.org/ontologies/galen#BrainDamage (some  http://www.co-ode.org/ontologies/galen#isSpecificImmediateConsequenceOf  http://www.co-ode.org/ontologies/galen#AcquiredPathologicalProcess) ) | 6     | 0.011768 | 6     | 0.010807 | 6     | 0.051386 |
+| (implies  http://www.co-ode.org/ontologies/galen#BrainDamage #1488 ) | 6     | 0.011932 | 6     | 0.011885 | 6     | 0.047475 |
+| (implies  http://www.co-ode.org/ontologies/galen#BrainDamage (some  http://www.co-ode.org/ontologies/galen#InverseDiseaseProcessAttribute #1480)  ) | 6     | 0.011868 | 6     | 0.010222 | 6     | 0.048011 |
+| (implies  http://www.co-ode.org/ontologies/galen#HepaticCellDamage #62203 ) | 12    | 1.09901  | 12    | 1.09559  | 12    | 1.30997  |
+| (implies  http://www.co-ode.org/ontologies/galen#HepaticCellDamage (some  http://www.co-ode.org/ontologies/galen#isSpecificImmediateConsequenceOf  http://www.co-ode.org/ontologies/galen#AcquiredPathologicalProcess) ) | 6     | 0.043714 | 6     | 0.043417 | 6     | 0.051024 |
+| (implies  http://www.co-ode.org/ontologies/galen#HepaticInjury (some  http://www.co-ode.org/ontologies/galen#isSpecificImmediateConsequenceOf  http://www.co-ode.org/ontologies/galen#AcquiredPathologicalProcess) ) | 6     | 0.047617 | 6     | 0.045851 | 6     | 0.050729 |
+| (implies  http://www.co-ode.org/ontologies/galen#HepaticInjury #1488 ) | 6     | 0.041418 | 6     | 0.041367 | 6     | 0.047966 |
+| (implies  http://www.co-ode.org/ontologies/galen#HepaticInjury (some  http://www.co-ode.org/ontologies/galen#InverseDiseaseProcessAttribute #1480)  ) | 6     | 0.011146 | 6     | 0.0112   | 6     | 0.050458 |
+| (implies  http://www.co-ode.org/ontologies/galen#OldInfarct #62203 ) | 18    | 1.24757  | 18    | 1.18239  | 18    | 2.10907  |
+| (implies  http://www.co-ode.org/ontologies/galen#PulmonaryInfarction #1488 ) | 6     | 0.017654 | 6     | 0.017115 | 6     | 0.020349 |
+| (implies  http://www.co-ode.org/ontologies/galen#SubendocardialMyocardialInfarction  #62203 ) | 12    | 1.68684  | 12    | 1.67936  | 12    | 1.82795  |
+| (implies  http://www.co-ode.org/ontologies/galen#Dandruff (some  http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus  http://www.co-ode.org/ontologies/galen#nonNormal) ) | 8     | 1.53199  | 8     | 1.51029  | 8     | 1.65802  |
+| (implies  http://www.co-ode.org/ontologies/galen#Deafness #18991 ) | 68    | 1.05971  | 68    | 1.05216  | 62    | 1.77962  |
+| (implies  http://www.co-ode.org/ontologies/galen#Trunk (some  http://www.co-ode.org/ontologies/galen#HasDivision  http://www.co-ode.org/ontologies/galen#SynovialMembrane) ) | 86    | 1.08245  | 86    | 1.07695  | 87    | 1.31485  |
+| (implies  http://www.co-ode.org/ontologies/galen#Shoulder (some  http://www.co-ode.org/ontologies/galen#HasDivision  http://www.co-ode.org/ontologies/galen#SynovialMembrane) ) | 6     | 0.007959 | 6     | 0.007526 | 6     | 0.009104 |
+| (implies  http://www.co-ode.org/ontologies/galen#UpperExtremity (some  http://www.co-ode.org/ontologies/galen#HasDivision  http://www.co-ode.org/ontologies/galen#SynovialMembrane) ) | 108   | 2.66739  | 108   | 2.65951  | 84    | 2.91482  |
+| (implies  http://www.co-ode.org/ontologies/galen#AbnormallyShapedThorax (some  http://www.co-ode.org/ontologies/galen#HasDivision  http://www.co-ode.org/ontologies/galen#SynovialMembrane) ) | 9     | 0.011675 | 9     | 0.011754 | 9     | 0.029858 |
+| (implies  http://www.co-ode.org/ontologies/galen#BodyAsAWhole (some  http://www.co-ode.org/ontologies/galen#HasDivision  http://www.co-ode.org/ontologies/galen#SynovialMembrane) ) | 366   | 2.73277  | 366   | 2.7182   | 271   | 2.90058  |
+| (implies  http://www.co-ode.org/ontologies/galen#BarrelChest (some  http://www.co-ode.org/ontologies/galen#HasDivision  http://www.co-ode.org/ontologies/galen#SynovialMembrane) ) | 9     | 0.0169   | 9     | 0.016831 | 9     | 0.019707 |
+| (implies  http://www.co-ode.org/ontologies/galen#PectusCarinatum (some  http://www.co-ode.org/ontologies/galen#HasDivision  http://www.co-ode.org/ontologies/galen#SynovialMembrane) ) | 9     | 0.018042 | 9     | 0.01799  | 9     | 0.037731 |
+| (implies  http://www.co-ode.org/ontologies/galen#PectusExcavatum (some  http://www.co-ode.org/ontologies/galen#HasDivision  http://www.co-ode.org/ontologies/galen#SynovialMembrane) ) | 9     | 0.018105 | 9     | 0.017878 | 9     | 0.037199 |
+| (implies  http://www.co-ode.org/ontologies/galen#GlenoHumeralJoint #69902 ) | 70    | 2.934    | 69    | 2.46928  | 50    | 2.95124  |
+| (implies  http://www.co-ode.org/ontologies/galen#CapsuleOfShoulder  http://www.co-ode.org/ontologies/galen#MSComponentOfUpperLimb ) | 51    | 2.62126  | 51    | 2.6938   | 45    | 1.85023  |
+| (implies  http://www.co-ode.org/ontologies/galen#CapsuleOfShoulder  http://www.co-ode.org/ontologies/galen#ComponentOfMajorBodyDivision ) | 107   | 2.78704  | 107   | 2.74312  | 89    | 2.30901  |
+| (implies  http://www.co-ode.org/ontologies/galen#ComponentOfShoulder (some  http://www.co-ode.org/ontologies/galen#IsDivisionOf  http://www.co-ode.org/ontologies/galen#MajorBodyDivision) ) | 35    | 0.201823 | 35    | 0.200992 | 35    | 0.957586 |
+| (implies  http://www.co-ode.org/ontologies/galen#CoracobrachialBursa (some  http://www.co-ode.org/ontologies/galen#isPairedOrUnpaired  http://www.co-ode.org/ontologies/galen#mirrorImaged) ) | 54    | 0.691897 | 54    | 0.69422  | 41    | 1.86061  |
+| (implies  http://www.co-ode.org/ontologies/galen#CoracobrachialBursa (some  http://www.co-ode.org/ontologies/galen#IsDivisionOf  http://www.co-ode.org/ontologies/galen#MajorBodyDivision) ) | 34    | 2.23153  | 34    | 2.21945  | 31    | 0.195111 |
+| (implies  http://www.co-ode.org/ontologies/galen#CoracoidBursa (some  http://www.co-ode.org/ontologies/galen#isPairedOrUnpaired  http://www.co-ode.org/ontologies/galen#mirrorImaged) ) | 54    | 0.694607 | 54    | 0.689331 | 41    | 1.86097  |
+| (implies  http://www.co-ode.org/ontologies/galen#CoracoidBursa (some  http://www.co-ode.org/ontologies/galen#IsDivisionOf  http://www.co-ode.org/ontologies/galen#MajorBodyDivision) ) | 34    | 2.26603  | 34    | 2.21247  | 31    | 0.195246 |
+| (implies  http://www.co-ode.org/ontologies/galen#LigamentOfShoulder (some  http://www.co-ode.org/ontologies/galen#IsDivisionOf  http://www.co-ode.org/ontologies/galen#MajorBodyDivision) ) | 28    | 0.636052 | 28    | 0.638851 | 28    | 1.59468  |
+| (implies  http://www.co-ode.org/ontologies/galen#RotatorCuff (some  http://www.co-ode.org/ontologies/galen#isPairedOrUnpaired  http://www.co-ode.org/ontologies/galen#mirrorImaged) ) | 50    | 2.5935   | 50    | 2.56488  | 50    | 2.96712  |
+| (implies  http://www.co-ode.org/ontologies/galen#ScapularMuscle (some  http://www.co-ode.org/ontologies/galen#isPairedOrUnpaired  http://www.co-ode.org/ontologies/galen#mirrorImaged) ) | 50    | 2.72037  | 50    | 2.71982  | 48    | 1.93974  |
+| (implies  http://www.co-ode.org/ontologies/galen#ScapularMuscle (some  http://www.co-ode.org/ontologies/galen#IsDivisionOf  http://www.co-ode.org/ontologies/galen#MajorBodyDivision) ) | 41    | 1.17137  | 41    | 1.17868  | 37    | 0.208705 |
+| (implies  http://www.co-ode.org/ontologies/galen#AcromialBursa (some  http://www.co-ode.org/ontologies/galen#InverseStructuralPartitiveAttribute  http://www.co-ode.org/ontologies/galen#Extremity) ) | 15    | 0.12911  | 15    | 0.128303 | 13    | 0.150112 |
+| (implies  http://www.co-ode.org/ontologies/galen#ComponentOfShoulder (some  http://www.co-ode.org/ontologies/galen#InverseStructuralPartitiveAttribute  http://www.co-ode.org/ontologies/galen#Extremity) ) | 14    | 1.31742  | 14    | 1.30026  | 14    | 1.83189  |
+| (implies  http://www.co-ode.org/ontologies/galen#CoracobrachialBursa (some  http://www.co-ode.org/ontologies/galen#InverseStructuralPartitiveAttribute  http://www.co-ode.org/ontologies/galen#Extremity) ) | 14    | 0.064771 | 14    | 0.064817 | 12    | 0.150421 |
+| (implies  http://www.co-ode.org/ontologies/galen#CoracoidBursa (some  http://www.co-ode.org/ontologies/galen#InverseStructuralPartitiveAttribute  http://www.co-ode.org/ontologies/galen#Extremity) ) | 14    | 0.064424 | 14    | 0.064257 | 12    | 0.158138 |
+| (implies  http://www.co-ode.org/ontologies/galen#ScapularMuscle (some  http://www.co-ode.org/ontologies/galen#InverseStructuralPartitiveAttribute  http://www.co-ode.org/ontologies/galen#Extremity) ) | 15    | 0.097813 | 15    | 0.097416 | 14    | 0.033999 |
+| (implies  http://www.co-ode.org/ontologies/galen#CavernousFibrosis (some  http://www.co-ode.org/ontologies/galen#isConsequenceOf  http://www.co-ode.org/ontologies/galen#BodyProcess) ) | 45    | 0.858548 | 45    | 0.855234 | 34    | 1.22712  |
+| (implies  http://www.co-ode.org/ontologies/galen#CavernousSinusThrombosis #68675 ) | 10    | 0.603521 | 10    | 0.602455 | 10    | 1.59141  |
+| (implies  http://www.co-ode.org/ontologies/galen#CavernousSinusThrombosis #15404 ) | 12    | 0.714864 | 12    | 0.714597 | 12    | 1.31383  |
+| (implies  http://www.co-ode.org/ontologies/galen#CavernousVenousSinus  http://www.co-ode.org/ontologies/galen#BodyStructureByTopology ) | 41    | 1.70835  | 41    | 1.69838  | 40    | 1.71807  |
+| (implies  http://www.co-ode.org/ontologies/galen#CavernousVenousSinus #69910 ) | 56    | 1.82552  | 56    | 1.75145  | 37    | 2.9695   |
+| (implies  http://www.co-ode.org/ontologies/galen#IntraCranialVenousSinus (some  http://www.co-ode.org/ontologies/galen#hasTopology #6980) ) | 60    | 2.70779  | 60    | 2.68511  | 41    | 2.60091  |
+| (implies  http://www.co-ode.org/ontologies/galen#IntraCranialVenousSinus (some  http://www.co-ode.org/ontologies/galen#isMadeOf  http://www.co-ode.org/ontologies/galen#SoftTissue) ) | 9     | 0.027926 | 9     | 0.027223 | 9     | 0.038491 |
+| (implies  http://www.co-ode.org/ontologies/galen#IntraCranialVenousSinus  http://www.co-ode.org/ontologies/galen#BodyStructureByFeature ) | 94    | 2.69912  | 94    | 2.66813  | 91    | 2.7829   |
+| (implies  http://www.co-ode.org/ontologies/galen#CavityOfHeartAtrium (some  http://www.co-ode.org/ontologies/galen#InverseStructuralModifierAttribute  http://www.co-ode.org/ontologies/galen#hollowTopology) ) | 85    | 2.69145  | 85    | 2.6606   | 82    | 2.88854  |
+| (implies  http://www.co-ode.org/ontologies/galen#CavityOfHeartChamber (some  http://www.co-ode.org/ontologies/galen#InverseStructuralModifierAttribute  http://www.co-ode.org/ontologies/galen#Topology) ) | 173   | 2.85913  | 173   | 2.81939  | 121   | 2.80383  |
+| (implies  http://www.co-ode.org/ontologies/galen#CavityOfHeartChamber (some  http://www.co-ode.org/ontologies/galen#InverseStructuralModifierAttribute  http://www.co-ode.org/ontologies/galen#hollowTopology) ) | 113   | 2.628    | 113   | 2.58236  | 75    | 2.8851   |
+| (implies  http://www.co-ode.org/ontologies/galen#CavityOfHeartChamber (some  http://www.co-ode.org/ontologies/galen#isSpaceDefinedBy #66824) ) | 14    | 0.075767 | 14    | 0.074396 | 14    | 0.115455 |
+| (implies  http://www.co-ode.org/ontologies/galen#CavityOfHeartVentricle (some  http://www.co-ode.org/ontologies/galen#InverseStructuralModifierAttribute  http://www.co-ode.org/ontologies/galen#hollowTopology) ) | 97    | 2.96     | 96    | 2.92781  | 91    | 2.89124  |
+| (implies  http://www.co-ode.org/ontologies/galen#CavityOfHeartVentricle (some  http://www.co-ode.org/ontologies/galen#hasNonCausalLinkTo #6980) ) | 155   | 2.21915  | 155   | 2.20831  | 103   | 2.90815  |
+| (implies  http://www.co-ode.org/ontologies/galen#CavityOfHeartVentricle (some  http://www.co-ode.org/ontologies/galen#InverseModifierAttribute #6980) ) | 155   | 2.15542  | 155   | 2.11193  | 103   | 2.8189   |
+| (implies  http://www.co-ode.org/ontologies/galen#CavityOfLeftHeartAtrium (some  http://www.co-ode.org/ontologies/galen#InverseStructuralModifierAttribute  http://www.co-ode.org/ontologies/galen#hollowTopology) ) | 47    | 1.17858  | 47    | 1.12372  | 34    | 0.100248 |
+| (implies  http://www.co-ode.org/ontologies/galen#CavityOfLeftHeartAtrium (some  http://www.co-ode.org/ontologies/galen#InverseModifierAttribute #6980) ) | 39    | 1.27685  | 39    | 1.26478  | 12    | 0.107088 |
+| (implies  http://www.co-ode.org/ontologies/galen#LeftAtrialMuscle  http://www.co-ode.org/ontologies/galen#Anonymous-277 ) | 22    | 1.90196  | 22    | 1.88072  | 13    | 0.060945 |
+| (implies  http://www.co-ode.org/ontologies/galen#HighLeftHeartAtrium (some  http://www.co-ode.org/ontologies/galen#ConstructiveAttribute  http://www.co-ode.org/ontologies/galen#CardiovascularSystem) ) | 5     | 0.00874  | 5     | 0.00862  | 5     | 0.013969 |
+| (implies  http://www.co-ode.org/ontologies/galen#LowLeftHeartAtrium (some  http://www.co-ode.org/ontologies/galen#ConstructiveAttribute  http://www.co-ode.org/ontologies/galen#CardiovascularSystem) ) | 5     | 0.008728 | 5     | 0.008499 | 5     | 0.04713  |
+| (implies  http://www.co-ode.org/ontologies/galen#SubdivisionOfLeftHeartAtrium (some  http://www.co-ode.org/ontologies/galen#ConstructiveAttribute  http://www.co-ode.org/ontologies/galen#CardiovascularSystem) ) | 5     | 0.009145 | 5     | 0.008161 | 5     | 0.032318 |
+| (implies  http://www.co-ode.org/ontologies/galen#HighLeftHeartAtrium (some  http://www.co-ode.org/ontologies/galen#HasDivision  http://www.co-ode.org/ontologies/galen#Subendocardium) ) | 6     | 0.016987 | 6     | 0.016583 | 6     | 0.018967 |
+| (implies  http://www.co-ode.org/ontologies/galen#MidLeftHeartAtrium (some  http://www.co-ode.org/ontologies/galen#HasDivision  http://www.co-ode.org/ontologies/galen#Subendocardium) ) | 6     | 0.017152 | 6     | 0.016545 | 6     | 0.018499 |
+| (implies  http://www.co-ode.org/ontologies/galen#PatentForamenOvale (some  http://www.co-ode.org/ontologies/galen#IsDivisionOf  http://www.co-ode.org/ontologies/galen#BodySystem) ) | 24    | 1.10986  | 24    | 1.10826  | 16    | 0.383491 |
+| (implies  http://www.co-ode.org/ontologies/galen#HighLeftHeartAtrium  http://www.co-ode.org/ontologies/galen#ComponentOfInternalAnatomicalStructure  ) | 33    | 1.07715  | 33    | 1.0735   | 32    | 1.35595  |
+| (implies  http://www.co-ode.org/ontologies/galen#HighLeftHeartAtrium  http://www.co-ode.org/ontologies/galen#PartOfInternalOrgan ) | 27    | 0.802942 | 27    | 0.78173  | 24    | 2.32285  |
+| (implies  http://www.co-ode.org/ontologies/galen#LowLeftHeartAtrium  http://www.co-ode.org/ontologies/galen#PartOfInternalOrgan ) | 39    | 2.72893  | 39    | 2.70894  | 26    | 0.745856 |
+
+
+Snomed-CT
+
+| Query                                                        | MinAs | RDMinA   | MinAs | RDMinA+  | MinAs | EL2MUS   |
+| ------------------------------------------------------------ | ----- | -------- | ----- | -------- | ----- | -------- |
+| (implies  http://snomed.info/id/449146005 http://snomed.info/id/118738001 ) | 10    | 0.000693 | 10    | 0.00068  | 10    | 0.002353 |
+| (implies http://snomed.info/id/449146005  http://snomed.info/id/118694006 ) | 11    | 0.000917 | 11    | 0.000911 | 11    | 0.001051 |
+| (implies http://snomed.info/id/449151004  http://snomed.info/id/387713003 ) | 8     | 0.000722 | 8     | 0.000698 | 8     | 0.000961 |
+| (implies http://snomed.info/id/174994000  http://snomed.info/id/138875005 ) | 15    | 0.002497 | 15    | 0.002362 | 15    | 0.003347 |
+| (implies http://snomed.info/id/174995004  http://snomed.info/id/118672003 ) | 6     | 0.00055  | 6     | 0.000525 | 6     | 0.000582 |
+| (implies http://snomed.info/id/174995004  http://snomed.info/id/118696008 ) | 6     | 0.000462 | 6     | 0.000453 | 6     | 0.000607 |
+| (implies http://snomed.info/id/174995004  http://snomed.info/id/387713003 ) | 13    | 0.057725 | 13    | 0.056201 | 13    | 0.065204 |
+| (implies http://snomed.info/id/174998002  http://snomed.info/id/128927009 ) | 13    | 0.042914 | 13    | 0.042829 | 13    | 0.061513 |
+| (implies http://snomed.info/id/174998002  http://snomed.info/id/71388002 ) | 48    | 0.025817 | 48    | 0.025633 | 48    | 0.972329 |
+| (implies http://snomed.info/id/174998002  http://snomed.info/id/118717007 ) | 7     | 0.000547 | 7     | 0.000547 | 7     | 0.000688 |
+| (implies http://snomed.info/id/174998002  http://snomed.info/id/118672003 ) | 12    | 0.000954 | 12    | 0.000936 | 12    | 0.001621 |
+| (implies http://snomed.info/id/174998002  http://snomed.info/id/118738001 ) | 10    | 0.000758 | 10    | 0.000759 | 10    | 0.001015 |
+| (implies http://snomed.info/id/17500001  http://snomed.info/id/51833009 ) | 9     | 0.002028 | 9     | 0.001915 | 9     | 0.002158 |
+| (implies http://snomed.info/id/175007008  http://snomed.info/id/413528009 ) | 8     | 0.002459 | 8     | 0.002516 | 8     | 0.002275 |
+| (implies http://snomed.info/id/175007008  http://snomed.info/id/392242000 ) | 9     | 0.000828 | 9     | 0.000855 | 9     | 0.001682 |
+| (implies http://snomed.info/id/175007008  http://snomed.info/id/386765006 ) | 9     | 0.000543 | 9     | 0.000549 | 9     | 0.003115 |
+| (implies http://snomed.info/id/175007008  http://snomed.info/id/112802009 ) | 41    | 0.493434 | 41    | 0.492727 | 34    | 1.84168  |
+| (implies http://snomed.info/id/175007008  http://snomed.info/id/363320004 ) | 31    | 0.329947 | 31    | 0.313835 | 31    | 0.366571 |
+| (implies http://snomed.info/id/175007008  http://snomed.info/id/118808003 ) | 12    | 0.000889 | 12    | 0.000889 | 12    | 0.00613  |
+| (implies http://snomed.info/id/175007008  http://snomed.info/id/30904006 ) | 25    | 0.093793 | 25    | 0.092987 | 25    | 0.330285 |
+| (implies http://snomed.info/id/175007008  http://snomed.info/id/118695007 ) | 39    | 0.41508  | 39    | 0.413262 | 39    | 0.423349 |
+| (implies http://snomed.info/id/175007008  http://snomed.info/id/385487005 ) | 15    | 0.015191 | 15    | 0.015098 | 15    | 0.021191 |
+| (implies http://snomed.info/id/232719007  http://snomed.info/id/118696008 ) | 6     | 0.000488 | 6     | 0.00049  | 6     | 0.00084  |
+| (implies http://snomed.info/id/232719007  http://snomed.info/id/387713003 ) | 43    | 0.630752 | 43    | 0.627814 | 43    | 0.743397 |
+| (implies http://snomed.info/id/232719007  http://snomed.info/id/118672003 ) | 28    | 0.043656 | 28    | 0.043329 | 28    | 0.321211 |
+| (implies http://snomed.info/id/232719007  http://snomed.info/id/4365001 ) | 11    | 0.001151 | 11    | 0.001163 | 11    | 0.00124  |
+| (implies http://snomed.info/id/232719007  http://snomed.info/id/362958002 ) | 105   | 0.352681 | 105   | 0.350962 | 104   | 1.34317  |
+| (implies http://snomed.info/id/232719007  http://snomed.info/id/118717007 ) | 15    | 0.001407 | 15    | 0.001428 | 15    | 0.002085 |
+| (implies http://snomed.info/id/232719007  http://snomed.info/id/118694006 ) | 27    | 0.004272 | 27    | 0.004305 | 27    | 0.123584 |
+| (implies http://snomed.info/id/232719007  http://snomed.info/id/118804001 ) | 12    | 0.001828 | 12    | 0.001793 | 12    | 0.012613 |
+| (implies http://snomed.info/id/232719007  http://snomed.info/id/373351007 ) | 6     | 0.000515 | 6     | 0.000491 | 6     | 0.000592 |
+| (implies http://snomed.info/id/3546002  http://snomed.info/id/2119009 ) | 14    | 0.018127 | 14    | 0.018016 | 14    | 0.025242 |
+| (implies http://snomed.info/id/3546002  http://snomed.info/id/265045007 ) | 6     | 0.000479 | 6     | 0.000466 | 6     | 0.001276 |
+| (implies http://snomed.info/id/3546002  http://snomed.info/id/387713003 ) | 109   | 1.0945   | 109   | 1.08434  | 64    | 1.8704   |
+| (implies http://snomed.info/id/3546002  http://snomed.info/id/118672003 ) | 81    | 1.57214  | 81    | 1.56302  | 77    | 0.873405 |
+| (implies http://snomed.info/id/3546002  http://snomed.info/id/4365001 ) | 32    | 0.675162 | 32    | 0.668145 | 24    | 0.147956 |
+| (implies http://snomed.info/id/3546002  http://snomed.info/id/362958002 ) | 168   | 2.82744  | 169   | 2.99754  | 154   | 2.78913  |
+| (implies http://snomed.info/id/3546002  http://snomed.info/id/118717007 ) | 43    | 0.533364 | 43    | 0.531887 | 39    | 0.957554 |
+| (implies http://snomed.info/id/3546002  http://snomed.info/id/118694006 ) | 50    | 0.063094 | 50    | 0.061307 | 56    | 1.6011   |
+| (implies http://snomed.info/id/3546002  http://snomed.info/id/118804001 ) | 33    | 0.22399  | 33    | 0.224177 | 29    | 0.121911 |
+| (implies http://snomed.info/id/175008003  http://snomed.info/id/392242000 ) | 9     | 0.00079  | 9     | 0.0008   | 9     | 0.002356 |
+| (implies http://snomed.info/id/175008003  http://snomed.info/id/386765006 ) | 9     | 0.000624 | 9     | 0.000637 | 9     | 0.00539  |
+| (implies http://snomed.info/id/175008003  http://snomed.info/id/112802009 ) | 42    | 1.00013  | 42    | 0.998787 | 35    | 1.20668  |
+| (implies http://snomed.info/id/175008003  http://snomed.info/id/363320004 ) | 31    | 0.060807 | 31    | 0.060348 | 29    | 1.12609  |
+| (implies http://snomed.info/id/175008003  http://snomed.info/id/118797008 ) | 9     | 0.004443 | 9     | 0.004424 | 9     | 0.004227 |
+| (implies http://snomed.info/id/175008003  http://snomed.info/id/74943008 ) | 31    | 0.909123 | 31    | 0.907889 | 32    | 1.14464  |
+| (implies http://snomed.info/id/175008003  http://snomed.info/id/118808003 ) | 12    | 0.001017 | 12    | 0.001014 | 12    | 0.013657 |
+| (implies http://snomed.info/id/175008003  http://snomed.info/id/30904006 ) | 25    | 0.185078 | 25    | 0.188369 | 25    | 0.415259 |
+| (implies http://snomed.info/id/175008003  http://snomed.info/id/118695007 ) | 39    | 2.7788   | 39    | 2.72643  | 39    | 2.9848   |
+| (implies http://snomed.info/id/175008003  http://snomed.info/id/119593002 ) | 10    | 0.01217  | 10    | 0.012149 | 10    | 0.022714 |
+| (implies http://snomed.info/id/175008003  http://snomed.info/id/385487005 ) | 15    | 0.006275 | 15    | 0.006144 | 15    | 0.0623   |
+| (implies http://snomed.info/id/175008003  http://snomed.info/id/128927009 ) | 127   | 2.48808  | 127   | 2.48865  | 128   | 2.82114  |
+| (implies http://snomed.info/id/74371005  http://snomed.info/id/71388002 ) | 146   | 2.9369   | 146   | 2.88697  | 133   | 2.26108  |
+| (implies http://snomed.info/id/74371005  http://snomed.info/id/112802009 ) | 13    | 0.479342 | 13    | 0.47878  | 13    | 0.501635 |
+| (implies http://snomed.info/id/74371005  http://snomed.info/id/363320004 ) | 8     | 0.000741 | 8     | 0.000743 | 8     | 0.000812 |
+| (implies http://snomed.info/id/74371005  http://snomed.info/id/74943008 ) | 10    | 0.003144 | 10    | 0.00316  | 10    | 0.000928 |
+| (implies http://snomed.info/id/74371005  http://snomed.info/id/30904006 ) | 6     | 0.000514 | 6     | 0.000521 | 6     | 0.000604 |
+| (implies http://snomed.info/id/74371005  http://snomed.info/id/118695007 ) | 13    | 0.001184 | 13    | 0.001173 | 13    | 0.001208 |
+| (implies http://snomed.info/id/74371005  http://snomed.info/id/385487005 ) | 5     | 0.000425 | 5     | 0.000426 | 5     | 0.000531 |
+| (implies http://snomed.info/id/175009006  http://snomed.info/id/128927009 ) | 129   | 1.67423  | 129   | 1.63538  | 104   | 2.90626  |
+| (implies http://snomed.info/id/175009006  http://snomed.info/id/392242000 ) | 9     | 0.000751 | 9     | 0.000755 | 9     | 0.047578 |
+| (implies http://snomed.info/id/175009006  http://snomed.info/id/386765006 ) | 9     | 0.000647 | 9     | 0.000613 | 9     | 0.003793 |
+| (implies http://snomed.info/id/175009006  http://snomed.info/id/112802009 ) | 51    | 0.229182 | 51    | 0.202727 | 39    | 0.627359 |
+| (implies http://snomed.info/id/175009006  http://snomed.info/id/363320004 ) | 31    | 0.135047 | 31    | 0.133808 | 30    | 1.9576   |
+| (implies http://snomed.info/id/175009006  http://snomed.info/id/118797008 ) | 9     | 0.00494  | 9     | 0.004956 | 9     | 0.006068 |
+| (implies http://snomed.info/id/175009006  http://snomed.info/id/74943008 ) | 28    | 0.257804 | 28    | 0.256326 | 29    | 0.411576 |
+| (implies http://snomed.info/id/175009006  http://snomed.info/id/118808003 ) | 12    | 0.01346  | 12    | 0.013049 | 12    | 0.014205 |
+| (implies http://snomed.info/id/175009006  http://snomed.info/id/30904006 ) | 25    | 0.068205 | 25    | 0.066936 | 25    | 0.064336 |
+| (implies http://snomed.info/id/175009006  http://snomed.info/id/119593002 ) | 10    | 0.000794 | 10    | 0.000789 | 10    | 0.023336 |
+| (implies http://snomed.info/id/175009006  http://snomed.info/id/385487005 ) | 15    | 0.004078 | 15    | 0.00405  | 15    | 0.004942 |
+| (implies http://snomed.info/id/62324004  http://snomed.info/id/362958002 ) | 17    | 0.001899 | 17    | 0.00187  | 17    | 0.573983 |
+| (implies http://snomed.info/id/62324004  http://snomed.info/id/128927009 ) | 5     | 0.000366 | 5     | 0.000361 | 5     | 0.000462 |
+| (implies http://snomed.info/id/175011002  http://snomed.info/id/392242000 ) | 7     | 0.000674 | 7     | 0.000657 | 7     | 0.000666 |
+| (implies http://snomed.info/id/175011002  http://snomed.info/id/386765006 ) | 6     | 0.000421 | 6     | 0.000418 | 6     | 0.000764 |
+| (implies http://snomed.info/id/175011002  http://snomed.info/id/112802009 ) | 38    | 0.062526 | 38    | 0.06105  | 26    | 0.420499 |
+| (implies http://snomed.info/id/175011002  http://snomed.info/id/118797008 ) | 6     | 0.000435 | 6     | 0.000425 | 6     | 0.000732 |
+| (implies http://snomed.info/id/175011002  http://snomed.info/id/74943008 ) | 22    | 0.126954 | 22    | 0.116251 | 22    | 0.148831 |
+| (implies http://snomed.info/id/175011002  http://snomed.info/id/118695007 ) | 26    | 0.27614  | 26    | 0.277599 | 26    | 0.447725 |
+| (implies http://snomed.info/id/175011002  http://snomed.info/id/385487005 ) | 10    | 0.000814 | 10    | 0.00081  | 10    | 0.001896 |
+| (implies http://snomed.info/id/175021005  http://snomed.info/id/118672003 ) | 28    | 0.042256 | 28    | 0.041936 | 28    | 0.319327 |
+| (implies http://snomed.info/id/175021005  http://snomed.info/id/4365001 ) | 11    | 0.001168 | 11    | 0.001179 | 11    | 0.001381 |
+| (implies http://snomed.info/id/175021005  http://snomed.info/id/362958002 ) | 105   | 0.349429 | 105   | 0.328895 | 104   | 1.34137  |
+| (implies http://snomed.info/id/175021005  http://snomed.info/id/118717007 ) | 15    | 0.001427 | 15    | 0.001303 | 15    | 0.002056 |
+| (implies http://snomed.info/id/175021005  http://snomed.info/id/118694006 ) | 27    | 0.004294 | 27    | 0.004267 | 27    | 0.121746 |
+| (implies http://snomed.info/id/175021005  http://snomed.info/id/118804001 ) | 12    | 0.001828 | 12    | 0.001799 | 12    | 0.012657 |
+| (implies http://snomed.info/id/175022003  http://snomed.info/id/386765006 ) | 6     | 0.000445 | 6     | 0.000436 | 6     | 0.000916 |
+| (implies http://snomed.info/id/175022003  http://snomed.info/id/112802009 ) | 19    | 0.004782 | 19    | 0.004766 | 20    | 0.460816 |
+| (implies http://snomed.info/id/175022003  http://snomed.info/id/119593002 ) | 6     | 0.000447 | 6     | 0.000458 | 6     | 0.001107 |
+| (implies http://snomed.info/id/175023008  http://snomed.info/id/52530000 ) | 6     | 0.00067  | 6     | 0.000658 | 6     | 0.001097 |
+| (implies http://snomed.info/id/175024002  http://snomed.info/id/386765006 ) | 6     | 0.000917 | 6     | 0.000925 | 6     | 0.000919 |
+| (implies http://snomed.info/id/175024002  http://snomed.info/id/112802009 ) | 19    | 1.69314  | 19    | 1.63742  | 18    | 1.19193  |
+| (implies http://snomed.info/id/175024002  http://snomed.info/id/363320004 ) | 16    | 0.495001 | 16    | 0.490058 | 16    | 0.525217 |
+| (implies http://snomed.info/id/175024002  http://snomed.info/id/118808003 ) | 8     | 0.000536 | 8     | 0.000563 | 8     | 0.00247  |
+| (implies http://snomed.info/id/175024002  http://snomed.info/id/385487005 ) | 10    | 0.001582 | 10    | 0.001564 | 10    | 0.006196 |
+| (implies http://snomed.info/id/232720001  http://snomed.info/id/118696008 ) | 6     | 0.000475 | 6     | 0.000466 | 6     | 0.000841 |
+| (implies http://snomed.info/id/232720001  http://snomed.info/id/387713003 ) | 43    | 0.636999 | 43    | 0.629164 | 43    | 0.444179 |
+| (implies http://snomed.info/id/232720001  http://snomed.info/id/118672003 ) | 28    | 0.042217 | 28    | 0.042181 | 28    | 0.32061  |
+| (implies http://snomed.info/id/232720001  http://snomed.info/id/362958002 ) | 105   | 0.355022 | 105   | 0.348844 | 104   | 1.34268  |
+| (implies http://snomed.info/id/232720001  http://snomed.info/id/118717007 ) | 15    | 0.001442 | 15    | 0.00123  | 15    | 0.002054 |
+| (implies http://snomed.info/id/232720001  http://snomed.info/id/118694006 ) | 27    | 0.004302 | 27    | 0.004282 | 27    | 0.120828 |
