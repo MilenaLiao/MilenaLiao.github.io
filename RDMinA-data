@@ -1,0 +1,8 @@
+| (implies  http://www.co-ode.org/ontologies/galen#BCellChronicLymphocyticLeukaemia #749  ) | 31   | 0.513912 | 31   | 0.512258 | 31   | 2.6852   |
+| ------------------------------------------------------------ | ---- | -------- | ---- | -------- | ---- | -------- |
+| (implies  http://www.co-ode.org/ontologies/galen#BCellChronicLymphocyticLeukaemia (some  http://www.co-ode.org/ontologies/galen#StatusAttribute  http://www.co-ode.org/ontologies/galen#pathological) ) | 28   | 2.54727  | 28   | 2.52973  | 28   | 3.78554  |
+| (implies  http://www.co-ode.org/ontologies/galen#CysticVein (some  http://www.co-ode.org/ontologies/galen#InverseStructuralPartitiveAttribute  http://www.co-ode.org/ontologies/galen#CardiovascularSystem) ) | 6    | 0.043997 | 6    | 0.042422 | 6    | 0.048846 |
+| (implies  http://www.co-ode.org/ontologies/galen#Cystitis (some  http://www.co-ode.org/ontologies/galen#StatusAttribute  http://www.co-ode.org/ontologies/galen#AbstractStatus) ) | 7    | 0.014696 | 7    | 0.014942 | 7    | 0.035835 |
+| (implies  http://www.co-ode.org/ontologies/galen#CystitisDueToInfection (some  http://www.co-ode.org/ontologies/galen#DomainAttribute  http://www.co-ode.org/ontologies/galen#pathological) ) | 5    | 0.008488 | 5    | 0.008477 | 5    | 0.012703 |
+| (implies  http://www.co-ode.org/ontologies/galen#CystitisDueToInfection #4527 ) | 20   | 0.522693 | 20   | 0.517104 | 18   | 0.122166 |
+
